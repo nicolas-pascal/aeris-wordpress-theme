@@ -265,10 +265,10 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
+	color: #333;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	/*font-size: 1rem;*/
 	line-height: 1.5;
 }
 
@@ -279,10 +279,23 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	border-bottom: 1px solid #4765a0;    
+    margin:10px 0 25px;
+}
+
+h2 {
+    font-size: 22px;
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: 10px;
 }
 
 dfn,
@@ -294,6 +307,11 @@ i {
 
 blockquote {
 	margin: 0 1.5em;
+	margin-bottom: 30px;
+    padding: 20px;
+	background: #fafafa;
+	border-left:2px solid #4765a0;
+	box-shadow: 0 10px 6px -6px #bbb;
 }
 
 address {
@@ -533,9 +551,6 @@ a:active {
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
 }
 
 .main-navigation ul {
@@ -547,19 +562,42 @@ a:active {
 
 .main-navigation li {
 	float: left;
+	height: 40px;
 	position: relative;
 }
 
 .main-navigation a {
 	display: block;
+	padding: 9px 30px 9px 20px;
+	font-size: 15px;
+	color: #687074;
 	text-decoration: none;
+	text-transform: uppercase;
 }
+
+.main-navigation .nav-menu > li > a:hover,
+.main-navigation .nav-menu > li > a:focus {
+	border-bottom: 2px solid #4765a0;
+	color: #4765a0;
+}
+
+.main-navigation .nav-menu > li > a::after {
+    content: "";
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 11px;
+    font-weight: normal;
+    position: absolute;
+    right: 15px;
+    top: 9px;
+}
+
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 1.5em;
+	top: 40px;
 	left: -999em;
 	z-index: 99999;
 }
@@ -571,10 +609,16 @@ a:active {
 
 .main-navigation ul ul a {
 	width: 200px;
+	font-size: 13px;
+	text-transform: none;
 }
 
 .main-navigation ul ul li {
 
+}
+
+.main-navigation ul ul li:last-child {
+	border-bottom: 1px solid #888;
 }
 
 .main-navigation li:hover > a,
@@ -583,6 +627,8 @@ a:active {
 
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
+	background: #eee none repeat scroll 0 0 !important;
+    color: #687074;
 }
 
 .main-navigation ul ul a:hover,
@@ -599,11 +645,15 @@ a:active {
 	left: 100%;
 }
 
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
+.main-navigation .nav-menu > .current_page_item > a,
+.main-navigation .nav-menu > .current-menu-item > a,
+.main-navigation .nav-menu > .current_page_ancestor > a,
+.main-navigation .nav-menu > .current-menu-ancestor > a {
+	border-bottom: 2px solid #4765a0;
+	color: #4765a0;
 }
+
+
 
 /* Small menu. */
 .menu-toggle,
@@ -641,6 +691,8 @@ a:active {
 	text-align: right;
 	width: 50%;
 }
+
+
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -893,3 +945,46 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## page
+--------------------------------------------------------------*/
+[id="page"] > [id="masterhead"] > *,
+[id="page"] > [id="content"]  {
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+## header
+--------------------------------------------------------------*/
+[id="masterhead"] {
+	padding-top:30px;
+	border-bottom: 2px solid #eee;
+}
+
+/*------------------
+## div pour logo + nav
+-------------------*/
+[id="masterhead"] > div {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+/*------------------
+## logo
+-------------------*/
+
+[id="masterhead"] > div > a{
+	display: block;
+	width: 200px;
+	padding-bottom: 10px;
+}
+
+
+
