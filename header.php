@@ -27,29 +27,41 @@
 			$description = get_bloginfo( 'description', 'display' );
 
 		?>
-		<div>
+		<div class="wrapper">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<img src="<?php echo $image[0];?>" alt="<?php bloginfo( 'name' ); ?>" title="<?php bloginfo( 'name' ); ?> : <?php echo $description;?>">
 			</a>
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
+			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Menu principal / Main menu">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'theme-aeris' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
+
+			<nav id="header-menu">
+
 		</div>
 	</header><!-- #masterhead -->
-	<div id="breadcrumb"></div>
+
+<?php
+	// Breadcrumbs sans titre
+	if ( is_front_page() && is_home() ) { ?>
+	<div id="breadcrumbs">
+		<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
+	</div>
+	
 	<div class="site-branding">
-		<?php
-		if ( is_front_page() && is_home() ) : ?>
+		<div>
+		
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php
-			if ( $description || is_customize_preview() ) : ?>
-			<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; 
-		endif;
-		?>
-		
+			if ( $description || is_customize_preview() ) { ?>
+			<p class="site-description"><?php echo $description; ?></p>
+				<?php
+			}
+			?>
+		</div>
 	</div><!-- .site-branding -->
-	<div id="content" class="site-content">
+<?php
+	}
+	?>
+	<!-- <div id="content" class="site-content"> -->

@@ -20,7 +20,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php theme_aeris_posted_on(); ?>
+			<?php theme_aeris_posted_on(); ?> TOTO
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
