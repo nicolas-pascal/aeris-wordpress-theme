@@ -285,8 +285,7 @@ h6 {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
 	border-bottom: 1px solid #4765a0;    
     margin:10px 0 25px;
 }
@@ -303,7 +302,7 @@ h3 > a, h3 > a:active, h3 > a:focus  {
 }
 
 p {
-	margin-bottom: 10px;
+	margin: 10px 0;
 }
 
 dfn,
@@ -570,7 +569,7 @@ a:active {
 
 .main-navigation li {
 	float: left;
-	height: 41px;
+	/*height: 41px;*/
 	position: relative;
 }
 
@@ -604,7 +603,7 @@ a:active {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 41px;
+	top: 40px;
 	left: -999em;
 	background: #FFF;
 	z-index: 99999;
@@ -650,8 +649,9 @@ a:active {
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
 	left: 0;
-	right:0;
+	width: 200px;
 }
+
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
@@ -1094,6 +1094,86 @@ object {
 	background-color: rgba(0, 0, 0, 0.3);
 	font-size: 18px;
 }
+
+/*------------------
+## homepage - list post
+-------------------*/
+
+[role="listNews"] {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: stretch;
+}
+
+[role="listNews"] h2 {
+	width: 100%;
+}
+
+[role="listNews"] article {
+	flex:1 0 250px;
+	margin: 0 20px 20px 0;
+	padding: 20px;
+	border:1px solid #CCC;
+}
+
+/*------------------
+## all template
+-------------------*/
+[id="content-area"] {
+	padding: 20px;
+}
+
+/*------------------
+## Template default
+-------------------*/
+[id="content-area"].default main {
+	max-width: 768px;
+	margin-left: 0;
+} 
+
+/*------------------
+## Template SideBar
+-------------------*/
+
+[id="content-area"].sidebar {
+	display: flex;
+	flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+	[id="content-area"].sidebar  main {
+		margin-right: 4%;
+	    max-width: 62.6667%;
+	}
+	[id="content-area"].sidebar  aside {
+	 	width: 33.3334%;
+		padding-top: 10px;
+		padding-left: 20px;
+		border-left: 1px solid #CCC;
+	}
+}
+
+/*------------------------------------------------------------------
+## FOOTER 
+-------------------------------------------------------------------*/
+
+[id="page"] > footer {
+	background: #585f69;
+	color: #FFF;
+}
+
+[id="page"] > footer address{ 
+	font-style: normal;
+}
+
+
+
+
+
+
+
 
 
 

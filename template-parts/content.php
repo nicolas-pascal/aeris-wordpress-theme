@@ -11,6 +11,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<?php 
+        if (get_the_post_thumbnail()) {
+        ?>
+        <figure>
+        <?php the_post_thumbnail( 'illustration-article' ); ?>
+        </figure>
+        <?php 
+        }
+        ?>     
 		<?php
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -20,7 +29,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php theme_aeris_posted_on(); ?> TOTO
+			<?php theme_aeris_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>

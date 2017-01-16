@@ -6,8 +6,6 @@
  */
 
 ?>
-
-
 <div id="breadcrumbs">
 	<div class="wrapper">
 		<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
@@ -16,4 +14,5 @@
 		</h1>
 	</div>
 </div>
+
 

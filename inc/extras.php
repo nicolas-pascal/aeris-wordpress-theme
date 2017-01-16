@@ -43,8 +43,7 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
 *  Function d'affichage du breadcrumb
 *  source : http://www.techpulsetoday.com/wordpress-breadcrumbs-without-plugin/
 */
-
-//// BREADCRUMB START ////       
+     
  function the_breadcrumb() {
  
   $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
@@ -151,4 +150,76 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
   }
 } // end the_breadcrumb()
 
-//// BREADCRUMB END ////
+
+/******************************************************************
+* Creation de liste des pages en fonction d'arguments passés à WP_Query()
+* Appelle le template content-embed-page.php
+*/
+
+function list_pages($arg, $infiniteScroll){
+
+// The Query
+    $queryListPages = new WP_Query( $arg );
+
+    // The Loop
+    if ( $queryListPages->have_posts() ) {
+    
+        if ($infiniteScroll) {
+        echo '<div id="i-scroll">';
+        }
+        ?>
+        <?php
+        while ( $queryListPages->have_posts() ) :
+            $queryListPages->the_post(); 
+        
+            // Appel embed template
+            get_template_part( 'template-parts/content', 'embed-page' );
+       
+        endwhile;
+        ?>
+        
+        <figure style="display:none" class="loader">
+            <img src="<?php bloginfo('template_directory');?>/images/loader.gif" alt="">
+        </figure>
+    <?php
+    if ($infiniteScroll) {
+        echo '</div> ';
+        }
+    ?>
+    <?php
+      the_posts_navigation(array(
+                'prev_text' => __( 'Page précédente', 'textdomain' ),
+                'next_text' => __( 'Page suivante', 'textdomain' ),
+                'screen_reader_text' => 'Plus de fiches'
+            ));
+        
+    } else {
+        get_template_part( 'template-parts/content', 'none' );
+    }
+
+    // Restore original Post Data
+    wp_reset_postdata();
+}
+
+/******************************************************************
+* GESTION DES IMAGES
+*
+* Support des thumbnails (images à la une)
+* Tailles d'images
+* Paramètre d'attachement par défaut d'une illustration (alignement/lien/taille)
+*
+*  https://developer.wordpress.org/reference/functions/add_image_size/ 
+*/
+
+// active les Post thumbnails (images à la une).
+add_theme_support( 'post-thumbnails' );
+
+/* Ajout de tailles d'images
+* https://developer.wordpress.org/reference/functions/add_image_size/
+*/
+function images_setup() {
+    add_image_size( 'illustration-article', 1024, 500, true );
+    add_image_size( 'embed-article', 1024, 250, true );
+ }
+add_action( 'after_setup_theme', 'images_setup' );
+
