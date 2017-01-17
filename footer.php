@@ -11,15 +11,35 @@
 
 ?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'theme-aeris' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'theme-aeris' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'theme-aeris' ), 'theme-aeris', '<a href="https://automattic.com/" rel="designer">Pierre VERT</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer>
+	    <!-- <address>
+	        OBSERVATOIRE MIDI-PYRENEES<br>
+	        14, avenue Edouard Belin - 31400 TOULOUSE<br>
+	        Tél. +33 (0)5 61 33 29 29<br>
+	        Fax : +33 (0)5 61 33 28 88<br>
+	    </address> -->
+	    <section>
+	        <p>© Copyright Pôle Aeris 2016 - Service de données OMP (SEDOO)</p>
+	    </section>
+	    <section role="tutelles">
+	        <figure>
+	            <a href="http://http://www.ac-toulouse.fr/" title="Lien vers le site de l'Académie de Toulouse">
+	                <img src="<?php bloginfo( 'template_url' ); ?>/images/ac-toulouse_logo.jpg" alt="">
+	            </a>
+	            <figcaption>
+	                <a href="http://http://www.ac-toulouse.fr/" title="Lien vers le site de l'Académie de Toulouse">Académie de Toulouse</a>
+	            </figcaption>
+	        </figure>
+	        <figure>
+	           <a href="http://www.univ-tlse3.fr" title="Lien vers le site de l'Université Paul Sabatier - Toulouse 3">
+	                <img src="<?php bloginfo( 'template_url' ); ?>/images/logo_univ-tlse.png" alt="">
+	            </a>
+	            <figcaption>
+	                <a href="http://www.univ-tlse3.fr" title="Lien vers le site de l'Université Paul Sabatier - Toulouse 3">Université Paul Sabatier - Toulouse 3</a>
+	            </figcaption>
+	        </figure>
+	    </section>
+	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
