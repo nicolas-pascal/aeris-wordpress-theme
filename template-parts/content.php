@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header>
 		<?php 
         if (get_the_post_thumbnail()) {
         ?>
@@ -35,7 +35,7 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div>
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */

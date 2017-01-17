@@ -7,13 +7,8 @@ $categories = get_the_terms( $post->ID, 'category');
 
 ?>
 
-<article>
+<article role="embed-post">
     <header>
-        <h3>
-           <a href="<?php the_permalink(); ?>">
-            <?php the_title();?>
-            </a>
-        </h3>
         <div class="tag">
         <?php
         if( $categories ) {
@@ -25,12 +20,17 @@ $categories = get_the_terms( $post->ID, 'category');
           } ?>
         </div>
 
+        <h3>
+           <a href="<?php the_permalink(); ?>">
+            <?php the_title();?>
+            </a>
+        </h3>     
         
         <?php 
         if (get_the_post_thumbnail()) {
         ?>
         <figure>
-        <?php the_post_thumbnail( 'embed-article' ); ?>
+        <?php the_post_thumbnail( 'illustration-article' ); ?>
         </figure>
         <?php 
         }
@@ -39,6 +39,6 @@ $categories = get_the_terms( $post->ID, 'category');
     </header>
     <section>
        <?php the_excerpt(); ?>
-        <a href="<?php the_permalink(); ?>" class="tag"><span class="icon-angle-right"></span> Lire la suite</a>
+        <a href="<?php the_permalink(); ?>"><span class="icon-angle-right"></span> Lire la suite</a>
     </section>
 </article>

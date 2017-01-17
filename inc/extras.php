@@ -219,7 +219,7 @@ add_theme_support( 'post-thumbnails' );
 */
 function images_setup() {
     add_image_size( 'illustration-article', 1024, 500, true );
-    add_image_size( 'embed-article', 1024, 250, true );
+    add_image_size( 'embed-article', 1024, 250, false );
  }
 add_action( 'after_setup_theme', 'images_setup' );
 

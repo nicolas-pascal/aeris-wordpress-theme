@@ -1,9 +1,9 @@
 /*
-Theme Name: aeris
-Theme URI: http://underscores.me/
-Author: Pierre VERT
-Author URI: http://www.sedoo.fr
-Description: Description
+Theme Name:   Aeris
+Theme URI:    
+Description:  Theme Aeris
+Author:       SEDOO OMP - Pierre VERT
+Author URI:   http://sedoo.fr
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -883,6 +883,11 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+.post > header figure {
+	text-align: right;
+}
+
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -892,6 +897,16 @@ a:active {
 
 .bypostauthor {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+## Taxonomies
+--------------------------------------------------------------*/
+.tag span {
+	padding: 5px 10px 7px;
+	border-radius: 5px;
+	background:#009FDE; /*#4765A0;*/
+	color: #FFF;
 }
 
 /*--------------------------------------------------------------
