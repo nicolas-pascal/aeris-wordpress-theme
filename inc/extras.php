@@ -223,3 +223,6 @@ function images_setup() {
  }
 add_action( 'after_setup_theme', 'images_setup' );
 
+
+
+

@@ -146,3 +146,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Implement the Nav feature.
  */
 require get_template_directory() . '/inc/custom-nav.php';
+
+/**
+ * Ajout de widgets custom
+ */
+require get_template_directory() . '/inc/custom-widget.php';
