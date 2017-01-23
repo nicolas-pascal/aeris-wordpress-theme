@@ -909,6 +909,14 @@ a:active {
 	color: #FFF;
 }
 
+.tag a {
+	text-decoration: none;
+}
+.tag a:hover span{
+	background: #585F69;
+	/*color:white;*/
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
