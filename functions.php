@@ -92,7 +92,7 @@ function theme_aeris_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'theme-aeris' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'theme-aeris' ),
+		'description'   => esc_html__( 'Ajouter des widgets ici.', 'theme-aeris' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -146,3 +146,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Implement the Nav feature.
  */
 require get_template_directory() . '/inc/custom-nav.php';
+
+/**
+ * Ajout de widgets custom
+ */
+require get_template_directory() . '/inc/custom-widget.php';

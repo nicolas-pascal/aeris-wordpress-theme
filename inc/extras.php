@@ -67,7 +67,7 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
     if ( is_category() ) {
       $thisCat = get_category(get_query_var('cat'), false);
       if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
-      echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+      echo $before . '' . single_cat_title('', false) . '' . $after;
  
     } elseif ( is_search() ) {
       echo $before . 'Search results for "' . get_search_query() . '"' . $after;
@@ -220,6 +220,10 @@ add_theme_support( 'post-thumbnails' );
 function images_setup() {
     add_image_size( 'illustration-article', 1024, 500, true );
     add_image_size( 'embed-article', 1024, 250, false );
+    add_image_size( 'logo-partenaire', 100, 40, false );
  }
 add_action( 'after_setup_theme', 'images_setup' );
+
+
+
 

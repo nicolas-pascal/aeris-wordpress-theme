@@ -12,10 +12,14 @@ $categories = get_the_terms( $post->ID, 'category');
         <div class="tag">
         <?php
         if( $categories ) {
-            foreach( $categories as $categorie ) { ?>
+            foreach( $categories as $categorie ) { 
+
+            echo '<a href="'.site_url().'/category/'.$categorie->slug.'">';
+            ?>
             <span class="<?php echo $categorie->slug; ?>">
                 <?php echo $categorie->name; ?>
             </span>
+            </a>
         <?php }
           } ?>
         </div>
