@@ -1,0 +1,44 @@
+h1,
+h2,
+h3 {
+	border-bottom-color: #7DBF3B; 
+}
+
+blockquote {
+	border-color:#7DBF3B;
+}
+
+a {
+	color: #7DBF3B;
+}
+
+a:visited {
+	color: #7DBF3B;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #009FDE;
+}
+
+.main-navigation ul ul li:first-child {
+	border-top-color: #7DBF3B;
+}
+
+.main-navigation .nav-menu > li > a:hover,
+.main-navigation .nav-menu > li > a:focus {
+	color: #7DBF3B;
+}
+
+.main-navigation .nav-menu > .current_page_item > a,
+.main-navigation .nav-menu > .current-menu-item > a,
+.main-navigation .nav-menu > .current_page_ancestor > a,
+.main-navigation .nav-menu > .current-menu-ancestor > a {
+	border-bottom-color: #7DBF3B;
+	color: #7DBF3B;
+}
+
+.site-branding h1 {
+	background-color: rgba(125, 191, 59, 0.5);
+}

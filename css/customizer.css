@@ -1,0 +1,56 @@
+/************
+* Backoffice custom
+******/
+
+option[value="atmosphere"],
+option[value="picdumidi"],
+option[value="hydrosphere"],
+option[value="astronomie"],
+option[value="biosphere"],
+option[value="environnement"],
+option[value="geosciences"],
+option[value="planetologie"] {
+	padding:20px;
+	color: white;
+}
+
+option[value="atmosphere"],
+option[value="atmosphere"][selected] {
+	background: #90BCD1;
+}
+option[value="picdumidi"],
+option[value="picdumidi"][selected] {
+	background: #08A5E0;
+}
+option[value="hydrosphere"],
+option[value="hydrosphere"][selected] {
+	background: #1F7E9E;
+}
+option[value="astronomie"],
+option[value="astronomie"][selected] {
+	background: #2D4F59;
+}
+option[value="biosphere"],
+option[value="biosphere"][selected] {
+	background: #B6CC49;
+}
+option[value="environnement"],
+option[value="environnement"][selected] {
+	background: #7DBF3B;
+}
+option[value="geosciences"],
+option[value="geosciences"][selected] {
+	background: #DD9946;
+}
+option[value="planetologie"],
+option[value="planetologie"][selected] {
+	background: #E25B3D;
+}
+
+
+
+
+
+option:hover, option:focus {
+	background: #ccc;
+}

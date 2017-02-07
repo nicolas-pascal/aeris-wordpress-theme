@@ -1,0 +1,44 @@
+h1,
+h2,
+h3 {
+	border-bottom-color: #90BCD1; 
+}
+
+blockquote {
+	border-color:#90BCD1;
+}
+
+a {
+	color: #90BCD1;
+}
+
+a:visited {
+	color: #90BCD1;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #009FDE;
+}
+
+.main-navigation ul ul li:first-child {
+	border-top-color: #90BCD1;
+}
+
+.main-navigation .nav-menu > li > a:hover,
+.main-navigation .nav-menu > li > a:focus {
+	color: #90BCD1;
+}
+
+.main-navigation .nav-menu > .current_page_item > a,
+.main-navigation .nav-menu > .current-menu-item > a,
+.main-navigation .nav-menu > .current_page_ancestor > a,
+.main-navigation .nav-menu > .current-menu-ancestor > a {
+	border-bottom-color:#90BCD1;
+	color: #90BCD1;
+}
+
+.site-branding h1 {
+	background-color: rgba(144, 188, 209, 0.5);
+}
