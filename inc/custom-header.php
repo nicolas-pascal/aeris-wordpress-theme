@@ -52,6 +52,87 @@ function theme_aeris_the_custom_logo() {
 
 }
 
+/*****
+*  Ajout du support de l'image d'entête personnalisée dans le customizer
+*
+*/
+
+$args = array(
+	'width'         => 1600,
+	'height'        => 300,
+	'default-image' => get_template_directory_uri() . '/images/atmosphere-cover.jpg',
+);
+add_theme_support( 'custom-header', $args );
+
+/*****
+*  Ajout du controleur de couleur personnalisée dans le customizer
+*
+*  source : https://codex.wordpress.org/Plugin_API/Action_Reference/customize_register
+*/
+
+function theme_aeris_customize_color( $wp_customize )
+{
+   //All our sections, settings, and controls will be added here
+
+// remove section colors
+	$wp_customize->remove_section('colors');
+
+//1. Define a new section (if desired) to the Theme Customizer
+ 	$wp_customize->add_section('theme_aeris_color_scheme', array(
+        'title'    => __('Couleur du thème', 'theme-aeris'),
+        'description' => '',
+        'priority' => 30,
+    ));
+
+//2. Register new settings to the WP database...
+
+    //  =============================
+    //  = Select Box                =
+    //  =============================
+     $wp_customize->add_setting('theme_aeris_main_color', array(
+        'default'        => 'atmosphere',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+ 
+    ));
+ 
+//3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
+	
+    $wp_customize->add_control( 'theme_aeris_main_color', array(
+        'settings' => 'theme_aeris_main_color',
+        'label'   => 'Sélectionner une couleur dominante:',
+        'section' => 'theme_aeris_color_scheme',
+        'type'    => 'select',
+        'choices'    => array(
+            'atmosphere' => 'Bleu clair (Atmosphere)',
+            'picdumidi' => 'Bleu clair 2 (Pic du Midi)',
+            'hydrosphere' => 'Bleu océan (Hydrosphère)',
+            'astronomie' => 'Bleu foncé (Astronomie)',
+            'biosphere' => 'Vert clair (Biosphère)',
+            'environnement' => 'Vert foncé Environnement',
+            'geosciences' => 'Orange (Géosciences)',
+            'planetologie' => 'Rouge (Planétologie)',
+        ),
+    ));
+}
+add_action( 'customize_register', 'theme_aeris_customize_color' );
+
+/*****
+* 
+* chargement de la feuille de style de couleur personnalisée
+* 
+*/
+
+function theme_aeris_color_style() {
+	
+	// if(get_theme_mod( 'theme_aeris_theme_color' ) == 'atmosphere'){
+	$theme_color= get_theme_mod( 'theme_aeris_main_color' );
+
+	wp_enqueue_style('theme-aeris-color', get_bloginfo('template_directory') . '/css/'.$theme_color.'.css');
+
+}
+add_action( 'wp_enqueue_scripts', 'theme_aeris_color_style' );
+
 /************************************************************/
 
 if ( ! function_exists( 'theme_aeris_header_style' ) ) :
@@ -96,3 +177,12 @@ function theme_aeris_header_style() {
 	<?php
 }
 endif;
+
+
+/******************************************************************
+* Ajout du css custom dans le customizer 
+*/
+function custom_customize_enqueue() {
+    wp_enqueue_style('custom-css-customize', get_bloginfo('template_directory') . '/css/customizer.css');
+}
+add_action( 'customize_controls_enqueue_scripts', 'custom_customize_enqueue' );
