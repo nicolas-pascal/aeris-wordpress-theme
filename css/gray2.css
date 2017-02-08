@@ -1,5 +1,5 @@
 /*****
-* main color vert foncé: #2D4F59;
+* main color gris: #AAA;
 */
 
 h1,
@@ -11,10 +11,11 @@ blockquote,
 .main-navigation .nav-menu > .current-menu-item > a,
 .main-navigation .nav-menu > .current_page_ancestor > a,
 .main-navigation .nav-menu > .current-menu-ancestor > a {
-	border-color: #7DBF3B; 
+	border-color: #AAA; 
 }
 
 a,
+/*a:visited,*/
 .main-navigation .nav-menu > li > a:hover,
 .main-navigation .nav-menu > li > a:focus,
 .main-navigation .nav-menu > .current_page_item > a,
@@ -22,11 +23,11 @@ a,
 .main-navigation .nav-menu > .current_page_ancestor > a,
 .main-navigation .nav-menu > .current-menu-ancestor > a
  {
-	color: #7DBF3B;
+	color: #AAA;
 }
 
 aside .widget-title {
-	background: #7DBF3B;
+	background: #AAA;
 }
 
 a:hover,
@@ -36,5 +37,5 @@ a:active {
 }
 
 .site-branding h1 {
-	background-color: rgba(125, 191, 59, 0.5);
+	background-color: rgba(0, 0, 0, 0.4);
 }

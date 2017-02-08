@@ -1,42 +1,38 @@
+/*****
+* main color vert clair: #B6CC49;
+*/
+
 h1,
 h2,
-h3 {
-	border-bottom-color: #B6CC49; 
+h3,
+blockquote,
+.main-navigation ul ul li:first-child,
+.main-navigation .nav-menu > .current_page_item > a,
+.main-navigation .nav-menu > .current-menu-item > a,
+.main-navigation .nav-menu > .current_page_ancestor > a,
+.main-navigation .nav-menu > .current-menu-ancestor > a {
+	border-color: #B6CC49; 
 }
 
-blockquote {
-	border-color:#B6CC49;
-}
-
-a {
+a,
+.main-navigation .nav-menu > li > a:hover,
+.main-navigation .nav-menu > li > a:focus,
+.main-navigation .nav-menu > .current_page_item > a,
+.main-navigation .nav-menu > .current-menu-item > a,
+.main-navigation .nav-menu > .current_page_ancestor > a,
+.main-navigation .nav-menu > .current-menu-ancestor > a
+ {
 	color: #B6CC49;
 }
 
-a:visited {
-	color: #B6CC49;
+aside .widget-title {
+	background: #B6CC49;
 }
 
 a:hover,
 a:focus,
 a:active {
 	color: #009FDE;
-}
-
-.main-navigation ul ul li:first-child {
-	border-top-color: #B6CC49;
-}
-
-.main-navigation .nav-menu > li > a:hover,
-.main-navigation .nav-menu > li > a:focus {
-	color: #B6CC49;
-}
-
-.main-navigation .nav-menu > .current_page_item > a,
-.main-navigation .nav-menu > .current-menu-item > a,
-.main-navigation .nav-menu > .current_page_ancestor > a,
-.main-navigation .nav-menu > .current-menu-ancestor > a {
-	border-bottom-color:#B6CC49;
-	color: #B6CC49;
 }
 
 .site-branding h1 {
