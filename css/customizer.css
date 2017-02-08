@@ -2,6 +2,7 @@
 * Backoffice custom
 ******/
 
+option[value="aeris"],
 option[value="atmosphere"],
 option[value="picdumidi"],
 option[value="hydrosphere"],
@@ -9,9 +10,18 @@ option[value="astronomie"],
 option[value="biosphere"],
 option[value="environnement"],
 option[value="geosciences"],
-option[value="planetologie"] {
+option[value="planetologie"],
+option[value="gray1"],
+option[value="gray2"],
+option[value="gray3"],
+option[value="black"] {
 	padding:20px;
 	color: white;
+}
+
+option[value="aeris"],
+option[value="aeris"][selected] {
+	background: #4765a0;
 }
 
 option[value="atmosphere"],
@@ -46,11 +56,22 @@ option[value="planetologie"],
 option[value="planetologie"][selected] {
 	background: #E25B3D;
 }
-
-
-
-
-
+option[value="gray1"],
+option[value="gray1"][selected] {
+	background: #CCC;
+}
+option[value="gray2"],
+option[value="gray2"][selected] {
+	background: #AAA;
+}
+option[value="gray3"],
+option[value="gray3"][selected] {
+	background: #777;
+}
+option[value="black"],
+option[value="black"][selected] {
+	background: #000;
+}
 option:hover, option:focus {
 	background: #ccc;
 }

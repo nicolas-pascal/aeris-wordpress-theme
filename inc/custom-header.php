@@ -90,7 +90,7 @@ function theme_aeris_customize_color( $wp_customize )
     //  = Select Box                =
     //  =============================
      $wp_customize->add_setting('theme_aeris_main_color', array(
-        'default'        => 'atmosphere',
+        'default'        => 'gray1',
         'capability'     => 'edit_theme_options',
         'type'           => 'theme_mod',
  
@@ -103,15 +103,20 @@ function theme_aeris_customize_color( $wp_customize )
         'label'   => 'Sélectionner une couleur dominante:',
         'section' => 'theme_aeris_color_scheme',
         'type'    => 'select',
-        'choices'    => array(
+        'choices'    => array(        	
             'atmosphere' => 'Bleu clair (Atmosphere)',
             'picdumidi' => 'Bleu clair 2 (Pic du Midi)',
             'hydrosphere' => 'Bleu océan (Hydrosphère)',
+            'aeris' => 'Bleu (Aeris)',
             'astronomie' => 'Bleu foncé (Astronomie)',
             'biosphere' => 'Vert clair (Biosphère)',
             'environnement' => 'Vert foncé Environnement',
             'geosciences' => 'Orange (Géosciences)',
             'planetologie' => 'Rouge (Planétologie)',
+            'gray1' => 'Gris clair',
+            'gray2' => 'Gris',
+            'gray3' => 'Gris foncé',
+            'black' => 'Noir',
         ),
     ));
 }
@@ -125,9 +130,7 @@ add_action( 'customize_register', 'theme_aeris_customize_color' );
 
 function theme_aeris_color_style() {
 	
-	// if(get_theme_mod( 'theme_aeris_theme_color' ) == 'atmosphere'){
 	$theme_color= get_theme_mod( 'theme_aeris_main_color' );
-
 	wp_enqueue_style('theme-aeris-color', get_bloginfo('template_directory') . '/css/'.$theme_color.'.css');
 
 }

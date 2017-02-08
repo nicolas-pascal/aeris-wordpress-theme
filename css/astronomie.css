@@ -1,42 +1,38 @@
+/*****
+* main color bleu foncé: #2D4F59;
+*/
+
 h1,
 h2,
-h3 {
-	border-bottom-color: #2D4F59; 
+h3,
+blockquote,
+.main-navigation ul ul li:first-child,
+.main-navigation .nav-menu > .current_page_item > a,
+.main-navigation .nav-menu > .current-menu-item > a,
+.main-navigation .nav-menu > .current_page_ancestor > a,
+.main-navigation .nav-menu > .current-menu-ancestor > a {
+	border-color: #2D4F59; 
 }
 
-blockquote {
-	border-color:#2D4F59;
-}
-
-a {
+a,
+.main-navigation .nav-menu > li > a:hover,
+.main-navigation .nav-menu > li > a:focus,
+.main-navigation .nav-menu > .current_page_item > a,
+.main-navigation .nav-menu > .current-menu-item > a,
+.main-navigation .nav-menu > .current_page_ancestor > a,
+.main-navigation .nav-menu > .current-menu-ancestor > a
+ {
 	color: #2D4F59;
 }
 
-a:visited {
-	color: #2D4F59;
+aside .widget-title {
+	background: #2D4F59;
 }
 
 a:hover,
 a:focus,
 a:active {
 	color: #009FDE;
-}
-
-.main-navigation ul ul li:first-child {
-	border-top-color: #2D4F59;
-}
-
-.main-navigation .nav-menu > li > a:hover,
-.main-navigation .nav-menu > li > a:focus {
-	color: #2D4F59;
-}
-
-.main-navigation .nav-menu > .current_page_item > a,
-.main-navigation .nav-menu > .current-menu-item > a,
-.main-navigation .nav-menu > .current_page_ancestor > a,
-.main-navigation .nav-menu > .current-menu-ancestor > a {
-	border-bottom-color:#2D4F59;
-	color: #2D4F59;
 }
 
 .site-branding h1 {
