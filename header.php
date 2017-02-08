@@ -49,7 +49,7 @@
 		<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
 	</div>
 	
-	<div class="site-branding" style="background-image:url("<?php header_image();?>");">
+	<div class="site-branding" style="background-image:url(<?php header_image()?>);">
 		<div>
 		
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

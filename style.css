@@ -294,7 +294,7 @@ h6 {
 h1,
 h2,
 h3 {
-	border-bottom: 1px solid #4765a0;    
+	border-bottom: 1px solid #CCC;
     margin:10px 0 25px;
 }
 
@@ -325,7 +325,7 @@ blockquote {
 	margin-bottom: 30px;
     padding: 20px;
 	background: #fafafa;
-	border-left:2px solid #4765a0;
+	border-left:2px solid;
 	box-shadow: 0 10px 6px -6px #bbb;
 }
 
@@ -634,7 +634,7 @@ a:active {
 }
 
 .main-navigation ul ul li:first-child {
-	border-top: 2px solid #4765a0;
+	border-top: 2px solid #CCC;
 }
 .main-navigation ul ul li:last-child {
 	border-bottom: 2px solid #888;
@@ -670,7 +670,7 @@ a:active {
 .main-navigation .nav-menu > .current-menu-item > a,
 .main-navigation .nav-menu > .current_page_ancestor > a,
 .main-navigation .nav-menu > .current-menu-ancestor > a {
-	border-bottom: 2px solid #4765a0;
+	border-bottom: 2px solid #CCC;
 	color: #4765a0;
 }
 
@@ -913,7 +913,7 @@ a:active {
 .tag span {
 	padding: 5px 10px 7px;
 	border-radius: 5px;
-	background:#009FDE; /*#4765A0;*/
+	background:#009FDE;
 	color: #FFF;
 }
 
@@ -1075,6 +1075,17 @@ main {
 }
 
 /*------------------
+## zone de widget
+-------------------*/
+
+aside .widget-title {
+	padding-left: 10px;
+	background: #CCC;
+	color: #FFF;
+	font-weight: 300;
+}
+
+/*------------------
 ## homepage
 -------------------*/
 
@@ -1111,7 +1122,7 @@ main {
 .site-branding h1 {
 	margin-bottom:10px;
 	padding: 0 5px;
-	background-color: rgba(50, 76, 128, 0.5);
+	background-color: rgba(0, 0, 0, 0.4);
 	border:none;
 	font-size: 40px;
 	line-height: 50px;	
