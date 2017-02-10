@@ -1042,7 +1042,7 @@ object {
 	margin: 0 auto;
 }
 
-main {
+main[role="main"] {
 	overflow: hidden;
 }
 
