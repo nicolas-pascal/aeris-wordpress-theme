@@ -151,3 +151,9 @@ require get_template_directory() . '/inc/custom-nav.php';
  * Ajout de widgets custom
  */
 require get_template_directory() . '/inc/custom-widget.php';
+
+/**
+ * Ajout de droits
+ */
+require get_template_directory() . '/inc/custom-rights.php';
+
