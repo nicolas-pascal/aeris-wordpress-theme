@@ -755,14 +755,52 @@ nav[id="top-header-menu"] ul li a{
 [id="breadcrumbs"] {
 	min-height:40px;
 	background: #FAFAFA;
+	border-bottom: 1px solid #eee;
 }
 
-[id="breadcrumbs"] > div{
+[id="breadcrumbs"] > div {
 	display: flex;
 	flex-flow: row wrap;
 	flex-direction: row-reverse;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
+}
+
+[id="breadcrumbs"] > div::before {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #eee transparent transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 22px;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 10%;
+    margin-bottom: -44px;
+    position: absolute;
+    z-index: 10;
+}
+[id="breadcrumbs"] > div::after {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #FAFAFA transparent transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 21px;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 10%;
+    margin-bottom: -41px;
+    margin-left: 1px;
+    position: absolute;
+    z-index: 11;
 }
 
 [id="breadcrumbs"] h1 {
@@ -1258,7 +1296,7 @@ aside .widget-title {
 
 .fullwidth article > figure {
 	max-width: 1024px;
-	margin:0 auto;
+	margin:1em auto;
 }
 
 /*------------------------------------------------------------------
@@ -1342,6 +1380,58 @@ aside .widget-title {
 [id="page"] > footer [id="partners-sidebar"] li:hover h2 {
 	left: 0;
 }
+
+/*------------------------------------------------------------------
+## POST FORMATS 
+-------------------------------------------------------------------*/
+/* format gallery */
+
+
+.format-gallery .flexslider { position: relative; }
+
+.format-gallery .flexslider ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.format-gallery .flex-direction-nav a {
+	display: block;
+	height: 32px;
+	width: 20px;
+	background-size: auto 32px;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 50%;
+	margin-top: -16px;
+	text-indent: -9999px;
+	-webkit-opacity: 0.5;
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+}
+
+.format-gallery .flex-direction-nav .flex-prev { 
+	left: 16px; 
+	background-image: url(images/icons/1x/chevron-left-w-shade.png);
+}
+
+.format-gallery .flex-direction-nav .flex-next { 
+	right: 16px; 
+	background-image: url(images/icons/1x/chevron-right-w-shade.png);
+}
+
+.format-gallery .flex-direction-nav a:hover { 
+	-webkit-opacity: 1;
+	-moz-opacity: 1;
+	opacity: 1; 
+}
+
+.format-gallery .flex-direction-nav .flex-prev:hover { left: 12px; }
+.format-gallery .flex-direction-nav .flex-next:hover { right: 12px; }
+
+.format-gallery .slides li { position: relative; }
+
+
 
 .copyright {
 	text-align: right;

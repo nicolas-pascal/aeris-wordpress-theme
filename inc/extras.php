@@ -220,10 +220,53 @@ add_theme_support( 'post-thumbnails' );
 function images_setup() {
     add_image_size( 'illustration-article', 1024, 500, true );
     add_image_size( 'embed-article', 1024, 250, false );
+    add_image_size( 'post-image', 945, 9999 );
     add_image_size( 'logo-partenaire', 100, 40, false );
  }
 add_action( 'after_setup_theme', 'images_setup' );
 
 
 
+// Flexslider function for format-gallery
+function theme_aeris_flexslider($size = thumbnail) {
 
+  if ( is_page()) :
+    $attachment_parent = $post->ID;
+  else : 
+    $attachment_parent = get_the_ID();
+  endif;
+
+  if($images = get_posts(array(
+    'post_parent'    => $attachment_parent,
+    'post_type'      => 'attachment',
+    'numberposts'    => -1, // show all
+    'post_status'    => null,
+    'post_mime_type' => 'image',
+                'orderby'        => 'menu_order',
+                'order'           => 'ASC',
+  ))) { ?>
+  
+    <div class="flexslider">
+    
+      <ul class="slides">
+  
+        <?php foreach($images as $image) { 
+          $attimg = wp_get_attachment_image($image->ID,$size); ?>
+          
+          <li>
+            <?php echo $attimg; ?>
+            <?php if ( !empty($image->post_excerpt) && is_single()) : ?>
+              <div class="media-caption-container">
+                <p class="media-caption"><?php echo $image->post_excerpt ?></p>
+              </div>
+            <?php endif; ?>
+          </li>
+          
+        <?php }; ?>
+    
+      </ul>
+      
+    </div><?php
+    
+  }
+}

@@ -114,6 +114,9 @@ function theme_aeris_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_script( 'theme_aeris_flexslider', get_template_directory_uri() . '/js/flexslider.min.js', array(), '20151215', true );
+	wp_enqueue_script('custom-js', get_bloginfo('template_directory') . '/js/global.js', array(), '1', true );
 }
 add_action( 'wp_enqueue_scripts', 'theme_aeris_scripts' );
 
@@ -153,7 +156,18 @@ require get_template_directory() . '/inc/custom-nav.php';
 require get_template_directory() . '/inc/custom-widget.php';
 
 /**
- * Ajout de droits
+ * Ajout de droits / capabilities
  */
 require get_template_directory() . '/inc/custom-rights.php';
+
+/**
+ * Theme supports
+ * Posts Formats
+ */
+require get_template_directory() . '/inc/custom-theme-supports.php';
+
+/**
+ * Enqueue Javascript custom files
+ */
+//require get_template_directory() . '/inc/custom-register-scripts.php';
 
