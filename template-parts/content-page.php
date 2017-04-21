@@ -21,7 +21,8 @@
     </figure>
     <?php 
     }
-    ?>     
+    ?>
+    <div class="wrapper-content">
 	<?php
 		the_content();
 
@@ -46,4 +47,5 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+	</div>
 </article><!-- #post-## -->
