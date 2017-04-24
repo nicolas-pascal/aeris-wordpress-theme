@@ -150,6 +150,11 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
   }
 } // end the_breadcrumb()
 
+// Change the length of excerpts
+function custom_excerpt_length( $length ) {
+  return 40;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /******************************************************************
 * Creation de liste des pages en fonction d'arguments passés à WP_Query()
@@ -171,10 +176,10 @@ function list_pages($arg, $infiniteScroll){
         <?php
         while ( $queryListPages->have_posts() ) :
             $queryListPages->the_post(); 
-        
+
             // Appel embed template
-            get_template_part( 'template-parts/content', 'embed-page' );
-       
+            get_template_part( 'template-parts/content', get_post_format() );
+
         endwhile;
         ?>
         
@@ -230,14 +235,13 @@ add_action( 'after_setup_theme', 'images_setup' );
 // Flexslider function for format-gallery
 function theme_aeris_flexslider($size = thumbnail) {
 
-  if ( is_page()) :
-    $attachment_parent = $post->ID;
-  else : 
-    $attachment_parent = get_the_ID();
-  endif;
-
+  // if ( is_page()) :
+  //   $attachment_parent = the_ID(); //$post->ID;
+  // else : 
+  //   $attachment_parent = get_the_ID();
+  // endif;
   if($images = get_posts(array(
-    'post_parent'    => $attachment_parent,
+    'post_parent'    => get_the_ID(),//$attachment_parent,
     'post_type'      => 'attachment',
     'numberposts'    => -1, // show all
     'post_status'    => null,

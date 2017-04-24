@@ -1,13 +1,14 @@
+
 <?php
 /**
- * Template part for displaying embed page 
+ * Template part for displaying embed post Gallery 
  *
  */
 $categories = get_the_terms( $post->ID, 'category');  
 
 ?>
 
-<article role="embed-post">
+<article role="embed-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
         <div class="tag">
         <?php
@@ -30,20 +31,21 @@ $categories = get_the_terms( $post->ID, 'category');
             </a>
         </h3>     
         
-        <?php 
-        if (get_the_post_thumbnail()) {
-        ?>
-        <figure>
-        <?php the_post_thumbnail( 'illustration-article' ); ?>
-        </figure>
-        <?php 
-        }
-        ?>        
+        <div class="featured-media">
+
+			<?php theme_aeris_flexslider('illustration-article'); ?>
+							
+		</div> <!-- /featured-media -->  
 
     </header>
     <section>
-       <?php if($post->post_content != "") : ?>				    		            			            	                                                                                            
-			<?php the_excerpt(); ?>
+		<?php if($post->post_content != "") : ?>
+											                                    	    
+			<div class="post-excerpt">
+				    		            			            	                                                                                            
+				<?php the_excerpt('100'); ?>
+			
+			</div> <!-- /post-excerpt -->
 
 		<?php endif; ?>   
         <a href="<?php the_permalink(); ?>"><span class="icon-angle-right"></span> Lire la suite</a>

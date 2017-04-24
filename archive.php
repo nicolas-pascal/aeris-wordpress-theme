@@ -11,6 +11,8 @@ get_header();
 
 get_template_part( 'template-parts/header-content', 'archive' );
 
+$categories = get_the_terms( $post->ID, 'category');  
+
 
 ?>
 
@@ -21,17 +23,22 @@ get_template_part( 'template-parts/header-content', 'archive' );
 			if ( have_posts() ) : ?>
 
 			<section role="listNews">
-
+				
 			<?php
 				while ( have_posts() ) : the_post();
+				?>
 
-					get_template_part( 'template-parts/content', 'embed-page' );
+					<?php
+					get_template_part( 'template-parts/content', get_post_format() );
 
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
 					endif;
+					?>
+				<?php
 				endwhile; // End of the loop.
+
 				the_posts_navigation();
 				?>
 			</section>
