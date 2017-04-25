@@ -152,7 +152,7 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
 
 // Change the length of excerpts
 function custom_excerpt_length( $length ) {
-  return 40;
+  return 50;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
@@ -204,6 +204,32 @@ function list_pages($arg, $infiniteScroll){
 
     // Restore original Post Data
     wp_reset_postdata();
+}
+
+/******************************************************************
+ * Afficher les catégories
+ * $categories = get_the_terms( $post->ID, 'category');  
+ */
+
+function theme_aeris_show_categories($categories) {
+ 
+  ?>
+  <div class="tag">
+        <?php
+        if( $categories ) {
+            foreach( $categories as $categorie ) { 
+                if ($categorie->slug !== "non-classe") {
+                echo '<a href="'.site_url().'/category/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+
+                      echo $categorie->name; 
+                    ?>                    
+                </a>
+        <?php 
+                }
+            }
+          } ?>
+        </div>
+    <?php
 }
 
 /******************************************************************

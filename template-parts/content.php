@@ -7,22 +7,9 @@ $categories = get_the_terms( $post->ID, 'category');
 
 ?>
 
-<article role="embed-post">
+<article role="embed-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
-        <div class="tag">
-        <?php
-        if( $categories ) {
-            foreach( $categories as $categorie ) { 
-
-            echo '<a href="'.site_url().'/category/'.$categorie->slug.'">';
-            ?>
-            <span class="<?php echo $categorie->slug; ?>">
-                <?php echo $categorie->name; ?>
-            </span>
-            </a>
-        <?php }
-          } ?>
-        </div>
+        <?php theme_aeris_show_categories($categories);?>
 
         <h3>
            <a href="<?php the_permalink(); ?>">
@@ -41,7 +28,7 @@ $categories = get_the_terms( $post->ID, 'category');
         ?>        
 
     </header>
-    <section>
+    <section>        
        <?php if($post->post_content != "") : ?>				    		            			            	                                                                                            
 			<?php the_excerpt(); ?>
 

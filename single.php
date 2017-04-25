@@ -11,45 +11,38 @@ get_header();
 
 $format = get_post_format();
 $categories = get_the_terms( $post->ID, 'category');  
+
+while ( have_posts() ) : the_post();
+
+	get_template_part( 'template-parts/header-content', 'page' );
 ?>
 
 	<div id="content-area" class="wrapper sidebar">
 		<main id="main" class="site-main" role="main">
-		<?php
-		while ( have_posts() ) : the_post();
-			?>
-
+		
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 									
 				<header>
-			        <div class="tag">
-			        <?php
-			        if( $categories ) {
-			            foreach( $categories as $categorie ) { 
+			        <?php theme_aeris_show_categories($categories);?>
 
-			            echo '<a href="'.site_url().'/category/'.$categorie->slug.'">';
-			            ?>
-			            <span class="<?php echo $categorie->slug; ?>">
-			                <?php echo $categorie->name; ?>
-			            </span>
-			            </a>
-			        <?php }
-			          } ?>
-			        </div>
-
-			        <h1 rel="bookmark">
-			           <a href="<?php the_permalink(); ?>">
-			            <?php the_title();?>
-			            </a>
-			        </h1>
 				</header>
 
 			<?php
 			if ($format == 'gallery') { ?>
 				
 				<section class="featured-media">					
-					<?php theme_aeris_flexslider('post-image'); ?>									
+					<?php theme_aeris_flexslider('post-image'); ?>
+
 				</section> <!-- /featured-media -->
+				<section>
+					<?php // Fetch post content
+						$content = get_post_field( 'post_content', get_the_ID() );
+						
+						// Get content parts
+						$content_parts = get_extended( $content );
+						
+						echo $content_parts['extended'];  ?>	
+				</section>
 
 			<?php } 
 
@@ -69,14 +62,30 @@ $categories = get_the_terms( $post->ID, 'category');
 				<!-- get_template_part( 'template-parts/content', get_post_format() ); -->
 
 				<footer>
-					<?php theme_aeris_posted_on(); ?>
+					<span class="icon-user"></span><?php the_author();?>
+					<span class="icon-clock"></span><?php the_time( get_option( 'date_format' ) );?>
+					<?php 
+					// if ( get_edit_post_link() ) : 
+					// 	edit_post_link(
+					// 		sprintf(
+					// 			/* translators: %s: Name of current post */
+					// 			esc_html__( 'Edit %s', 'theme-aeris' ),
+					// 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					// 		),
+					// 		'<span class="edit-link">',
+					// 		'</span>'
+					// 	);
+					// endif; 
+
+					the_post_navigation();
+
+					?>
 				</footer><!-- .entry-meta -->
 			<?php 
 			}
 			?>
 			</article>
-			<?php
-			the_post_navigation();
+			<?php			
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -84,17 +93,14 @@ $categories = get_the_terms( $post->ID, 'category');
 			endif;
 			?>
 
-		<?php
-		endwhile; // End of the loop.
-		?>
-
 		</main><!-- #main -->
 		
 		<?php 
 		get_sidebar();
 		?>
 	</div><!-- #primary -->
-
 <?php
+endwhile; // End of the loop.
+
 // get_sidebar();
 get_footer();

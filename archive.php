@@ -27,6 +27,7 @@ $categories = get_the_terms( $post->ID, 'category');
 			<?php
 				while ( have_posts() ) : the_post();
 				?>
+					
 
 					<?php
 					get_template_part( 'template-parts/content', get_post_format() );

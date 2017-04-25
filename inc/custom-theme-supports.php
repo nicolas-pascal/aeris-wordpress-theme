@@ -5,7 +5,17 @@ function theme_aeris_support() {
 // POST FORMATS
 // https://developer.wordpress.org/themes/functionality/post-formats/
 
-add_theme_support('post-formats', array('video', 'gallery', 'link'));
+add_theme_support('post-formats', array(
+	'gallery',
+	'quote',
+	'video',
+	'aside',
+	'image',
+	'link',
+	'status',
+	'audio',
+	//'chat'
+	));
 
 }
 

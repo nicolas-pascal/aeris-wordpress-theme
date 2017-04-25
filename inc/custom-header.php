@@ -136,6 +136,19 @@ function theme_aeris_color_style() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_aeris_color_style' );
 
+/*****
+* 
+* chargement de la feuille de style d'icones
+* 
+*/
+
+function theme_aeris_icons_font() {
+	
+	wp_enqueue_style('theme-aeris-icon', get_bloginfo('template_directory') . '/css/icon-aeris.css');
+
+}
+add_action( 'wp_enqueue_scripts', 'theme_aeris_icons_font' );
+
 /************************************************************/
 
 if ( ! function_exists( 'theme_aeris_header_style' ) ) :

@@ -15,7 +15,7 @@ blockquote,
 }
 
 a,
-/*a:visited,*/
+a:visited,
 .main-navigation .nav-menu > li > a:hover,
 .main-navigation .nav-menu > li > a:focus,
 .main-navigation .nav-menu > .current_page_item > a,
@@ -26,14 +26,14 @@ a,
 	color: #08A5E0;
 }
 
-.widget-title {
+aside .widget-title {
 	background: #08A5E0;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #009FDE;
+	color: #333;
 }
 
 .site-branding h1 {
