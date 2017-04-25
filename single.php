@@ -61,7 +61,11 @@ while ( have_posts() ) : the_post();
 		        </section>
 				<!-- get_template_part( 'template-parts/content', get_post_format() ); -->
 
-				<footer>
+				
+			<?php 
+			}
+			?>
+			<footer>
 					<span class="icon-user"></span><?php the_author();?>
 					<span class="icon-clock"></span><?php the_time( get_option( 'date_format' ) );?>
 					<?php 
@@ -81,9 +85,6 @@ while ( have_posts() ) : the_post();
 
 					?>
 				</footer><!-- .entry-meta -->
-			<?php 
-			}
-			?>
 			</article>
 			<?php			
 

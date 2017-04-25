@@ -43,7 +43,6 @@ while ( have_posts() ) : the_post();
 			
 			?>
 			<section role="listNews">
-                <h2>News</h2>
                <?php
                 /*******  WP_QUERY
                 * Liste des derniers articles (actus)

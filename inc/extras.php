@@ -213,23 +213,24 @@ function list_pages($arg, $infiniteScroll){
 
 function theme_aeris_show_categories($categories) {
  
+  if( $categories ) {
   ?>
   <div class="tag">
-        <?php
-        if( $categories ) {
-            foreach( $categories as $categorie ) { 
-                if ($categorie->slug !== "non-classe") {
-                echo '<a href="'.site_url().'/category/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+  <?php
+      foreach( $categories as $categorie ) { 
+          if ($categorie->slug !== "non-classe") {
+          echo '<a href="'.site_url().'/category/'.$categorie->slug.'" class="'.$categorie->slug.'">';
 
-                      echo $categorie->name; 
-                    ?>                    
-                </a>
-        <?php 
-                }
-            }
-          } ?>
-        </div>
-    <?php
+                echo $categorie->name; 
+              ?>                    
+          </a>
+  <?php 
+          }
+      }
+  ?>
+  </div>
+<?php
+    } 
 }
 
 /******************************************************************

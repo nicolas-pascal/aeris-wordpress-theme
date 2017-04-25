@@ -52,7 +52,7 @@ function theme_aeris_the_custom_logo() {
 
 }
 
-/*****
+/*************************************************************************************************************
 *  Ajout du support de l'image d'entête personnalisée dans le customizer
 *
 */
@@ -64,7 +64,7 @@ $args = array(
 );
 add_theme_support( 'custom-header', $args );
 
-/*****
+/**************************************************************************************************************
 *  Ajout du controleur de couleur personnalisée dans le customizer
 *
 *  source : https://codex.wordpress.org/Plugin_API/Action_Reference/customize_register
@@ -79,7 +79,7 @@ function theme_aeris_customize_color( $wp_customize )
 
 //1. Define a new section (if desired) to the Theme Customizer
  	$wp_customize->add_section('theme_aeris_color_scheme', array(
-        'title'    => __('Couleur du thème', 'theme-aeris'),
+        'title'    => __('Options du thème', 'theme-aeris'),
         'description' => '',
         'priority' => 30,
     ));
@@ -119,6 +119,28 @@ function theme_aeris_customize_color( $wp_customize )
             'black' => 'Noir',
         ),
     ));
+
+    //  =============================
+    //  = Radio Input               =
+    //  =============================
+    $wp_customize->add_setting('theme_aeris_box', array(
+        'default'        => 'nobox',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+    ));
+
+    $wp_customize->add_control('theme_aeris_box', array(
+        'label'      => __('Mode d\'affichage', 'themename'),
+        'section'    => 'theme_aeris_color_scheme',
+        'settings'   => 'theme_aeris_box',
+        'type'       => 'radio',
+        'choices'    => array(
+            'value1' => 'Avec boites',
+            'value2' => 'Applat',
+        ),
+    ));
+
+
 }
 add_action( 'customize_register', 'theme_aeris_customize_color' );
 
@@ -136,6 +158,20 @@ function theme_aeris_color_style() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_aeris_color_style' );
 
+/*****
+* 
+* Ajout des styles applat
+* 
+*/
+
+function theme_aeris_box_style() {
+	
+	if( get_theme_mod( 'theme_aeris_box' ) == "value1") {
+	wp_enqueue_style('theme-aeris-box', get_bloginfo('template_directory') . '/css/boxes.css');
+	}
+
+}
+add_action( 'wp_enqueue_scripts', 'theme_aeris_box_style' );
 /*****
 * 
 * chargement de la feuille de style d'icones

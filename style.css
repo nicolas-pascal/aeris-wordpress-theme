@@ -311,6 +311,7 @@ h3 > a, h3 > a:active, h3 > a:focus  {
 
 p {
 	margin: 10px 0;
+	text-align: justify;
 }
 
 dfn,
@@ -1402,7 +1403,7 @@ article > footer [class^="icon"],
 -------------------*/
 [id="content-area"].default main {
 	max-width: 1024px;
-	margin-left: 0;
+	margin: 0 auto;
 } 
 
 /*------------------

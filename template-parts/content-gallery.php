@@ -22,7 +22,7 @@ $categories = get_the_terms( $post->ID, 'category');
 
     </header>
     <section>
-        
+
         <div class="featured-media">
 
             <?php theme_aeris_flexslider('illustration-article'); ?>
@@ -32,7 +32,7 @@ $categories = get_the_terms( $post->ID, 'category');
 											                                    	    
 			<div class="post-excerpt">
 				    		            			            	                                                                                            
-				<?php the_excerpt('100'); ?>
+				<?php the_excerpt(); ?>
 			
 			</div> <!-- /post-excerpt -->
 
