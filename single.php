@@ -34,7 +34,7 @@ while ( have_posts() ) : the_post();
 					<?php theme_aeris_flexslider('post-image'); ?>
 
 				</section> <!-- /featured-media -->
-				<section>
+				<section class="wrapper-content">
 					<?php // Fetch post content
 						$content = get_post_field( 'post_content', get_the_ID() );
 						
@@ -56,7 +56,7 @@ while ( have_posts() ) : the_post();
 		        <?php 
 		        }
 		        ?>   
-		        <section>
+		        <section class="wrapper-content">
 					<?php the_content(); ?>
 		        </section>
 				<!-- get_template_part( 'template-parts/content', get_post_format() ); -->

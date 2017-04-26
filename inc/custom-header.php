@@ -139,7 +139,7 @@ function theme_aeris_customize_color( $wp_customize )
             '#AAA' => 'Gris',
             '#777' => 'Gris foncé',
             '#000' => 'Noir',
-			'custom' => 'Code couleur personnalisé, remplir le champs ci-dessous',
+			'custom' => 'Autre, remplir le champs "code couleur personnalisé"',
         ),
     ));
 
@@ -176,7 +176,7 @@ function theme_aeris_customize_color( $wp_customize )
         'type'       => 'radio',
         'choices'    => array(
             'value1' => 'Tous en boîte',
-            'value2' => 'Applat',
+            'value2' => 'Aplat',
         ),
     ));
 
@@ -214,6 +214,8 @@ function theme_aeris_color_style() {
 		$code_color	= get_theme_mod( 'theme_aeris_main_color' );
 	}
 
+	$rgb_color = hex2rgb($code_color); // array 0 => r , 1 => g, 2 => b
+	
 	//wp_enqueue_style('theme-aeris-color', get_bloginfo('template_directory') . '/css/'.$theme_color.'.css');
 	?>
          <style type="text/css">
@@ -252,7 +254,7 @@ function theme_aeris_color_style() {
 			}
 
 			.site-branding h1 {
-				background-color: rgba(125, 191, 59, 0.5);
+				background-color: rgba(<?php echo $rgb_color[0].",".$rgb_color[1].",".$rgb_color[2].",.5)";?>;
 			}
          </style>
     <?php
