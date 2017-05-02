@@ -243,7 +243,9 @@ function theme_aeris_color_style() {
 				color: <?php echo $code_color;?>;
 			}
 
-			aside .widget-title {
+			aside .widget-title,
+			.bkg,
+			[role="listNews"] article.format-quote > header > blockquote {
 				background: <?php echo $code_color;?>;
 			}
 

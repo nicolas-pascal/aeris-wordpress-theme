@@ -8,8 +8,6 @@
 
 <?php endif; ?>
 
-<?php if( is_sticky() ) { ?> <span class="sticky-post"><?php _e('Sticky post', 'baskerville'); ?></span> <?php } ?>
-
 <?php baskerville_meta(); ?>
-
+            
 <div class="clear"></div>

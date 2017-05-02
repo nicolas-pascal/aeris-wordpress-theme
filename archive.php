@@ -16,7 +16,7 @@ $categories = get_the_terms( $post->ID, 'category');
 
 ?>
 
-	<div id="content-area" class="wrapper sidebar">
+	<div id="content-area" class="wrapper sidebar archives">
 		<main id="main" class="site-main" role="main">
 
 			<?php
@@ -27,9 +27,7 @@ $categories = get_the_terms( $post->ID, 'category');
 			<?php
 				while ( have_posts() ) : the_post();
 				?>
-					
-
-					<?php
+				<?php
 					get_template_part( 'template-parts/content', get_post_format() );
 
 					// If comments are open or we have at least one comment, load up the comment template.

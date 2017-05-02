@@ -260,15 +260,20 @@ add_action( 'after_setup_theme', 'images_setup' );
 
 
 // Flexslider function for format-gallery
-function theme_aeris_flexslider($size = thumbnail) {
+function theme_aeris_flexslider($size = thumbnail, $post) {
 
-  // if ( is_page()) :
-  //   $attachment_parent = the_ID(); //$post->ID;
-  // else : 
-  //   $attachment_parent = get_the_ID();
-  // endif;
+  if ( is_page()) :
+    $attachment_parent = $post->ID; // the_ID();
+  else : 
+    $attachment_parent = get_the_ID();
+  endif;
+
+  echo "<h3>POST ID :".$post->ID."
+        <br> GET the ID : ".get_the_ID()." 
+        <br> Attach : ".$attachment_parent."
+  </h3>";
   if($images = get_posts(array(
-    'post_parent'    => get_the_ID(),//$attachment_parent,
+    'post_parent'    => $attachment_parent, //get_the_ID(),
     'post_type'      => 'attachment',
     'numberposts'    => -1, // show all
     'post_status'    => null,
@@ -278,7 +283,6 @@ function theme_aeris_flexslider($size = thumbnail) {
   ))) { ?>
   
     <div class="flexslider">
-    
       <ul class="slides">
   
         <?php foreach($images as $image) { 

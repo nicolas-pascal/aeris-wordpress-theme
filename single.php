@@ -30,8 +30,9 @@ while ( have_posts() ) : the_post();
 			<?php
 			if ($format == 'gallery') { ?>
 				
-				<section class="featured-media">					
-					<?php theme_aeris_flexslider('post-image'); ?>
+				<section class="featured-media">	
+					<h3> single : <?php echo $post->ID; ?></h3>				
+					<?php theme_aeris_flexslider('post-image', $post); ?>
 
 				</section> <!-- /featured-media -->
 				<section class="wrapper-content">
@@ -45,7 +46,24 @@ while ( have_posts() ) : the_post();
 				</section>
 
 			<?php } 
-
+			elseif ($format == 'quote') { ?>
+					
+				<section class="wrapper-content post-quote bkg">
+					
+					<?php
+					
+						// Fetch post content
+						$content = get_post_field( 'post_content', get_the_ID() );
+						
+						// Get content parts
+						$content_parts = get_extended( $content );
+						
+						echo $content_parts['main']; 
+						
+					?>
+				</div>
+			<?php
+			}
 			else {
 
 		        if (get_the_post_thumbnail()) {

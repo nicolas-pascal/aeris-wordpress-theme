@@ -15,17 +15,17 @@ $categories = get_the_terms( $post->ID, 'category');
         <h3>
            <a href="<?php the_permalink(); ?>">
             <?php the_title();?>
+            // 
+            <?php echo $post->ID; ?>
             </a>
         </h3>     
         
-        
-
     </header>
     <section>
 
         <div class="featured-media">
 
-            <?php theme_aeris_flexslider('illustration-article'); ?>
+            <?php theme_aeris_flexslider('illustration-article', $post); ?>
                             
         </div> <!-- /featured-media -->  
 		<?php if($post->post_content != "") : ?>
