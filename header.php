@@ -31,16 +31,19 @@
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<img src="<?php echo $image[0];?>" alt="<?php bloginfo( 'name' ); ?>" title="<?php bloginfo( 'name' ); ?> : <?php echo $description;?>">
 			</a>
-
-			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Menu principal / Main menu">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'theme-aeris' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
-
-			<nav id="header-menu">
-
+			<div>
+				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Menu principal / Main menu">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'theme-aeris' ); ?></button>
+					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+				</nav>
+				
+				<nav id="top-header-menu" role="navigation" aria-label="Menu secondaire / Second menu">
+					<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_id' => 'header-menu' ) ); ?>
+				</nav>
+			</div>
+			
 		</div>
-	</header><!-- #masterhead -->
+	</header>
 
 <?php
 	// Breadcrumbs sans titre

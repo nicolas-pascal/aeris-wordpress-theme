@@ -275,9 +275,9 @@ select,
 textarea {
 	color: #333;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	/*font-size: 1rem;*/
-	line-height: 1.5;
+	line-height: 1.7;
 }
 
 h1,
@@ -295,7 +295,7 @@ h1,
 h2,
 h3 {
 	border-bottom: 1px solid #CCC;
-    margin:10px 0 25px;
+    margin:10px 0;
 }
 
 h2 {
@@ -311,6 +311,7 @@ h3 > a, h3 > a:active, h3 > a:focus  {
 
 p {
 	margin: 10px 0;
+	text-align: justify;
 }
 
 dfn,
@@ -412,11 +413,17 @@ ol {
 }
 
 ul {
-	list-style: disc;
+	list-style: none;
 }
 
 ol {
 	list-style: decimal;
+}
+
+
+main ul li::before,
+aside ul li::before {
+	content:'\f101';
 }
 
 li > ul,
@@ -532,6 +539,53 @@ textarea {
 	width: 100%;
 }
 
+
+/*--------------------------------------------------------------
+# Icones 
+--------------------------------------------------------------*/
+main ul li::before,
+aside ul li::before,
+.nav-previous a::before, 
+.nav-next a::after,
+.post-edit-link::before,
+.widget_recent_entries h2::before,
+.widget_archive h2::before, 
+.widget_calendar h2::before,
+.widget_categories h2::before {
+  font-family: "icon-aeris";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -540,6 +594,7 @@ textarea {
 --------------------------------------------------------------*/
 a {
 	color: #4765a0;
+	transition: all .4s ease; 
 }
 
 a:visited {
@@ -561,11 +616,28 @@ a:active {
 	outline: 0;
 }
 
+.post-edit-link {
+	padding:5px 10px;
+	background: #009fde;
+	border-radius: 3px;
+	text-decoration: none;
+	color: #FFF;
+}
+.post-edit-link::before {
+	content: '\e809';
+}
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+
+/*-----------------------------------
+## Main menu
+------------------------------------*/
+
 .main-navigation {
 	clear: both;
+	order:1;
 }
 
 .main-navigation ul {
@@ -694,7 +766,7 @@ a:active {
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 1.5em 0 1.5em;
 	overflow: hidden;
 }
 
@@ -714,20 +786,102 @@ a:active {
 }
 
 
+/*-----------------------------------
+## Header menu
+------------------------------------*/
+
+nav[id="top-header-menu"] ul {
+	list-style: none;
+	text-align: right;
+	margin: 0;
+}
+
+nav[id="top-header-menu"] ul li {
+	display: inline-block;
+}
+
+nav[id="top-header-menu"] ul li+li {
+	border-left: 1px solid #BBB;
+}
+
+nav[id="top-header-menu"] ul li a{
+	display: block;
+	padding: 2px 10px;
+	color: #7c8082;
+    font-size: 13px;
+    text-transform: uppercase;
+	
+}
+
+/*-----------------------------------
+## Post navigation
+------------------------------------*/
+
+nav.post-navigation a {
+	text-decoration: none;
+}
+
+.nav-previous a::before {
+	content: '\f137';
+}
+
+.nav-next a::after {
+	content: '\f138';
+}
+
+
 /*--------------------------------------------------------------
 ## Breadcrumbs
 --------------------------------------------------------------*/
 [id="breadcrumbs"] {
 	min-height:40px;
 	background: #FAFAFA;
+	border-bottom: 1px solid #eee;
 }
 
-[id="breadcrumbs"] > div{
+[id="breadcrumbs"] > div {
 	display: flex;
 	flex-flow: row wrap;
 	flex-direction: row-reverse;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
+}
+
+[id="breadcrumbs"] > div::before {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #eee transparent transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 17px;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 10%;
+    margin-bottom: -35px;
+    position: absolute;
+    z-index: 10;
+}
+[id="breadcrumbs"] > div::after {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #FAFAFA transparent transparent;
+    border-image: none;
+    border-style: solid;
+    border-width: 16px;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 10%;
+    margin-bottom: -32px;
+    margin-left: 1px;
+    position: absolute;
+    z-index: 11;
 }
 
 [id="breadcrumbs"] h1 {
@@ -844,17 +998,6 @@ a:active {
 	clear: both;
 }
 
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-.widget {
-	margin: 0 0 1.5em;
-}
-
-/* Make sure select elements fit in widgets. */
-.widget select {
-	max-width: 100%;
-}
 
 /*--------------------------------------------------------------
 # Content
@@ -910,19 +1053,23 @@ a:active {
 /*--------------------------------------------------------------
 ## Taxonomies
 --------------------------------------------------------------*/
-.tag span {
-	padding: 5px 10px 7px;
-	border-radius: 5px;
-	background:#009FDE;
-	color: #FFF;
-}
 
 .tag a {
+	display: block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	padding: 3px 10px;
+	float: left;
+	border-radius: 3px;
+	background:#009FDE;
+	font-size: .8em;
+	color: #FFF;
 	text-decoration: none;
 }
-.tag a:hover span{
+.tag a:hover,
+.post-edit-link:hover {
 	background: #585F69;
-	/*color:white;*/
+	color:white;
 }
 
 /*--------------------------------------------------------------
@@ -956,6 +1103,10 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+.featured-media {
+	margin-bottom: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -1034,12 +1185,19 @@ object {
 # Layout
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## page
+## page & wrapper
 --------------------------------------------------------------*/
 
 .wrapper{
 	max-width: 1170px;
 	margin: 0 auto;
+}
+
+@media (min-width:768px) {
+	.default .wrapper-content {
+		max-width: 768px;
+		margin: 0 auto;
+	}
 }
 
 main[role="main"] {
@@ -1061,7 +1219,16 @@ main[role="main"] {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	align-items: flex-end;
+	align-items: stretch;
+}
+
+/*------------------
+## div pour main menu + header menu
+-------------------*/
+[id="masterhead"] > div > div {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
 }
 
 /*------------------
@@ -1074,7 +1241,7 @@ main[role="main"] {
 	padding-bottom: 10px;
 }
 
-/*------------------
+/*--------------------------------------------------------------
 ## zone de widget
 -------------------*/
 
@@ -1085,7 +1252,68 @@ aside .widget-title {
 	font-weight: 300;
 }
 
-/*------------------
+aside ul,
+aside ol {
+	margin: 0;
+}
+
+/*-------------------
+# Widgets
+-----------------------*/
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+	max-width: 100%;
+}
+
+.widget_recent_entries h2::before,
+.widget_archive h2::before, 
+.widget_calendar h2::before,
+.widget_categories h2::before {
+	margin-right: 10px;
+}
+
+
+.widget_recent_entries h2::before {
+	content:'\e808';
+}
+.widget_archive h2::before {
+	content:'\e806';
+}
+.widget_calendar h2::before {
+	content:'\e807';
+}
+
+.widget_categories h2::before {
+	content:'\f187';;
+}
+
+/*-----------------------------------------------------------------
+## article 
+-------------------*/
+article > header,
+[role="listNews"] {
+	margin-top: 10px;
+}
+
+article > footer {
+	margin-top: 20px;
+	padding: 20px; 
+	border-top: 1px solid #eee;
+	background: #f0f0f0;
+}
+
+article > footer [class^="icon"],
+.nav-previous a::before,
+.nav-next a::after
+ {
+	font-size: 1.5em;
+}
+
+/*-----------------------------------------------------------------
 ## homepage
 -------------------*/
 
@@ -1174,8 +1402,8 @@ aside .widget-title {
 ## Template default
 -------------------*/
 [id="content-area"].default main {
-	max-width: 768px;
-	margin-left: 0;
+	max-width: 1024px;
+	margin: 0 auto;
 } 
 
 /*------------------
@@ -1199,6 +1427,15 @@ aside .widget-title {
 		padding-left: 20px;
 		border-left: 1px solid #CCC;
 	}
+}
+
+/*------------------
+## Template fullwidth
+-------------------*/
+
+.fullwidth article > figure {
+	max-width: 1024px;
+	margin:1em auto;
 }
 
 /*------------------------------------------------------------------
@@ -1282,6 +1519,72 @@ aside .widget-title {
 [id="page"] > footer [id="partners-sidebar"] li:hover h2 {
 	left: 0;
 }
+
+/*------------------------------------------------------------------
+## POST FORMATS 
+-------------------------------------------------------------------*/
+/* format gallery */
+
+
+.format-gallery .flexslider { position: relative; }
+
+.format-gallery .flexslider ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.format-gallery .flexslider ul li::before {
+	display: none;
+}
+
+.format-gallery .flex-direction-nav a {
+	display: block;
+	height: 32px;
+	width: 20px;
+	background-size: auto 32px;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 50%;
+	margin-top: -16px;
+	text-indent: -9999px;
+	-webkit-opacity: 0.5;
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+}
+
+.format-gallery .flex-direction-nav .flex-prev { 
+	left: 16px; 
+	background-image: url(images/icons/1x/chevron-left-w-shade.png);
+}
+
+.format-gallery .flex-direction-nav .flex-next { 
+	right: 16px; 
+	background-image: url(images/icons/1x/chevron-right-w-shade.png);
+}
+
+.format-gallery .flex-direction-nav a:hover { 
+	-webkit-opacity: 1;
+	-moz-opacity: 1;
+	opacity: 1; 
+}
+
+.format-gallery .flex-direction-nav .flex-prev:hover { left: 12px; }
+.format-gallery .flex-direction-nav .flex-next:hover { right: 12px; }
+
+.format-gallery .slides li { position: relative; }
+
+.media-caption,
+figcaption {
+    border-bottom: 1px solid #eee;
+    color: #999;
+    font-size: 0.8em;
+    font-weight: 700;
+    line-height: 110%;
+    margin: 0 10%;
+    padding: 20px 0;
+}
+
 
 .copyright {
 	text-align: right;
