@@ -24,12 +24,11 @@
 				<?php dynamic_sidebar( 'partners' ); ?>
 			</ul>
 		<?php endif; ?>
-		    <p class="copyright">© Copyright Pôle Aeris 2016 - Service de données OMP (SEDOO)</p>
+		    <p class="copyright">© Copyright <?php echo get_theme_mod('theme_aeris_copyright');?></p>
 
 	    </div>
 	</footer>
 </div><!-- #page -->
-
 
 <?php wp_footer(); ?>
 

@@ -150,6 +150,11 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
   }
 } // end the_breadcrumb()
 
+// Change the length of excerpts
+function custom_excerpt_length( $length ) {
+  return 50;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /******************************************************************
 * Creation de liste des pages en fonction d'arguments passés à WP_Query()
@@ -171,10 +176,10 @@ function list_pages($arg, $infiniteScroll){
         <?php
         while ( $queryListPages->have_posts() ) :
             $queryListPages->the_post(); 
-        
+
             // Appel embed template
-            get_template_part( 'template-parts/content', 'embed-page' );
-       
+            get_template_part( 'template-parts/content', get_post_format() );
+
         endwhile;
         ?>
         
@@ -202,6 +207,33 @@ function list_pages($arg, $infiniteScroll){
 }
 
 /******************************************************************
+ * Afficher les catégories
+ * $categories = get_the_terms( $post->ID, 'category');  
+ */
+
+function theme_aeris_show_categories($categories) {
+ 
+  if( $categories ) {
+  ?>
+  <div class="tag">
+  <?php
+      foreach( $categories as $categorie ) { 
+          if ($categorie->slug !== "non-classe") {
+          echo '<a href="'.site_url().'/category/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+
+                echo $categorie->name; 
+              ?>                    
+          </a>
+  <?php 
+          }
+      }
+  ?>
+  </div>
+<?php
+    } 
+}
+
+/******************************************************************
 * GESTION DES IMAGES
 *
 * Support des thumbnails (images à la une)
@@ -220,10 +252,79 @@ add_theme_support( 'post-thumbnails' );
 function images_setup() {
     add_image_size( 'illustration-article', 1024, 500, true );
     add_image_size( 'embed-article', 1024, 250, false );
+    add_image_size( 'post-image', 945, 9999 );
     add_image_size( 'logo-partenaire', 100, 40, false );
  }
 add_action( 'after_setup_theme', 'images_setup' );
 
 
 
+// Flexslider function for format-gallery
+function theme_aeris_flexslider($size = thumbnail, $post) {
 
+  if ( is_page()) :
+    $attachment_parent = $post->ID; // the_ID();
+  else : 
+    $attachment_parent = get_the_ID();
+  endif;
+
+  echo "<h3>POST ID :".$post->ID."
+        <br> GET the ID : ".get_the_ID()." 
+        <br> Attach : ".$attachment_parent."
+  </h3>";
+  if($images = get_posts(array(
+    'post_parent'    => $attachment_parent, //get_the_ID(),
+    'post_type'      => 'attachment',
+    'numberposts'    => -1, // show all
+    'post_status'    => null,
+    'post_mime_type' => 'image',
+                'orderby'        => 'menu_order',
+                'order'           => 'ASC',
+  ))) { ?>
+  
+    <div class="flexslider">
+      <ul class="slides">
+  
+        <?php foreach($images as $image) { 
+          $attimg = wp_get_attachment_image($image->ID,$size); ?>
+          
+          <li>
+            <?php echo $attimg; ?>
+            <?php if ( !empty($image->post_excerpt) && is_single()) : ?>
+              <div class="media-caption-container">
+                <p class="media-caption"><?php echo $image->post_excerpt ?></p>
+              </div>
+            <?php endif; ?>
+          </li>
+          
+        <?php }; ?>
+    
+      </ul>
+      
+    </div><?php
+    
+  }
+}
+
+/******************************************************************
+* CONVERTISSEUR DE COULEUR HEX > RGB
+*
+* source : https://bavotasan.com/2011/convert-hex-color-to-rgb-using-php/
+*/
+
+function hex2rgb($hex) {
+		$hex = str_replace("#", "", $hex);
+
+		if(strlen($hex) == 3) {
+			$r = hexdec(substr($hex,0,1).substr($hex,0,1));
+			$g = hexdec(substr($hex,1,1).substr($hex,1,1));
+			$b = hexdec(substr($hex,2,1).substr($hex,2,1));
+		} else {
+			$r = hexdec(substr($hex,0,2));
+			$g = hexdec(substr($hex,2,2));
+			$b = hexdec(substr($hex,4,2));
+		}
+		$rgb = array($r, $g, $b);
+		//return implode(",", $rgb); // returns the rgb values separated by commas
+		return $rgb; // returns an array with the rgb values
+	}

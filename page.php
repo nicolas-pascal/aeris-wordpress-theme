@@ -29,7 +29,18 @@ while ( have_posts() ) : the_post();
 
 			
 			?>
-
+			<?php 
+			// if ( get_edit_post_link() ) : 
+			// 	edit_post_link(
+			// 		sprintf(
+			// 			/* translators: %s: Name of current post */
+			// 			esc_html__( 'Edit page%s', 'theme-aeris' ),
+			// 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			// 		),
+			// 		'<span class="edit-link">',
+			// 		'</span>'
+			// 	);
+			// endif; ?>
 		</main><!-- #main -->
 	</div><!-- #content-area -->
 
