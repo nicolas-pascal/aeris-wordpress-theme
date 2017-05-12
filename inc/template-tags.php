@@ -120,3 +120,28 @@ function theme_aeris_category_transient_flusher() {
 }
 add_action( 'edit_category', 'theme_aeris_category_transient_flusher' );
 add_action( 'save_post',     'theme_aeris_category_transient_flusher' );
+
+function theme_aeris_meta() { ?>
+
+	<div class="post-meta">
+	
+		<a class="post-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><span class="icon-clock"></span> <?php the_time( 'Y/m/d' ); ?></a>
+		
+		<?php
+		
+			if( function_exists('zilla_likes') ) zilla_likes(); 
+		
+			if ( comments_open() ) {
+				comments_popup_link( '0', '1', '%', 'post-comments' );
+			}
+			
+			edit_post_link(); 
+		
+		?>
+		
+		<div class="clear"></div>
+	
+	</div> <!-- /post-meta -->
+	
+<?php
+}

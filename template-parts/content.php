@@ -9,8 +9,6 @@ $categories = get_the_terms( $post->ID, 'category');
 
 <article role="embed-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
-        <?php theme_aeris_show_categories($categories);?>
-
         <h3>
            <a href="<?php the_permalink(); ?>">
             <?php the_title();?>
@@ -28,11 +26,16 @@ $categories = get_the_terms( $post->ID, 'category');
         ?>        
 
     </header>
-    <section>        
-       <?php if($post->post_content != "") : ?>				    		            			            	                                                                                            
+    <section>
+       <?php if($post->post_content != "") : ?>			
+       <div class="post-excerpt">	    		            			            	                                                                                            
 			<?php the_excerpt(); ?>
-
-		<?php endif; ?>   
-        <a href="<?php the_permalink(); ?>"><span class="icon-angle-right"></span> Lire la suite</a>
+        </div>
+		<?php endif; ?>
     </section>
+    <footer>
+        <?php theme_aeris_show_categories($categories);?>
+        
+		<?php theme_aeris_meta(); ?>
+	</footer>
 </article>

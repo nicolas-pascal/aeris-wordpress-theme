@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
-Version: 1.5.6
+Version: 1.6.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -304,11 +304,17 @@ h2 {
     font-size: 22px;
 }
 
-h1 > a, h1 > a:active, h1 > a:focus,
-h2 > a, h2 > a:active, h2 > a:focus,
-h3 > a, h3 > a:active, h3 > a:focus  {
+h1 > a, h1 > a:active, h1 > a:focus, h1 > a:visited,
+h2 > a, h2 > a:active, h2 > a:focus, h2 > a:visited,
+h3 > a, h3 > a:active, h3 > a:focus, h3 > a:visited  {
 	color:#555;
 	text-decoration: none;
+}
+
+[role="listNews"] article > header > h3 {
+	font-weight: bold;
+	border-top:3px solid;
+	border-bottom:none;
 }
 
 p {
@@ -596,6 +602,7 @@ aside ul li::before,
 --------------------------------------------------------------*/
 a {
 	color: #4765a0;
+	-webkit-transition: all .4s ease;
 	transition: all .4s ease; 
 }
 
@@ -618,13 +625,11 @@ a:active {
 	outline: 0;
 }
 
-.post-edit-link {
-	padding:5px 10px;
-	background: #009fde;
-	border-radius: 3px;
+.post-edit-link,
+.post-date {
 	text-decoration: none;
-	color: #FFF;
 }
+
 .post-edit-link::before {
 	content: '\e809';
 }
@@ -639,7 +644,9 @@ a:active {
 
 .main-navigation {
 	clear: both;
-	order:1;
+	-webkit-box-ordinal-group:2;
+	    -ms-flex-order:1;
+	        order:1;
 }
 
 .main-navigation ul {
@@ -842,11 +849,21 @@ nav.post-navigation a {
 }
 
 [id="breadcrumbs"] > div {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row wrap;
-	flex-direction: row-reverse;
-	justify-content: space-between;
-	align-items: center;
+	-ms-flex-flow: row wrap;
+	    flex-flow: row wrap;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	    -ms-flex-direction: row-reverse;
+	        flex-direction: row-reverse;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	position: relative;
 }
 
@@ -1068,6 +1085,11 @@ nav.post-navigation a {
 	color: #FFF;
 	text-decoration: none;
 }
+
+.tag a:visited {
+	color:#FFF;
+}
+
 .tag a:hover,
 .post-edit-link:hover {
 	background: #585F69;
@@ -1218,19 +1240,31 @@ main[role="main"] {
 ## div pour logo + nav
 -------------------*/
 [id="masterhead"] > div {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	align-items: stretch;
+	-ms-flex-flow: row wrap;
+	    flex-flow: row wrap;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: stretch;
+	    -ms-flex-align: stretch;
+	        align-items: stretch;
 }
 
 /*------------------
 ## div pour main menu + header menu
 -------------------*/
 [id="masterhead"] > div > div {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: column nowrap;
-	justify-content: space-between;
+	-ms-flex-flow: column nowrap;
+	    flex-flow: column nowrap;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 /*------------------
@@ -1375,11 +1409,17 @@ article > footer [class^="icon"],
 ## homepage - list post
 -------------------*/
 
-[role="listNews"] {
+/*[role="listNews"] {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-around;
-	align-items: stretch;
+	-ms-flex-flow: row wrap;
+	    flex-flow: row wrap;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-align: stretch;
+	    -ms-flex-align: stretch;
+	        align-items: stretch;
 }
 
 [role="listNews"] h2 {
@@ -1387,11 +1427,24 @@ article > footer [class^="icon"],
 }
 
 [role="listNews"] article {
-	flex:1 0 250px;
+	-webkit-box-flex:1;
+	    -ms-flex:1 0 250px;
+	        flex:1 0 250px;
 	margin: 0 20px 20px 0;
 	padding: 20px;
 	border:1px solid #CCC;
+}*/
+
+.posts {
+	overflow: visible;
 }
+
+.post-container {
+    padding: 0 2.5% 3.5%;
+    width: 33.3%;
+}
+
+
 
 /*------------------
 ## all template
@@ -1413,9 +1466,14 @@ article > footer [class^="icon"],
 -------------------*/
 
 [id="content-area"].sidebar {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row wrap;
-    justify-content: space-between;
+	-ms-flex-flow: row wrap;
+	    flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 @media (min-width: 768px) {
@@ -1465,9 +1523,14 @@ article > footer [class^="icon"],
 }
 
 [id="footer-widget-area"] {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
+	-ms-flex-flow: row wrap;
+	    flex-flow: row wrap;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
 	margin-bottom: 20px;
 }
 
@@ -1510,12 +1573,14 @@ article > footer [class^="icon"],
 }
 
 [id="page"] > footer [id="partners-sidebar"] li img {
-	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	        filter: grayscale(100%);
 	vertical-align: middle;
 }
 
 [id="page"] > footer [id="partners-sidebar"] li:hover img {
-	filter: grayscale(0%);
+	-webkit-filter: grayscale(0%);
+	        filter: grayscale(0%);
 }
 
 [id="page"] > footer [id="partners-sidebar"] li:hover h2 {
@@ -1525,6 +1590,13 @@ article > footer [class^="icon"],
 /*------------------------------------------------------------------
 ## POST FORMATS 
 -------------------------------------------------------------------*/
+
+article.format-gallery > header,
+article.format-quote > header {
+	margin-top: 0;
+}
+
+
 /* format gallery */
 
 
@@ -1592,5 +1664,4 @@ figcaption {
 	text-align: right;
 	font-size: .8rem;
 }
-
 
