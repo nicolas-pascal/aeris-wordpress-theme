@@ -227,7 +227,8 @@ function theme_aeris_color_style() {
 			.main-navigation .nav-menu > .current_page_item > a,
 			.main-navigation .nav-menu > .current-menu-item > a,
 			.main-navigation .nav-menu > .current_page_ancestor > a,
-			.main-navigation .nav-menu > .current-menu-ancestor > a {
+			.main-navigation .nav-menu > .current-menu-ancestor > a,
+			[role="listNews"] article > header > h3 {
 				border-color: <?php echo $code_color;?>; 
 			}
 

@@ -150,15 +150,27 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
   }
 } // end the_breadcrumb()
 
+/******************************************************************
+* EXCERPT CUSTOM
+* 
+*/
+
 // Change the length of excerpts
 function custom_excerpt_length( $length ) {
   return 50;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+// Add more-link text to excerpt
+function new_excerpt_more( $more ) {
+	return '... <a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __('Continue Reading', 'theme_aeris') . ' <span class="icon-angle-right"></span></a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+
 /******************************************************************
 * Creation de liste des pages en fonction d'arguments passés à WP_Query()
-* Appelle le template content-embed-page.php
+* 
 */
 
 function list_pages($arg, $infiniteScroll){
@@ -229,6 +241,7 @@ function theme_aeris_show_categories($categories) {
       }
   ?>
   </div>
+  <div class="clear"></div>
 <?php
     } 
 }
@@ -257,23 +270,28 @@ function images_setup() {
  }
 add_action( 'after_setup_theme', 'images_setup' );
 
+/* set default attachment setting
+* https://writenowdesign.com/blog/wordpress/wordpress-how-to/change-wordpress-default-image-alignment-link-type/
+*/
+function default_attachment_display_settings() {
+    update_option( 'image_default_align', 'none' );
+    update_option( 'image_default_link_type', 'none' );
+    update_option( 'image_default_size', 'medium' );
+}
+add_action( 'after_setup_theme', 'default_attachment_display_settings' );
 
 
 // Flexslider function for format-gallery
 function theme_aeris_flexslider($size = thumbnail, $post) {
 
   if ( is_page()) :
-    $attachment_parent = $post->ID; // the_ID();
+    $attachment_parent = $post->ID;
   else : 
     $attachment_parent = get_the_ID();
   endif;
 
-  echo "<h3>POST ID :".$post->ID."
-        <br> GET the ID : ".get_the_ID()." 
-        <br> Attach : ".$attachment_parent."
-  </h3>";
   if($images = get_posts(array(
-    'post_parent'    => $attachment_parent, //get_the_ID(),
+    'post_parent'    => $attachment_parent,
     'post_type'      => 'attachment',
     'numberposts'    => -1, // show all
     'post_status'    => null,

@@ -116,6 +116,7 @@ function theme_aeris_scripts() {
 	}
 
 	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'masonry' );
 	wp_enqueue_script( 'theme_aeris_flexslider', get_template_directory_uri() . '/js/flexslider.min.js', array(), '20151215', true );
 	wp_enqueue_script('custom-js', get_bloginfo('template_directory') . '/js/global.js', array(), '1', true );
 }

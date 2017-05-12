@@ -68,7 +68,7 @@ aside > section .calendar_wrap {
 }
 
 [role="listNews"] article > header > :not(figure),
-[role="listNews"] article > section {
+.post-excerpt {
 	padding: 20px;
 }
 
