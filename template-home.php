@@ -3,7 +3,7 @@
 Template Name: Homepage
 */
 get_header(); 
-
+COUCOUC
 // Description (slogan)
 $description = get_bloginfo( 'description', 'display' );
 
