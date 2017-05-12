@@ -13,20 +13,20 @@ get_template_part( 'template-parts/header-content', 'archive' );
 
 $categories = get_the_terms( $post->ID, 'category');  
 
-
 ?>
 
-	<div id="content-area" class="wrapper sidebar archives">
+	<div id="content-area" class="wrapper archives">
 		<main id="main" class="site-main" role="main">
 
 			<?php
 			if ( have_posts() ) : ?>
 
-			<section role="listNews">
+			<section role="listNews" class="posts">
 				
 			<?php
 				while ( have_posts() ) : the_post();
 				?>
+				<div class="post-container">
 				<?php
 					get_template_part( 'template-parts/content', get_post_format() );
 
@@ -35,12 +35,14 @@ $categories = get_the_terms( $post->ID, 'category');
 						comments_template();
 					endif;
 					?>
+				</div>
 				<?php
 				endwhile; // End of the loop.
-
+				?>				
+			</section>
+			<?php 
 				the_posts_navigation();
 				?>
-			</section>
 			<?php
 			else :
 
@@ -50,7 +52,7 @@ $categories = get_the_terms( $post->ID, 'category');
 		
 		</main><!-- #main -->
 		<?php 
-		get_sidebar();
+		// get_sidebar();
 		?>
 	</div><!-- #content-area -->
 <?php
