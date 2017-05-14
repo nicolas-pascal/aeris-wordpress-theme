@@ -8,12 +8,12 @@ function theme_aeris_support() {
 add_theme_support('post-formats', array(
 	'gallery',
 	'quote',
-	'video',
-	'aside',
-	'image',
-	'link',
-	'status',
-	'audio',
+	// 'video',
+	// 'aside',
+	// 'image',
+	// 'link',
+	// 'status',
+	// 'audio',
 	//'chat'
 	));
 

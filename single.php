@@ -24,31 +24,21 @@ while ( have_posts() ) : the_post();
 									
 				<header>
 			        <?php theme_aeris_show_categories($categories);?>
-
 				</header>
-
+			
 			<?php
 			if ($format == 'gallery') { ?>
 				
-				<section class="featured-media">	
-					<h3> single : <?php echo $post->ID; ?></h3>				
+				<section class="featured-media">
 					<?php theme_aeris_flexslider('post-image', $post); ?>
 
 				</section> <!-- /featured-media -->
-				<section class="wrapper-content">
-					<?php // Fetch post content
-						$content = get_post_field( 'post_content', get_the_ID() );
-						
-						// Get content parts
-						$content_parts = get_extended( $content );
-						
-						echo $content_parts['extended'];  ?>	
-				</section>
+				
 
 			<?php } 
 			elseif ($format == 'quote') { ?>
 					
-				<section class="wrapper-content post-quote bkg">
+				<section class="wrapper-content post-quote">
 					
 					<?php
 					
@@ -61,29 +51,33 @@ while ( have_posts() ) : the_post();
 						echo $content_parts['main']; 
 						
 					?>
-				</div>
+				</section>
 			<?php
 			}
-			else {
-
-		        if (get_the_post_thumbnail()) {
-		        ?>
+			elseif (get_the_post_thumbnail()) {
+		    ?>
 		        <figure>
 		        <?php the_post_thumbnail( 'illustration-article' ); ?>
 		        </figure>
-		        <?php 
-		        }
-		        ?>   
-		        <section class="wrapper-content">
-					<?php the_content(); ?>
-		        </section>
-				<!-- get_template_part( 'template-parts/content', get_post_format() ); -->
-
-				
+  
 			<?php 
 			}
 			?>
-			<footer>
+
+				<section class="wrapper-content">
+
+					<?php 
+							if ($format == 'link' || $format == 'quote' || $format == 'video') { 
+								$content = $content_parts['extended'];
+								$content = apply_filters('the_content', $content);
+								echo $content;
+							} else {
+								the_content();
+							}
+					?>
+		        </section>
+
+				<footer>
 					<span class="icon-user"></span><?php the_author();?>
 					<span class="icon-clock"></span><?php the_time( get_option( 'date_format' ) );?>
 					<?php 
