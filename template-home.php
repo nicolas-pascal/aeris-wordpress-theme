@@ -14,8 +14,6 @@ while ( have_posts() ) : the_post();
 		<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
 	</div>
 	
-
-
 <script>
 	var bgImageArray = [];
 
