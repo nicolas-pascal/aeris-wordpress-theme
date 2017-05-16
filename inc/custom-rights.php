@@ -5,6 +5,9 @@
  * @package aeris
  */
 
+/**
+* Ajout de droits pour l'admin pour l'ajout de code HTML non standard
+*/
 
 function add_theme_caps() {
     // gets the author role
