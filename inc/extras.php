@@ -100,7 +100,15 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
  
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
       $post_type = get_post_type_object(get_post_type());
-      echo $before . $post_type->labels->singular_name . $after;
+      
+	if(is_tax()) {
+		
+		$term .= $delimiter . $before. ' ';	    	
+		$term .= get_queried_object()->name . $after;
+
+      }
+
+      echo $before . $post_type->labels->singular_name . $after. $term;
  
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
