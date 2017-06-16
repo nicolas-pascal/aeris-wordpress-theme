@@ -210,7 +210,6 @@ function theme_aeris_color_style() {
 			}
 
 			a,
-			a:visited,
 			.main-navigation .nav-menu > li > a:hover,
 			.main-navigation .nav-menu > li > a:focus,
 			.main-navigation .nav-menu > .current_page_item > a,
