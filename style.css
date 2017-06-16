@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
-Version: 1.6.2
+Version: 1.6.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -606,9 +606,9 @@ a {
 	transition: all .4s ease; 
 }
 
-a:visited {
+/*a:visited {
 	color: #4765a0;
-}
+}*/
 
 a:hover,
 a:focus,
@@ -1444,8 +1444,48 @@ article > footer [class^="icon"],
     width: 33.3%;
 }
 
+/*-----------------------------------------------------------------
+## homepage custom
+-------------------*/
+
+[role="homepage-top-widget-area"],
+[role="homepage-md"],
+[role="homepage-footer-widget-area"] {
+	display: flex;
+	flex-flow:row wrap;
+	justify-content: space-between;
+}
+
+[role="homepage-top-widget-area"] > *,
+[role="homepage-footer-widget-area"] > *:not(.widget_rss) {
+	flex: 0 1 300px;
+}
+
+[role="homepage-md"] > :first-child {
+	padding-right: 60px;
+}
+
+[role="homepage-md"] > [role="homepage-mdleft-widget-area"] {
+	flex: 1 1 740px;
+}
+
+[role="homepage-md"] > [role="homepage-mdright-widget-area"] {
+	flex: 1 1 250px;
+}
 
 
+/*----
+## widgets 
+--*/
+
+section.widget_rss li {
+	width: 250px;
+	display: inline-block;
+	margin: 30px;
+}
+section.widget_rss li:first-child {
+	margin-top: 0;
+}
 /*------------------
 ## all template
 -------------------*/
