@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
-Version: 1.6.4
+Version: 1.6.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -52,6 +52,7 @@ html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
+	font-size: 16px;
 }
 
 body {
@@ -276,9 +277,8 @@ input,
 select,
 textarea {
 	color: #333;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 16px;
-	/*font-size: 1rem;*/
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;	
+	font-size: 1rem;
 	line-height: 1.7;
 }
 
@@ -429,9 +429,8 @@ ol {
 }
 
 
-main ul li::before,
-aside ul li::before {
-	content:'\f101';
+article ul {
+	list-style-type: initial;
 }
 
 li > ul,
@@ -551,8 +550,7 @@ textarea {
 /*--------------------------------------------------------------
 # Icones 
 --------------------------------------------------------------*/
-main ul li::before,
-aside ul li::before,
+
 .nav-previous a::before, 
 .nav-next a::after,
 .post-edit-link::before,
