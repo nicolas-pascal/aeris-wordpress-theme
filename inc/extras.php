@@ -92,7 +92,15 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
         if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
       } else {
         $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+        // CORRECTIFS POUR CUSTOM TAXONOMIES - 20160619 - Clement
+        if(!isset($cat)) {
+          $showCurrent = 1;
+          $cats = '';
+        }
+        else {
+          $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+          echo $cats;
+        }
         if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
         echo $cats;
         if ($showCurrent == 1) echo $before . get_the_title() . $after;
@@ -100,7 +108,17 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
  
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
       $post_type = get_post_type_object(get_post_type());
-      echo $before . $post_type->labels->singular_name . $after;
+      // CORRECTIFS POUR CUSTOM TAXONOMIES - 20160619 - Clement
+      $term = ' ';
+      $current_term = single_term_title("", false);
+	
+      if(is_tax()) {
+        $term.= ''.$delimiter;
+        $term.= $current_term;
+        $term.= $after;
+      }
+      
+      echo $before . $post_type->labels->singular_name . $after. $before .$term;
  
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
