@@ -168,6 +168,7 @@ function the_breadcrumb() {
 		
 		echo '</nav>';
 	}
+
 } // end the_breadcrumb()
 
 /**
