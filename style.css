@@ -799,8 +799,10 @@ a:active {
 
 nav[id="top-header-menu"] ul {
 	list-style: none;
-	text-align: right;
-	margin: 0;
+    text-align: right;
+    /* margin: 0; */
+    float: right;
+	
 }
 
 nav[id="top-header-menu"] ul li {
