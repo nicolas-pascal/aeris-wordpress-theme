@@ -89,61 +89,52 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
         $post_type = get_post_type_object(get_post_type());
         $slug = $post_type->rewrite;
         echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
-      } else {
-        $cat = get_the_category(); $cat = $cat[0];
-        // CORRECTIFS POUR CUSTOM TAXONOMIES - 20160619 - Clement
-        if(!isset($cat)) {
-          $showCurrent = 1;
-          $cats = '';
-        }
+        echo ' '.$delimiter;
+          } 
+        $parent = get_post($post->post_parent);
+            $cat = get_the_category($parent->ID); $cat = $cat[0];   
+            
+        if (! isset ( $cat )) {
+            
+            $showCurrent = 1;
+            $cats = '';
+            
+        } 
         else {
-          $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-          echo $cats;
+            $cats = get_category_parents ( $cat, TRUE, ' ' . $delimiter . ' ' );
         }
-        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
+        
+        if ($showCurrent == 0)
+            $cats = preg_replace ( "#^(.+)\s$delimiter\s$#", "$1", $cats );
+        
         echo $cats;
-        if ($showCurrent == 1) echo $before . get_the_title() . $after;
-      }
- 
-    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-      $post_type = get_post_type_object(get_post_type());
-      // CORRECTIFS POUR CUSTOM TAXONOMIES - 20160619 - Clement
-      $term = ' ';
-      $current_term = single_term_title("", false);
-	
-      if(is_tax()) {
-        $term.= ''.$delimiter;
-        $term.= $current_term;
-        $term.= $after;
-      }
-      
-      echo $before . $post_type->labels->singular_name . $after. $before .$term;
- 
-    } elseif ( is_attachment() ) {
-      $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-      echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
- 
-    } elseif ( is_page() && !$post->post_parent ) {
-      if ($showCurrent == 1) echo $before . get_the_title() . $after;
- 
-    } elseif ( is_page() && $post->post_parent ) {
-      $parent_id  = $post->post_parent;
-      $breadcrumbs = array();
-      while ($parent_id) {
-        $page = get_page($parent_id);
-        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-        $parent_id  = $page->post_parent;
-      }
-      $breadcrumbs = array_reverse($breadcrumbs);
-      for ($i = 0; $i < count($breadcrumbs); $i++) {
-        echo $breadcrumbs[$i];
-        if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . ' ';
-      }
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+        
+        if ($showCurrent == 1)
+            echo  ' ' . $before . get_the_title() . $after;
+    
+        } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+          $post_type = get_post_type_object(get_post_type());
+          // CORRECTIFS POUR CUSTOM TAXONOMIES - 20160619 - Clement
+          $term = ' ';
+          
+        $post_type = get_post_type_object(get_post_type());
+            $slug = $post_type->rewrite; 
+          if(is_tax()) {
+            $taxonomy = get_queried_object ();
+        $term .= $delimiter . $before . ' ';
+        $term .= $taxonomy->name . $after;
+          }
+          echo $before . '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>' . $after. $before .$term;
+    
+        } elseif ( is_attachment() ) {
+          $parent = get_post($post->post_parent);
+          $cat = get_the_category($parent->ID); $cat = $cat[0];
+          
+          if(isset($cat)) {
+              echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+          }
+            
+          if ($showCurrent == 1) echo  ' ' . $before . get_the_title() . $after;
  
     } elseif ( is_tag() ) {
       echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
