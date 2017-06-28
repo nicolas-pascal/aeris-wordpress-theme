@@ -24,6 +24,7 @@ function theme_aeris_customize_preview_js() {
 	wp_enqueue_script( 'theme_aeris_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'theme_aeris_customize_preview_js' );
+<<<<<<< HEAD
 
 
 /*****
@@ -222,7 +223,8 @@ function theme_aeris_color_style() {
 
 			aside .widget-title,
 			.bkg,
-			[role="listNews"] article.format-quote > header > blockquote {
+			[role="listNews"] article.format-quote > header > blockquote,
+            [role="listCampaign"] > header > h2 {
 				background: <?php echo $code_color;?>;
 			}
 
@@ -263,3 +265,5 @@ function custom_customize_enqueue() {
     wp_enqueue_style('custom-css-customize', get_bloginfo('template_directory') . '/css/customizer.css');
 }
 add_action( 'customize_controls_enqueue_scripts', 'custom_customize_enqueue' );
+=======
+>>>>>>> parent of fb219c8... Merge branch 'release/1.6.2'

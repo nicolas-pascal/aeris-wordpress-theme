@@ -87,4 +87,14 @@ function wpaeris_custom_sidebars() {
 }
 add_action( 'widgets_init', 'wpaeris_custom_sidebars' );
 
+
+/******************************************************************
+* WIDGET PARTENAIRES
+*/
+
+//require get_template_directory() . '/inc/widgets/custom-widget-partenaires.php';
+
+
+
+
 ?>
