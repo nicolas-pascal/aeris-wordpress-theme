@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
-Version: 1.6.6
+Version: 1.6.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -1440,6 +1440,10 @@ article > footer [class^="icon"],
 	border:1px solid #CCC;
 }*/
 
+/*------------------
+## Masonry
+-------------------*/
+
 .posts {
 	overflow: visible;
 }
@@ -1448,6 +1452,22 @@ article > footer [class^="icon"],
     padding: 0 2.5% 3.5%;
     width: 33.3%;
 }
+
+
+/*[role="homepage-mdright-widget-area"] .post-container {
+	width: 100%;
+}
+
+[role="homepage-mdright-widget-area"] .widget_newsrecent article header > :not(h3),
+[role="homepage-mdright-widget-area"] .widget_newsrecent article section,
+[role="homepage-mdright-widget-area"] .widget_newsrecent article footer > :not(.post-meta),
+[role="homepage-mdright-widget-area"] .widget_newsrecent article footer > .post-meta :not(.post-date) {
+	display: none;
+}
+
+[role="homepage-mdright-widget-area"] .widget_newsrecent article footer {
+	background: none;
+}*/
 
 /*-----------------------------------------------------------------
 ## homepage custom
@@ -1479,9 +1499,9 @@ article > footer [class^="icon"],
 }
 
 
-/*----
-## widgets 
---*/
+/*------------------
+## widgets custom
+------------------*/
 
 section.widget_rss li {
 	width: 250px;
@@ -1491,6 +1511,22 @@ section.widget_rss li {
 section.widget_rss li:first-child {
 	margin-top: 0;
 }
+
+/* Legende sur widget image standard de wordpress 
+*/
+.widget.widget_media_image figure {
+    position: relative;
+}
+
+.widget.widget_media_image figure figcaption {
+    background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+}
+
 /*------------------
 ## all template
 -------------------*/
@@ -1711,3 +1747,45 @@ figcaption {
 	font-size: 1em;
 }
 
+/*------------------------------------------------------------------
+## PLUGINS CSS
+-------------------------------------------------------------------*/
+
+/*------------------
+## CAMPAIGN PLUGIN
+------------------*/
+
+[role="listCampaign"] {
+    border: 1px solid #ccc;
+	overflow: hidden;
+	margin-bottom: 20px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+[role="listCampaign"] > header {
+	width: 100%;
+}
+
+
+[role="listCampaign"] > header > h2 {
+    margin: 0;
+    padding: 5px 10px;
+	color: #FFF;
+}
+
+[role="listCampaign"] > article {
+	/*flex: 0 0 250px;*/
+	width: 250px;
+	padding: 20px;
+	/*margin: 0 20px 20px 0;*/
+}
+
+[role="listCampaign"] > article header {
+	/*margin-left: 20px;*/
+}
+
+[role="listCampaign"] > article ul {
+	margin:0;
+} 

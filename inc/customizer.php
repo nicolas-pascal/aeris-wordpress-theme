@@ -222,7 +222,8 @@ function theme_aeris_color_style() {
 
 			aside .widget-title,
 			.bkg,
-			[role="listNews"] article.format-quote > header > blockquote {
+			[role="listNews"] article.format-quote > header > blockquote,
+            [role="listCampaign"] > header > h2 {
 				background: <?php echo $code_color;?>;
 			}
 
