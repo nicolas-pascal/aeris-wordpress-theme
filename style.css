@@ -5,10 +5,14 @@ Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
 <<<<<<< HEAD
+<<<<<<< HEAD
 Version: 1.6.7
 =======
 Version: 1.6.1
 >>>>>>> parent of fb219c8... Merge branch 'release/1.6.2'
+=======
+Version: 1.6.7
+>>>>>>> release/1.6.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -1772,6 +1776,26 @@ figcaption {
 	width: 100%;
 }
 
+/*------------------------------------------------------------------
+## PLUGINS CSS
+-------------------------------------------------------------------*/
+
+/*------------------
+## CAMPAIGN PLUGIN
+------------------*/
+
+[role="listCampaign"] {
+    border: 1px solid #ccc;
+	overflow: hidden;
+	margin-bottom: 20px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+[role="listCampaign"] > header {
+	width: 100%;
+}
 
 [role="listCampaign"] > header > h2 {
     margin: 0;
