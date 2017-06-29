@@ -24,33 +24,6 @@ function theme_aeris_customize_preview_js() {
 	wp_enqueue_script( 'theme_aeris_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'theme_aeris_customize_preview_js' );
-<<<<<<< HEAD
-
-
-/*****
-*  Ajout du support du logo dans le customizer
-*
-*/
-
-function theme_aeris_logo_setup() {
-	add_theme_support( 'custom-logo', array(
-	'height'      => 100,
-	'width'       => 400,
-	'flex-height' => true,
-	'flex-width'  => true,
-	'header-text' => array( 'site-title', 'site-description' ),
-	) ) ;
-}
-add_action( 'after_setup_theme', 'theme_aeris_logo_setup' );
-
-function theme_aeris_the_custom_logo() {
-	
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
-	}
-
-}
-
 
 
 /*************************************************************************************************************
@@ -265,5 +238,4 @@ function custom_customize_enqueue() {
     wp_enqueue_style('custom-css-customize', get_bloginfo('template_directory') . '/css/customizer.css');
 }
 add_action( 'customize_controls_enqueue_scripts', 'custom_customize_enqueue' );
-=======
->>>>>>> parent of fb219c8... Merge branch 'release/1.6.2'
+?>
