@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
-Version: 1.7.0
+Version: 1.7.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -1330,6 +1330,19 @@ aside ol {
 .widget > ul {
 	margin: 0;
     padding: 0;
+}
+
+.widget.widget_media_image figure {
+    position: relative;
+}
+
+.widget.widget_media_image figure figcaption {
+    background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+    bottom: 0;
+    left: 0;
+	right: 0;
+    margin: 0;
+    position: absolute;
 }
 
 /*-----------------------------------------------------------------
