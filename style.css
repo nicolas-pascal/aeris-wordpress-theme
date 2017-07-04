@@ -1593,6 +1593,18 @@ section.widget_rss li:first-child {
 	margin:1em auto;
 }
 
+/*------------------
+## Template Liste d'éléments enfants
+-------------------*/
+
+[role="listChild"] > article {
+	padding:30px 60px 0;
+}
+
+[role="listChild"] > article header a{
+	text-decoration: none;
+}
+
 /*------------------------------------------------------------------
 ## FOOTER 
 -------------------------------------------------------------------*/

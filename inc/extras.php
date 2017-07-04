@@ -108,6 +108,92 @@ function list_pages($arg, $infiniteScroll){
 }
 
 /******************************************************************
+* Liste des pages enfants
+*/
+
+/*********************
+* Function utilisée sur le template template-listchild.php
+*/
+
+function wpaeris_listchild_pages( $atts ) {
+
+global $post;
+
+	// The Query
+		$queryListChildPages = new WP_Query( $atts );
+		
+		// The Loop
+		if ( $queryListChildPages->have_posts() ) {
+			
+			?>
+	    <?php
+	    while ( $queryListChildPages->have_posts() ) :
+	        $queryListChildPages->the_post(); 
+	
+	        // Appel embed template
+	        get_template_part( 'template-parts/content', 'listchild' );
+	
+	    endwhile;
+	        
+	  }	
+	  // Restore original Post Data
+    wp_reset_postdata();
+}
+
+/*********************
+* Shortcode permettant de lister les éléments enfants 
+* Default : list des pages du post courant
+* Attributs possibles ou d'un post->ID donnée
+*/
+// Add Shortcode
+function wpaeris_shortcode_listchild_pages( $atts ) {
+// begin output buffering
+ob_start();
+
+global $post;
+	// Attributes
+  if (empty($atts)) {
+    $atts = shortcode_atts(
+      array(
+        'post_parent'    => $post->ID,
+        'post_type'      => 'page',
+        'posts_per_page' => '-1',
+        'order'          => 'ASC',
+        'orderby'        => 'menu_order'
+      ),
+      $atts
+    );
+  }
+
+	// The Query
+		$queryListChildPages = new WP_Query( $atts );
+		
+		// The Loop
+		if ( $queryListChildPages->have_posts() ) {
+			
+			?>
+	    <?php
+	    while ( $queryListChildPages->have_posts() ) :
+	        $queryListChildPages->the_post(); 
+	
+	        // Appel embed template
+	        get_template_part( 'template-parts/content', 'listchild' );
+	
+	    endwhile;
+	        
+	  }
+    
+    // end output buffering, grab the buffer contents, and empty the buffer
+    return ob_get_clean();
+	  // Restore original Post Data
+    wp_reset_postdata();
+}
+add_shortcode( 'aeris_childpage', 'wpaeris_shortcode_listchild_pages' );
+
+/***/
+
+
+/******************************************************************
  * Afficher les catégories
  * $categories = get_the_terms( $post->ID, 'category');  
  */
