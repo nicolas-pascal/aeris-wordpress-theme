@@ -8,16 +8,16 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" >
- 	<header class="entry-header">
-        <a href="<?php the_permalink(); ?>">
-	        <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-        </a>
+<article id="post-<?php the_ID(); ?>" class="item-child">
+ 	<header>
+        <h2>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                <span class="icon-link"></span> 
+                <?php the_title(); ?>
+            </a>
+        </h2>
 	</header> 
-    <!--<div class="wrapper-content">-->
 	<?php
 		the_excerpt();
 	?>
-
-	<!--</div>-->
-</article><!-- #post-## -->
+</article>

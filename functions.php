@@ -174,6 +174,12 @@ require get_template_directory() . '/inc/custom-rights.php';
 require get_template_directory() . '/inc/custom-theme-supports.php';
 
 /**
+ * SHORTCODES
+ * Posts Formats
+ */
+require get_template_directory() . '/inc/custom-shortcodes.php';
+
+/**
  * Enqueue Javascript custom files
  */
 //require get_template_directory() . '/inc/custom-register-scripts.php';

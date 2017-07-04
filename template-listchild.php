@@ -20,7 +20,7 @@ while ( have_posts() ) : the_post();
                     'order'          => 'ASC',
                     'orderby'        => 'menu_order'
                 );
-				wpaeris_listchild_pages($args);
+				theme_aeris_listchild_pages($args);
 			?>
             </section>
 		

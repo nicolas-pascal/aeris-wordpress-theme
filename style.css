@@ -1597,12 +1597,32 @@ section.widget_rss li:first-child {
 ## Template Liste d'éléments enfants
 -------------------*/
 
-[role="listChild"] > article {
-	padding:30px 60px 0;
+[role="listChild"] > article.item-child  {
+	padding:30px 60px 30px;
 }
 
-[role="listChild"] > article header a{
+article.item-child {
+	border-bottom: 1px solid #CCC;
+}
+
+/* appel en shortcode */
+:not([role="listChild"]) > article.item-child {
+	padding:0;
+	margin-bottom: 20px;
+	border: 1px solid #CCC;
+}
+
+[role="listChild"] > article.item-child:last-child  {
+	border-bottom:none;
+}
+
+article.item-child  header a {
 	text-decoration: none;
+	display: block;
+}
+
+article.item-child header + p {
+	padding:10px;
 }
 
 /*------------------------------------------------------------------
