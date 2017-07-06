@@ -1571,12 +1571,17 @@ section.widget_rss li:first-child {
             justify-content: space-between;
 }
 
+[id="content-area"].sidebar main,
+[id="content-area"].sidebar aside {
+	width: 100%;
+}
+
 @media (min-width: 768px) {
-	[id="content-area"].sidebar  main {
+	[id="content-area"].sidebar main {
 		margin-right: 4%;
-	    max-width: 62.6667%;
+	    width: 62.6667%;
 	}
-	[id="content-area"].sidebar  aside {
+	[id="content-area"].sidebar aside {
 	 	width: 33.3334%;
 		padding-top: 10px;
 		padding-left: 20px;
@@ -1800,7 +1805,7 @@ figcaption {
 ## CAMPAIGN PLUGIN
 ------------------*/
 
-[role="listCampaign"] {
+[role="listProgram"] {
     border: 1px solid #ccc;
 	overflow: hidden;
 	margin-bottom: 20px;
@@ -1809,7 +1814,7 @@ figcaption {
 	justify-content: space-between;
 }
 
-[role="listCampaign"] > header {
+[role="listProgram"] > header {
 	width: 100%;
 }
 
@@ -1821,7 +1826,7 @@ figcaption {
 ## CAMPAIGN PLUGIN
 ------------------*/
 
-[role="listCampaign"] {
+[role="listProgram"] {
     border: 1px solid #ccc;
 	overflow: hidden;
 	margin-bottom: 20px;
@@ -1830,27 +1835,27 @@ figcaption {
 	justify-content: space-between;
 }
 
-[role="listCampaign"] > header {
+[role="listProgram"] > header {
 	width: 100%;
 }
 
-[role="listCampaign"] > header > h2 {
+[role="listProgram"] > header > h2 {
     margin: 0;
     padding: 5px 10px;
 	color: #FFF;
 }
 
-[role="listCampaign"] > article {
+[role="listProgram"] > article {
 	/*flex: 0 0 250px;*/
 	width: 250px;
 	padding: 20px;
 	/*margin: 0 20px 20px 0;*/
 }
 
-[role="listCampaign"] > article header {
+[role="listProgram"] > article header {
 	/*margin-left: 20px;*/
 }
 
-[role="listCampaign"] > article ul {
+[role="listProgram"] > article ul {
 	margin:0;
 } 
