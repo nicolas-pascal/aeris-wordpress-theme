@@ -153,6 +153,11 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/custom-nav.php';
 
 /**
+ * Implement the Nav feature.
+ */
+require get_template_directory() . '/inc/custom-breadcrumb.php';
+
+/**
  * Ajout de widgets custom
  */
 require get_template_directory() . '/inc/custom-widget.php';
@@ -167,6 +172,12 @@ require get_template_directory() . '/inc/custom-rights.php';
  * Posts Formats
  */
 require get_template_directory() . '/inc/custom-theme-supports.php';
+
+/**
+ * SHORTCODES
+ * Posts Formats
+ */
+require get_template_directory() . '/inc/custom-shortcodes.php';
 
 /**
  * Enqueue Javascript custom files

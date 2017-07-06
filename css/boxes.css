@@ -54,6 +54,12 @@ aside > section {
     padding: 0 0 20px;
 }
 
+aside > section > *:not(h2),
+.widget > ul {
+    padding-left:20px;
+    padding-right: 20px;
+}
+
 section.widget_calendar {
 	padding-bottom: 0;
 }
