@@ -14,7 +14,7 @@ function theme_aeris_register_menu_location() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
-      'extra-menu' => __( 'Extra Menu' )
+      // 'extra-menu' => __( 'Extra Menu' )
     )
   );
 }
