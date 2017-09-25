@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
-Version: 1.7.2
+Version: 1.7.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -475,7 +475,6 @@ input[type="submit"] {
 	background: #e6e6e6;
 	color: rgba(0, 0, 0, .8);
 	font-size: 12px;
-	font-size: 1.3rem;
 	line-height: 1;
 	padding: .6em 1em .6em;
 }
@@ -1403,17 +1402,19 @@ article > footer [class^="icon"],
 }
 
 .site-branding h1 {
+	border-bottom:none;
+}
+
+.site-branding h1 a {
+	display: inline-block;
 	margin-bottom:10px;
-	padding: 0 5px;
+	padding: 0 20px;
 	background-color: rgba(0, 0, 0, 0.4);
 	border:none;
 	font-size: 40px;
 	line-height: 50px;	
 	text-transform: uppercase;
 	color: #FFF;
-}
-.site-branding h1 a {
-	color: #fff;
 }
 
 .site-branding p {
@@ -1599,6 +1600,12 @@ section.widget_rss li:first-child {
 	margin:1em auto;
 }
 
+/*------------------
+## Template blank
+-------------------*/
+[id="content-area"].blank {
+	padding: 0
+}
 /*------------------
 ## Template Liste d'éléments enfants
 -------------------*/

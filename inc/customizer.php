@@ -207,7 +207,7 @@ function theme_aeris_color_style() {
 				color: #009FDE;
 			}
 
-			.site-branding h1 {
+			.site-branding h1 a {
 				background-color: rgba(<?php echo $rgb_color[0].",".$rgb_color[1].",".$rgb_color[2].",.5)"; ?>;
 			}
          </style>

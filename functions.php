@@ -171,11 +171,11 @@ require get_template_directory() . '/inc/custom-rights.php';
  * Theme supports
  * Posts Formats
  */
-require get_template_directory() . '/inc/custom-theme-supports.php';
+//require get_template_directory() . '/inc/custom-theme-supports.php';
 
 /**
  * SHORTCODES
- * Posts Formats
+ * 
  */
 require get_template_directory() . '/inc/custom-shortcodes.php';
 

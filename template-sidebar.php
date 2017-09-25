@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Contenu + sidebar
+Template Name: Contenu + sidebar (obsolete)
 */
 get_header(); 
 
