@@ -20,7 +20,4 @@ add_theme_support('post-formats', array(
 
 add_action('after_setup_theme','theme_aeris_support');
 
-// Ajoute la possibilité d'utiliser les shortcodes dans les widgets "text"
-add_filter('widget_text', 'do_shortcode');
-
 ?>

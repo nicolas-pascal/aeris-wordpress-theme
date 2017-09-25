@@ -475,7 +475,6 @@ input[type="submit"] {
 	background: #e6e6e6;
 	color: rgba(0, 0, 0, .8);
 	font-size: 12px;
-	font-size: 1.3rem;
 	line-height: 1;
 	padding: .6em 1em .6em;
 }
@@ -1601,6 +1600,12 @@ section.widget_rss li:first-child {
 	margin:1em auto;
 }
 
+/*------------------
+## Template blank
+-------------------*/
+[id="content-area"].blank {
+	padding: 0
+}
 /*------------------
 ## Template Liste d'éléments enfants
 -------------------*/
