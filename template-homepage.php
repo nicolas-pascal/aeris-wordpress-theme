@@ -49,7 +49,10 @@ while ( have_posts() ) : the_post();
             <?php
             }
             ?>
-            
+            <?php 
+            if ( ( is_active_sidebar( 'homepage-mdleft-widget-area' ) )||( is_active_sidebar( 'homepage-mdright-widget-area' ) ) ) 
+            {
+            ?>
             <div role="homepage-md">
                 <?php 
                 if ( is_active_sidebar( 'homepage-mdleft-widget-area' ) ) {
@@ -75,6 +78,9 @@ while ( have_posts() ) : the_post();
                 }
                 ?>            
             </div>
+            <?php
+            }
+            ?>
             <?php 
             if ( is_active_sidebar( 'homepage-footer-widget-area' ) ) {
                 ?>

@@ -1,4 +1,14 @@
 <?php
+/*********************
+* Shortcodes
+* source : https://www.smashingmagazine.com/2012/05/wordpress-shortcodes-complete-guide/
+****************/
+
+/******
+* activation de la possibilité d'utiliser les shortcodes dans les widgets de texte
+*/
+
+add_filter('widget_text', 'do_shortcode');
 
 /*********************
 * Shortcode permettant de lister les éléments enfants 
