@@ -26,6 +26,21 @@ function theme_aeris_customize_preview_js() {
 add_action( 'customize_preview_init', 'theme_aeris_customize_preview_js' );
 
 
+/*****
+* 
+* Remove des sections inutiles
+* 
+*/
+
+function theme_aeris_customizer_remove_section( $wp_customize )
+{
+// remove section colors
+$wp_customize->remove_section('colors');
+// remove section background image
+$wp_customize->remove_section('background_image');
+}
+add_action( 'customize_register', 'theme_aeris_customizer_remove_section' );
+
 /*************************************************************************************************************
 *  Ajout du support de l'image d'entête personnalisée dans le customizer
 *
@@ -48,10 +63,7 @@ function theme_aeris_customize_color( $wp_customize )
 {
    //All our sections, settings, and controls will be added here
 
-// remove section colors
-	$wp_customize->remove_section('colors');
-
-//1. Define a new section (if desired) to the Theme Customizer
+   //1. Define a new section (if desired) to the Theme Customizer
  	$wp_customize->add_section('theme_aeris_color_scheme', array(
         'title'    => __('Options du thème', 'theme-aeris'),
         'description' => '',
@@ -150,6 +162,7 @@ function theme_aeris_customize_color( $wp_customize )
 
 }
 add_action( 'customize_register', 'theme_aeris_customize_color' );
+
 
 /*****
 * 
