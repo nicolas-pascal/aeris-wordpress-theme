@@ -1,5 +1,4 @@
 <?php
-
 /*****
 *  Function d'affichage du breadcrumb
 *  source : https://www.thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
@@ -24,23 +23,26 @@ function the_breadcrumb() {
        
         // Build the breadcrums
         echo '<nav aria-label="Fil d\'Ariane / breadcrumbs" role="breadcrumbs">';
-           
+       
         // Home page
         echo '<a href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a>';
         echo '<span class="delimiter"> ' . $separator . ' </span>';
            
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
-              
+        	if( !isset($prefix)){
+        		$prefix = '';
+        		//$prefix = $post->post_status == 'draft'? 'events':'';
+        	}
             echo '<span class="current">' . post_type_archive_title($prefix, false) . '</span>';
               
         } else if ( is_archive() && is_tax() && !is_category() && !is_tag() ) {
-              
+             
             // If post is a custom post type
             $post_type = get_post_type();
-              
+          
             // If it is a custom post type display name and link
             if($post_type != 'post') {
-                  
+                
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
               
@@ -53,7 +55,7 @@ function the_breadcrumb() {
             echo '<span class="current">' . $custom_tax_name . '</span>';
               
         } else if ( is_single() ) {
-              
+        
             // If post is a custom post type
             $post_type = get_post_type();
               
@@ -120,12 +122,12 @@ function the_breadcrumb() {
             }
               
         } else if ( is_category() ) {
-               
+             
             // Category page
             echo '<span class="current item-cat">' . single_cat_title('', false) . '</span>';
                
         } else if ( is_page() ) {
-               
+    		
             // Standard page
             if( $post->post_parent ){
                    
