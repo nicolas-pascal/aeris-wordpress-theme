@@ -38,7 +38,13 @@
 				</nav>
 				
 				<nav id="top-header-menu" role="navigation" aria-label="Menu secondaire / Second menu">
-					<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_id' => 'header-menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_id' => 'header-menu' ) ); 
+					//@author epointal add switch language
+					if( function_exists('mlp_show_linked_elements'))
+					{
+						mlp_show_linked_elements();
+					}
+					?>
 				</nav>
 			</div>
 			

@@ -1073,7 +1073,7 @@ nav.post-navigation a {
 ## Taxonomies
 --------------------------------------------------------------*/
 
-.tag a {
+body .tag a {
 	display: block;
 	margin-right: 5px;
 	margin-bottom: 5px;
@@ -1086,11 +1086,11 @@ nav.post-navigation a {
 	text-decoration: none;
 }
 
-.tag a:visited {
+body .tag a:visited {
 	color:#FFF;
 }
 
-.tag a:hover,
+body .tag a:hover,
 .post-edit-link:hover {
 	background: #585F69;
 	color:white;
@@ -1867,3 +1867,15 @@ figcaption {
 [role="listProgram"] > article ul {
 	margin:0;
 } 
+
+/**-------------------------------------------
+## epointal MULTILINGUAL PRESS SWITCHER
+-----------------------*/
+#top-header-menu > div{
+	display: inline-block;
+	margin-left:0;
+	float:right;
+}
+#top-header-menu > div > ul{
+	margin-left:0;
+}
