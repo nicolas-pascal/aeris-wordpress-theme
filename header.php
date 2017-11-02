@@ -40,9 +40,20 @@
 				<nav id="top-header-menu" role="navigation" aria-label="Menu secondaire / Second menu">
 					<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_id' => 'header-menu' ) ); 
 					//@author epointal add switch language
+					//@see http://developer.infoymas.com/wordpress/multilingual-press-switcher-for-your-theme-header/
 					if( function_exists('mlp_show_linked_elements'))
 					{
-						mlp_show_linked_elements();
+						// display "Alternative Language Title" link
+						mlp_show_linked_elements( );
+						
+						// You can custom the link
+						//mlp_show_linked_elements(
+						//		array(
+						//		'link_text' => 'none', // do not display text link
+						//		'display_flag' => true, // display a flag
+						//		'show_current_blog' => FALSE // do not display if no translation
+						//		)
+						//	);
 					}
 					?>
 				</nav>
