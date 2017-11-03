@@ -65,7 +65,7 @@ function theme_aeris_customize_color( $wp_customize )
 
    //1. Define a new section (if desired) to the Theme Customizer
  	$wp_customize->add_section('theme_aeris_color_scheme', array(
-        'title'    => __('Options du thème', 'theme-aeris'),
+        'title'    => __('Theme options', 'theme-aeris'),
         'description' => '',
         'priority' => 30,
     ));
@@ -134,7 +134,7 @@ function theme_aeris_customize_color( $wp_customize )
     ));
 
     $wp_customize->add_control('theme_aeris_box', array(
-        'label'      => __('Mode d\'affichage', 'theme_aeris'),
+        'label'      => __('Display mode', 'theme_aeris'),
         'section'    => 'theme_aeris_color_scheme',
         'settings'   => 'theme_aeris_box',
         'type'       => 'radio',

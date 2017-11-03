@@ -1,0 +1,219 @@
+# Copyright (C) 2016 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2017-11-03 10:24+0100\n"
+"PO-Revision-Date: 2017-11-03 10:24+0100\n"
+"Last-Translator: epointal <elisabeth.pointal@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e;gettext;esc_html;esc_html_e;esc_html__\n"
+"X-Poedit-Basepath: /var/www/multisite.test/wp-content/themes/aeris-wordpress-"
+"theme\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: /var/www/multisite.test/wp-content/themes/aeris-"
+"wordpress-theme\n"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/header.php:14
+msgid "Skip to content"
+msgstr "Aller au contenu"
+
+# @ _s
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/header.php:36
+#, fuzzy
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+# @ _s
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/functions.php:47
+#, fuzzy
+msgid "Primary"
+msgstr "Menu principal"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/functions.php:93
+msgid "Sidebar"
+msgstr "Barre lat&eacute;rale"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/functions.php:95
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:43
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:55
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:67
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:79
+msgid "Add widgets here."
+msgstr "Ajouter des widgets ici."
+
+# @ _s
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/template-blank.php:21
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/template-parts/content-page.php:30
+msgid "Pages:"
+msgstr "Pages:"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oups! Cette page n&rsquo;a pas pu &ecirc;tre trouv&eacute;e."
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Il semble que rien ne se trouve &agrave; cette endroit. Essayez peut-&ecirc;"
+"tre un des liens ci-dessous ou une recherche?"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/404.php:33
+msgid "Most Used Categories"
+msgstr "Cat&eacute;gories les plus utilis&eacute;es"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/404.php:51
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Essayez une recherche dans les archives mensuelles.  %1$s"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/comments.php:40
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/comments.php:61
+msgid "Comment navigation"
+msgstr "Navigation des commentaires"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/comments.php:43
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/comments.php:64
+msgid "Older Comments"
+msgstr "Anciens commentaires"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/comments.php:44
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/comments.php:65
+msgid "Newer Comments"
+msgstr "Nouveaux commentaires"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/comments.php:78
+msgid "Comments are closed."
+msgstr "Les commentaires sont clos."
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr "R&eacute;sultats de la recherche pour:  %s"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Aucun r&eacute;sultat"
+
+# @ _s
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Pr&euml;t &agrave; publier votre premier article ? <a href=\"%1$s"
+"\">Commencez ici</a>."
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"D&eacute;sol&eacute;, mais rien ne correspond aux termes recherch&eacute;s. "
+"R&eacute;&eacute;ssayez avec des mots cl&eacute;diff&eacute;rents."
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Il semble que nous ne pouvons trouver ce que vous demandez. Peut-&ecirc,tre "
+"une recherche vous aidera."
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/extras.php:55
+msgid "Continue Reading"
+msgstr "Continuer  &agrave; lire"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/extras.php:97
+msgid "Previous page"
+msgstr "Page pr&eacute;c&eacute;dente"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/extras.php:98
+msgid "Next page"
+msgstr "Page suivante"
+
+# @ _s
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-breadcrumb.php:221
+msgid "Page"
+msgstr "Page"
+
+# @ _s
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-nav.php:16
+msgid "Header Menu"
+msgstr "Menu haut de page"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/customizer.php:68
+msgid "Theme options"
+msgstr "Options du th&egrave;me"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/customizer.php:121
+msgid "...ou un code couleur personnalisé"
+msgstr "...ou un code couleur personnalisé"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/customizer.php:137
+msgid "Display mode"
+msgstr "Mode d &rsquo;affichage"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/customizer.php:158
+msgid "© Copyright"
+msgstr "© Copyright"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:15
+msgid "Footer"
+msgstr "Pied de page"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:16
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:28
+msgid "Add image widgets here."
+msgstr "Ajouter des images widgets ici."
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:27
+msgid "List of logos"
+msgstr "Foire aux logos"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:42
+msgid "homepage top"
+msgstr "Haut de la page d&rsquo;accueil"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:54
+msgid "homepage center left"
+msgstr "Milieu gauche de la page d&rsquo;accueil."
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:66
+msgid "homepage middle right"
+msgstr "Milieu droit de la page d&rsquo;accueil"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-widget.php:78
+msgid "homepage pre footer"
+msgstr "Page d&rsquo;accueil avant le pied de page."
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/template-tags.php:52
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Publi&eacute; dans %1$s"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/template-tags.php:58
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Etiquet&eacute; %1$s"
+
+# @ _s
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/template-tags.php:65
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+"Laisser un commentaire<span class=\"screen-reader-text\"> sur %s</span>"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/template-tags.php:72
+#, php-format
+msgid "Edit %s"
+msgstr "Modifie %s"
