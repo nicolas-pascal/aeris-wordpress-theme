@@ -836,15 +836,60 @@ nav[id="top-header-menu"] ul li a{
 }
 
 @media screen and (max-width: 37.5em) {
+	#masterhead div.wrapper{
+		text-align:center;
+	}
+	#masterhead div.wrapper >div{
+		width:100%;
+	}
+	#masterhead > div > a{
+		margin:auto;
+	}
 	#top-header-menu{
-		   text-align:center;
+		display:block;
+		margin:auto;
 	}
 	#top-header-menu > div{
+	   margin:auto;
 	   float:none;
 
 	}
 	nav[id="top-header-menu"] ul {
 		padding:0;
+		float:none;
+		text-align:center;
+	}
+	header div.wrapper li{
+		float:none;
+	}
+	#primary-menu  ul.sub-menu{
+	   width:95%;
+	   min-width:250px;
+	    float: none;
+	   position:relative;
+	   margin:auto;
+	   top:0;
+	   left:0;
+	   height:0;
+	   max-height:0;
+	   opacity:0;
+	   
+	}
+	
+	#primary-menu  li  ul.sub-menu{
+		display:block;
+		height:auto;
+		max-height:600px;
+		opacity:1;
+		transition: all .8s ease-out;		
+	}
+	#primary-menu  li  ul.sub-menu li{
+	   display:block;
+	}
+	#primary-menu ul.sub-menu li{
+	   float:none;
+	   width:100%;
+	   margin-left:0;
 	}
 }
 /*-----------------------------------
