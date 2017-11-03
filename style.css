@@ -759,6 +759,7 @@ a:active {
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	margin:auto;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -768,6 +769,7 @@ a:active {
 	.main-navigation ul {
 		display: block;
 	}
+	
 }
 
 .site-main .comment-navigation,
@@ -821,7 +823,30 @@ nav[id="top-header-menu"] ul li a{
     text-transform: uppercase;
 	
 }
+/**-------------------------------------------
+## epointal MULTILINGUAL PRESS SWITCHER
+-----------------------*/
+#top-header-menu > div{
+	display: inline-block;
+	margin-left:0;
+	float:right;
+}
+#top-header-menu > div > ul{
+	margin-left:0;
+}
 
+@media screen and (max-width: 37.5em) {
+	#top-header-menu{
+		   text-align:center;
+	}
+	#top-header-menu > div{
+	   float:none;
+
+	}
+	nav[id="top-header-menu"] ul {
+		padding:0;
+	}
+}
 /*-----------------------------------
 ## Post navigation
 ------------------------------------*/
@@ -1868,14 +1893,4 @@ figcaption {
 	margin:0;
 } 
 
-/**-------------------------------------------
-## epointal MULTILINGUAL PRESS SWITCHER
------------------------*/
-#top-header-menu > div{
-	display: inline-block;
-	margin-left:0;
-	float:right;
-}
-#top-header-menu > div > ul{
-	margin-left:0;
-}
+

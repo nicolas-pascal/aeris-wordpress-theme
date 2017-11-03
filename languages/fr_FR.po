@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2017-11-03 10:27+0100\n"
-"PO-Revision-Date: 2017-11-03 10:27+0100\n"
+"POT-Creation-Date: 2017-11-03 10:36+0100\n"
+"PO-Revision-Date: 2017-11-03 10:37+0100\n"
 "Last-Translator: epointal <elisabeth.pointal@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fr_FR\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: __;_e;gettext;esc_html;esc_html_e;esc_html__\n"
+"X-Poedit-KeywordsList: __;_e;gettext;esc_html;esc_html_e;esc_html__;_nx\n"
 "X-Poedit-Basepath: /var/www/multisite.test/wp-content/themes/aeris-wordpress-"
 "theme\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -75,6 +75,11 @@ msgstr "Cat&eacute;gories les plus utilis&eacute;es"
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "Essayez une recherche dans les archives mensuelles.  %1$s"
+
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/comments.php:31
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr "Une pens&eacute;e sur  &ldquo;%2$s&rdquo;"
 
 #: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/comments.php:40
 #: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/comments.php:61
