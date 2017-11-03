@@ -17,7 +17,8 @@ function the_breadcrumb() {
        
     // Get the query & post information
     global $post,$wp_query;
-       
+  
+
     // Do not display on the homepage
     if ( !is_front_page() ) {
        
@@ -55,12 +56,26 @@ function the_breadcrumb() {
             echo '<span class="current">' . $custom_tax_name . '</span>';
               
         } else if ( is_single() ) {
+        	
         
             // If post is a custom post type
             $post_type = get_post_type();
-              
+            
+            //@author epointal case tribe_events
+            if( $post_type === 'page' && isset($wp_query->query['post_type']) &&  $wp_query->query['post_type']=== 'tribe_events'){
+            	if( class_exists('Tribe__Events__Main')){
+	            	
+            		echo '<a href="'.  Tribe__Events__Main::instance()->getLink() .'" title="'.__('Events', 'theme-aeris').'">'. __('Events', 'theme-aeris').'</a>';
+            		if(isset( $wp_query->query['tribe_events'])){
+            			echo '<span class="delimiter"> ' . $separator . '</span>';
+            			echo '<span class="current"> '. get_the_title( $wp_query->posts[0] ).'</span>';
+            		}
+	            	$post_type = 'tribe_events';
+            	}
+            }
+           
             // If it is a custom post type display name and link
-            if($post_type != 'post') {
+            if($post_type != 'post' && $post_type != 'tribe_events') {
                   
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
@@ -216,7 +231,7 @@ function the_breadcrumb() {
             echo '<span class="current">' . 'Author: ' . $userdata->display_name . '';
            
         } else if ( get_query_var('paged') ) {
-               
+
             // Paginated archives
             echo '<span class="current">'.__('Page') . ' ' . get_query_var('paged') . '';
                
