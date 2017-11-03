@@ -12,7 +12,7 @@ function wpaeris_custom_sidebars() {
     $args = array(
         'id'            => 'footer-widget-area',
         'class'         => 'footer-widget-area',
-        'name'          => __( 'Footer', 'text_domain' ),
+        'name'          => __( 'Footer', 'theme-aeris' ),
         'description'   => esc_html__( 'Add image widgets here.', 'theme-aeris' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
