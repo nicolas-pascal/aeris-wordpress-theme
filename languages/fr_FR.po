@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2017-11-03 10:36+0100\n"
-"PO-Revision-Date: 2017-11-03 11:11+0100\n"
+"POT-Creation-Date: 2017-11-03 14:38+0100\n"
+"PO-Revision-Date: 2017-11-03 14:45+0100\n"
 "Last-Translator: epointal <elisabeth.pointal@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fr_FR\n"
@@ -24,12 +24,6 @@ msgstr ""
 #: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/header.php:14
 msgid "Skip to content"
 msgstr "Aller au contenu"
-
-# @ _s
-#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/header.php:36
-#, fuzzy
-msgid "Primary Menu"
-msgstr "Menu principal"
 
 # @ _s
 #: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/functions.php:47
@@ -146,8 +140,13 @@ msgstr "Page pr&eacute;c&eacute;dente"
 msgid "Next page"
 msgstr "Page suivante"
 
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-breadcrumb.php:36
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-breadcrumb.php:69
+msgid "Events"
+msgstr "Ev&eacute;nements"
+
 # @ _s
-#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-breadcrumb.php:221
+#: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/inc/custom-breadcrumb.php:237
 msgid "Page"
 msgstr "Page"
 
@@ -222,3 +221,8 @@ msgstr ""
 #, php-format
 msgid "Edit %s"
 msgstr "Modifie %s"
+
+# @ _s
+#, fuzzy
+#~ msgid "Primary Menu"
+#~ msgstr "Menu principal"

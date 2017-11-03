@@ -30,19 +30,26 @@ function the_breadcrumb() {
         echo '<span class="delimiter"> ' . $separator . ' </span>';
            
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
-        	if( !isset($prefix)){
+        	
+        	//@author epointal add case events
+        	if( !isset($prefix) ){
         		$prefix = '';
-        		//$prefix = $post->post_status == 'draft'? 'events':'';
-        	}
+        	
+        		if( isset($wp_query->query['post_type']) && $wp_query->query['post_type']== 'tribe_events'
+        				&& post_type_archive_title('',false)== ''){
+        
+        			$prefix = __('Events','the-events-calendar');
+        		}
+        	} // end add case events
             echo '<span class="current">' . post_type_archive_title($prefix, false) . '</span>';
               
         } else if ( is_archive() && is_tax() && !is_category() && !is_tag() ) {
-             
+        
             // If post is a custom post type
             $post_type = get_post_type();
           
             // If it is a custom post type display name and link
-            if($post_type != 'post') {
+            if($post_type != 'post' ) {
                 
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
@@ -65,7 +72,7 @@ function the_breadcrumb() {
             if( $post_type === 'page' && isset($wp_query->query['post_type']) &&  $wp_query->query['post_type']=== 'tribe_events'){
             	if( class_exists('Tribe__Events__Main')){
 	            	
-            		echo '<a href="'.  Tribe__Events__Main::instance()->getLink() .'" title="'.__('Events', 'theme-aeris').'">'. __('Events', 'theme-aeris').'</a>';
+            		echo '<a href="'.  Tribe__Events__Main::instance()->getLink() .'" title="'.__('Events', 'the-events-calendar').'">'. __('Events', 'the-events-calendar').'</a>';
             		if(isset( $wp_query->query['tribe_events'])){
             			echo '<span class="delimiter"> ' . $separator . '</span>';
             			echo '<span class="current"> '. get_the_title( $wp_query->posts[0] ).'</span>';
