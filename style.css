@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
-Version: 1.7.5
+Version: 1.7.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -115,7 +115,7 @@ dfn {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 1.5rem;
 	margin: 0.67em 0;
 }
 
@@ -662,8 +662,8 @@ a:active {
 
 .main-navigation a {
 	display: block;
-	padding: 9px 30px 9px 20px;
-	font-size: 15px;
+	padding: 9px 20px 9px 10px;
+	font-size: 14px;
 	color: #687074;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -681,7 +681,7 @@ a:active {
     font-size: 11px;
     font-weight: normal;
     position: absolute;
-    right: 15px;
+    right: 6px;
     top: 11px;
 }
 
@@ -759,6 +759,7 @@ a:active {
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	margin:auto;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -768,6 +769,7 @@ a:active {
 	.main-navigation ul {
 		display: block;
 	}
+	
 }
 
 .site-main .comment-navigation,
@@ -821,7 +823,47 @@ nav[id="top-header-menu"] ul li a{
     text-transform: uppercase;
 	
 }
+/**-------------------------------------------
+## epointal MULTILINGUAL PRESS SWITCHER
+-----------------------*/
+#top-header-menu > div{
+	display: inline-block;
+	margin-left:0;
+	float:right;
+}
+#top-header-menu > div > ul{
+	margin-left:0;
+}
 
+@media screen and (max-width: 37.5em) {
+	#masterhead div.wrapper{
+		text-align:center;
+	}
+	#masterhead div.wrapper >div{
+		width:100%;
+	}
+	#masterhead > div > a{
+		margin:auto;
+	}
+	#top-header-menu{
+		display:block;
+		margin:auto;
+	}
+	#top-header-menu > div{
+	   margin:auto;
+	   float:none;
+
+	}
+	nav[id="top-header-menu"] ul {
+		padding:0;
+		float:none;
+		text-align:center;
+	}
+	header div.wrapper li{
+		float:none;
+	}
+	
+}
 /*-----------------------------------
 ## Post navigation
 ------------------------------------*/
@@ -1073,7 +1115,7 @@ nav.post-navigation a {
 ## Taxonomies
 --------------------------------------------------------------*/
 
-.tag a {
+body .tag a {
 	display: block;
 	margin-right: 5px;
 	margin-bottom: 5px;
@@ -1086,11 +1128,11 @@ nav.post-navigation a {
 	text-decoration: none;
 }
 
-.tag a:visited {
+body .tag a:visited {
 	color:#FFF;
 }
 
-.tag a:hover,
+body .tag a:hover,
 .post-edit-link:hover {
 	background: #585F69;
 	color:white;
@@ -1232,7 +1274,7 @@ main[role="main"] {
 ## header
 --------------------------------------------------------------*/
 [id="masterhead"] {
-	padding-top:30px;
+	padding-top:10px;
 	border-bottom: 2px solid #eee;
 }
 
@@ -1600,6 +1642,20 @@ section.widget_rss li:first-child {
 	margin:1em auto;
 }
 
+.page-template-template-fullwidth [id="breadcrumbs"] > .wrapper {
+	max-width: 100%;
+	padding:0 20px;
+}
+.page-template-template-fullwidth [id="breadcrumbs"] > .wrapper h1 {
+	font-size:1.3rem;
+}
+
+.page-template-template-fullwidth article .wrapper-content,
+.page-template-template-fullwidth [id="content-area"] {
+	padding:0;
+}
+
+
 /*------------------
 ## Template blank
 -------------------*/
@@ -1867,3 +1923,5 @@ figcaption {
 [role="listProgram"] > article ul {
 	margin:0;
 } 
+
+

@@ -1,5 +1,4 @@
 <?php
-
 /*****
 *  Function d'affichage du breadcrumb
 *  source : https://www.thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
@@ -18,29 +17,40 @@ function the_breadcrumb() {
        
     // Get the query & post information
     global $post,$wp_query;
-       
+  
+
     // Do not display on the homepage
     if ( !is_front_page() ) {
        
         // Build the breadcrums
         echo '<nav aria-label="Fil d\'Ariane / breadcrumbs" role="breadcrumbs">';
-           
+       
         // Home page
         echo '<a href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a>';
         echo '<span class="delimiter"> ' . $separator . ' </span>';
            
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
-              
+        	
+        	//@author epointal add case events
+        	if( !isset($prefix) ){
+        		$prefix = '';
+        	
+        		if( isset($wp_query->query['post_type']) && $wp_query->query['post_type']== 'tribe_events'
+        				&& post_type_archive_title('',false)== ''){
+        
+        			$prefix = __('Events','the-events-calendar');
+        		}
+        	} // end add case events
             echo '<span class="current">' . post_type_archive_title($prefix, false) . '</span>';
               
         } else if ( is_archive() && is_tax() && !is_category() && !is_tag() ) {
-              
+        
             // If post is a custom post type
             $post_type = get_post_type();
-              
+          
             // If it is a custom post type display name and link
-            if($post_type != 'post') {
-                  
+            if($post_type != 'post' ) {
+                
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
               
@@ -53,12 +63,26 @@ function the_breadcrumb() {
             echo '<span class="current">' . $custom_tax_name . '</span>';
               
         } else if ( is_single() ) {
-              
+        	
+        
             // If post is a custom post type
             $post_type = get_post_type();
-              
+            
+            //@author epointal case tribe_events
+            if( $post_type === 'page' && isset($wp_query->query['post_type']) &&  $wp_query->query['post_type']=== 'tribe_events'){
+            	if( class_exists('Tribe__Events__Main')){
+	            	
+            		echo '<a href="'.  Tribe__Events__Main::instance()->getLink() .'" title="'.__('Events', 'the-events-calendar').'">'. __('Events', 'the-events-calendar').'</a>';
+            		if(isset( $wp_query->query['tribe_events'])){
+            			echo '<span class="delimiter"> ' . $separator . '</span>';
+            			echo '<span class="current"> '. get_the_title( $wp_query->posts[0] ).'</span>';
+            		}
+	            	$post_type = 'tribe_events';
+            	}
+            }
+           
             // If it is a custom post type display name and link
-            if($post_type != 'post') {
+            if($post_type != 'post' && $post_type != 'tribe_events') {
                   
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
@@ -74,7 +98,7 @@ function the_breadcrumb() {
             if(!empty($category)) {
               
                 // Get last category post is in
-                $last_category = end(array_values($category));
+                $last_category = end($category);
                   
                 // Get parent any categories and create array
                 $get_cat_parents = rtrim(get_category_parents($last_category->term_id, true, ','),',');
@@ -120,12 +144,12 @@ function the_breadcrumb() {
             }
               
         } else if ( is_category() ) {
-               
+             
             // Category page
             echo '<span class="current item-cat">' . single_cat_title('', false) . '</span>';
                
         } else if ( is_page() ) {
-               
+    		
             // Standard page
             if( $post->post_parent ){
                    
@@ -214,7 +238,7 @@ function the_breadcrumb() {
             echo '<span class="current">' . 'Author: ' . $userdata->display_name . '';
            
         } else if ( get_query_var('paged') ) {
-               
+
             // Paginated archives
             echo '<span class="current">'.__('Page') . ' ' . get_query_var('paged') . '';
                

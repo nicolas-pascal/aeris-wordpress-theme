@@ -94,8 +94,8 @@ function list_pages($arg, $infiniteScroll){
     ?>
     <?php
       the_posts_navigation(array(
-                'prev_text' => __( 'Page précédente', 'textdomain' ),
-                'next_text' => __( 'Page suivante', 'textdomain' ),
+                'prev_text' => __( 'Previous page', 'theme-aeris' ),
+                'next_text' => __( 'Next page', 'theme-aeris' ),
                 'screen_reader_text' => 'Plus de fiches'
             ));
         

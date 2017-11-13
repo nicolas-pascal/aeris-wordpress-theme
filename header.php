@@ -33,12 +33,30 @@
 			</a>
 			<div>
 				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Menu principal / Main menu">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'theme-aeris' ); ?></button>
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="fa fa-bars"></span></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav>
 				
 				<nav id="top-header-menu" role="navigation" aria-label="Menu secondaire / Second menu">
-					<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_id' => 'header-menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_id' => 'header-menu' ) ); 
+					//@author epointal add switch language
+					//@see http://developer.infoymas.com/wordpress/multilingual-press-switcher-for-your-theme-header/
+					if( function_exists('mlp_show_linked_elements'))
+					{
+						// display "Alternative Language Title" link 
+						// In sites array https://www7.obs-mip.fr/wp-admin/network/sites.php see column Relations
+						mlp_show_linked_elements( );
+						
+						// You can custom the link
+						//mlp_show_linked_elements(
+						//		array(
+						//		'link_text' => 'none', // do not display text link
+						//		'display_flag' => true, // display a flag
+						//		'show_current_blog' => FALSE // do not display if no translation
+						//		)
+						//	);
+					}
+					?>
 				</nav>
 			</div>
 			
