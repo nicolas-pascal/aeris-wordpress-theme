@@ -107,9 +107,9 @@ function theme_aeris_customize_color( $wp_customize )
         ),
     ));
 
-	//  =============================
-    //  = Text Input color code     =
-    //  =============================
+	//  ==================================
+    //  = Text Input Main color code     =
+    //  ==================================
     $wp_customize->add_setting('theme_aeris_color_code', array(
         'default'        => '#CCC',
         'capability'     => 'edit_theme_options',
@@ -117,12 +117,59 @@ function theme_aeris_customize_color( $wp_customize )
  
     ));
 
-	$wp_customize->add_control('theme_aeris_color_code', array(
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'theme_aeris_color_code', array(
         'label'      => __('...ou un code couleur personnalisé', 'theme_aeris'),
         'section'    => 'theme_aeris_color_scheme',
         'settings'   => 'theme_aeris_color_code',
+    )));
+
+    //  =======================================
+    //  = Text Input Secondary color code     =
+    //  =======================================
+    $wp_customize->add_setting('theme_aeris_second_color_code', array(
+        'default'        => '#AAA',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+ 
     ));
 
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'theme_aeris_second_color_code', array(
+        'label'      => __('Couleur secondaire', 'theme_aeris'),
+        'section'    => 'theme_aeris_color_scheme',
+        'settings'   => 'theme_aeris_second_color_code',
+    )) );
+
+    //  =======================================
+    //  = Text Input text color code     =
+    //  =======================================
+    $wp_customize->add_setting('theme_aeris_text_color_code', array(
+        'default'        => '#FFF',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+ 
+    ));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'theme_aeris_text_color_code', array(
+        'label'      => __('Couleur des textes sur les blocks utilisant la couleur dominante', 'theme_aeris'),
+        'section'    => 'theme_aeris_color_scheme',
+        'settings'   => 'theme_aeris_text_color_code',
+    )) );
+
+    //  =======================================
+    //  = Text Input Link hover color code     =
+    //  =======================================
+    $wp_customize->add_setting('theme_aeris_link_hover_color_code', array(
+        'default'        => '#009FDE',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+ 
+    ));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'theme_aeris_link_hover_color_code', array(
+        'label'      => __('Couleur de survol des liens', 'theme_aeris'),
+        'section'    => 'theme_aeris_color_scheme',
+        'settings'   => 'theme_aeris_link_hover_color_code',
+    )) );
 
     //  =============================
     //  = Radio Input boxes or not  =
@@ -166,18 +213,37 @@ add_action( 'customize_register', 'theme_aeris_customize_color' );
 
 /*****
 * 
+* Main code couleur en fonction du choix utilisateur
+* 
+*/
+
+function theme_aeris_main_color(){
+
+    if (get_theme_mod('theme_aeris_main_color') == "custom" ) {
+		$code_color = get_theme_mod( 'theme_aeris_color_code' );
+	}
+	else {
+		$code_color	= get_theme_mod( 'theme_aeris_main_color' );
+    }
+    return $code_color;
+}
+
+/*****
+* 
 * chargement du code couleur selectionné ou saisi
 * 
 */
 
 function theme_aeris_color_style() {
 	
-	if (get_theme_mod('theme_aeris_main_color') == "custom" ) {
-		$code_color = get_theme_mod( 'theme_aeris_color_code' );
-	}
-	else {
-		$code_color	= get_theme_mod( 'theme_aeris_main_color' );
-	}
+	// if (get_theme_mod('theme_aeris_main_color') == "custom" ) {
+	// 	$code_color = get_theme_mod( 'theme_aeris_color_code' );
+	// }
+	// else {
+	// 	$code_color	= get_theme_mod( 'theme_aeris_main_color' );
+	// }
+
+    $code_color=theme_aeris_main_color();
 
 	$rgb_color = hex2rgb($code_color); // array 0 => r , 1 => g, 2 => b
 	
@@ -211,17 +277,19 @@ function theme_aeris_color_style() {
 			.bkg,
 			[role="listNews"] article.format-quote > header > blockquote,
             [role="listProgram"] > header > h2 {
-				background: <?php echo $code_color;?>;
+                background: <?php echo $code_color;?>;
+                color:<?php echo get_theme_mod( 'theme_aeris_text_color_code' );?>;
 			}
-
+            
 			a:hover,
 			a:focus,
 			a:active {
-				color: #009FDE;
+				color: <?php echo get_theme_mod( 'theme_aeris_link_hover_color_code' );?>;
 			}
 
 			.site-branding h1 a {
-				background-color: rgba(<?php echo $rgb_color[0].",".$rgb_color[1].",".$rgb_color[2].",.5)"; ?>;
+                background-color: rgba(<?php echo $rgb_color[0].",".$rgb_color[1].",".$rgb_color[2].",.5)"; ?>;
+                color:<?php echo get_theme_mod( 'theme_aeris_text_color_code' );?>;
 			}
          </style>
     <?php
