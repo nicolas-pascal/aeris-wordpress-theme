@@ -43,7 +43,7 @@
 					if( function_exists('mlp_show_linked_elements'))
 					{
 						// display "Alternative Language Title" link 
-						// In sites array https://www7.obs-mip.fr/wp-admin/network/sites.php see column Relations
+						// In sites array https://*********/wp-admin/network/sites.php see column Relations
 						mlp_show_linked_elements( );
 						
 						// You can custom the link
