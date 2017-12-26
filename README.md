@@ -4,6 +4,13 @@ Wordpress - Thème Aeris
 ===
 
 ## Release notes
+### 1.8.0
+
+- Correctif sur l'image des posts: ajout de l'image size "single-article"
+- Nouvelle page d'accueil par défaut home.php, intégrant les zones de widgets "homepage", en remplacement de homepage custom (template-homepage.php)
+- add template pour les posts embarqués
+- correctifs css sur les zones de widgets "homepage"
+
 
 ### 1.7.10
 

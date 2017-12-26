@@ -7,77 +7,63 @@ get_header();
 
 ?>
 
-	<div id="content-area" class="wrapper ">
+	<div id="content-area" class="wrapper">
 		<main id="main" class="site-main" role="main">
-
-			<!--<section role="listNews">
-                <h2>News</h2>-->
-               <?php
-                /*******  WP_QUERY
-                * Liste des derniers articles (actus)
-                */
-
-                // $argsListPost = array (
-                //     'post_type'             => array( 'post' ),
-                //     'post_status'           => array( 'publish' ),
-                //     'order'                 => 'DESC'
-                // );
-                
-                // list_pages($argsListPost, false);
-                
-                ?>
-            <!--</section>-->
-
-
-            <section role="listNews" class="posts">
-               <?php
-                /*******  WP_QUERY
-                * Liste des derniers articles (actus)
-                */
-
-                // $argsListPost = array (
-                //     'post_type'             => array( 'post' ),
-                //     'post_status'           => array( 'publish' ),
-                //     'order'                 => 'DESC'
-                // );
-				                
-                // list_pages($argsListPost, false);
-				global $post;
-				$argsListPost = array(
-					'posts_per_page'   => 10,
-					'offset'           => 0,
-					'category'         => '',
-					'category_name'    => '',
-					'orderby'          => 'date',
-					'order'            => 'DESC',
-					'include'          => '',
-					'exclude'          => '',
-					'meta_key'         => '',
-					'meta_value'       => '',
-					'post_type'        => 'post',
-					'post_mime_type'   => '',
-					'post_parent'      => '',
-					'author'		   => '',
-					'author_name'	   => '',
-					'post_status'      => 'publish',
-					'suppress_filters' => true 
-				);
-
-				$postsList = get_posts ($argsListPost);
-
-				foreach ($postsList as $post) :
-  				  setup_postdata( $post );
+			
+			<?php 
+			if ( is_active_sidebar( 'homepage-top-widget-area' ) ) {
+				?>
+			<section role="homepage-top-widget-area">    
+				<?php
+				dynamic_sidebar( 'homepage-top-widget-area' );
+				?>
+			</section>
+			<?php
+			}
+			?>
+			<?php 
+			if ( ( is_active_sidebar( 'homepage-mdleft-widget-area' ) )||( is_active_sidebar( 'homepage-mdright-widget-area' ) ) ) 
+			{
+			?>
+			<div role="homepage-md">
+				<?php 
+				if ( is_active_sidebar( 'homepage-mdleft-widget-area' ) ) {
 					?>
-					<div class="post-container">
+				<section role="homepage-mdleft-widget-area">    
 					<?php
-					get_template_part( 'template-parts/content', get_post_format() );
+					dynamic_sidebar( 'homepage-mdleft-widget-area' );
 					?>
-					</div>
+				</section>
+				<?php
+				}
+				?>
+
+				<?php 
+				if ( is_active_sidebar( 'homepage-mdright-widget-area' ) ) {
+					?>
+				<section role="homepage-mdright-widget-area">    
 					<?php
-				endforeach;
-                wp_reset_postdata();
-                ?>
-            </section>
+					dynamic_sidebar( 'homepage-mdright-widget-area' );
+					?>
+				</section>
+				<?php
+				}
+				?>            
+			</div>
+			<?php
+			}
+			?>
+			<?php 
+			if ( is_active_sidebar( 'homepage-footer-widget-area' ) ) {
+				?>
+			<section role="homepage-footer-widget-area">    
+				<?php
+				dynamic_sidebar( 'homepage-footer-widget-area' );
+				?>
+			</section>
+			<?php
+			}
+			?>
 		</main><!-- #main -->
 		<?php 
 		// get_sidebar();
