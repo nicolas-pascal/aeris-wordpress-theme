@@ -8,7 +8,7 @@ Wordpress - Thème Aeris
 
 - Correctif sur l'image des posts: ajout de l'image size "single-article"
 - Nouvelle page d'accueil par défaut home.php, intégrant les zones de widgets "homepage", en remplacement de homepage custom (template-homepage.php)
-- add template pour les posts embarqués
+- add template pour les posts embarqués (figure / titre / date / tags )
 - correctifs css sur les zones de widgets "homepage"
 
 
