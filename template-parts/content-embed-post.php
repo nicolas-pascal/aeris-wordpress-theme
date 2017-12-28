@@ -20,12 +20,13 @@ $title = mb_strimwidth($title, 0, 50, '...');
     <?php 
     }
     ?> 
+        <?php theme_aeris_meta(); ?> 
         <h3>
            <a href="<?php the_permalink(); ?>">
             <?php echo $title;?>
             </a>
         </h3>      
-        <?php theme_aeris_meta(); ?>          
+                 
     </header>
     <footer>
         <?php theme_aeris_show_categories($categories);?>

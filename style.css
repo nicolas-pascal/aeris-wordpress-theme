@@ -1079,9 +1079,9 @@ nav.post-navigation a {
 	display: block;
 }
 
-.hentry {
+/* .hentry {
 	margin: 0 0 1.5em;
-}
+} */
 
 .byline,
 .updated:not(.published) {
@@ -1360,28 +1360,6 @@ aside ol {
 	max-width: 100%;
 }
 
-.widget_recent_entries h2::before,
-.widget_archive h2::before, 
-.widget_calendar h2::before,
-.widget_categories h2::before {
-	margin-right: 10px;
-}
-
-
-.widget_recent_entries h2::before {
-	content:'\e808';
-}
-.widget_archive h2::before {
-	content:'\e806';
-}
-.widget_calendar h2::before {
-	content:'\e807';
-}
-
-.widget_categories h2::before {
-	content:'\f187';;
-}
-
 .widget > ul {
 	margin: 0;
     padding: 0;
@@ -1481,36 +1459,6 @@ article > footer [class^="icon"],
 }
 
 /*------------------
-## homepage - list post
--------------------*/
-
-/*[role="listNews"] {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-flow: row wrap;
-	    flex-flow: row wrap;
-	-ms-flex-pack: distribute;
-	    justify-content: space-around;
-	-webkit-box-align: stretch;
-	    -ms-flex-align: stretch;
-	        align-items: stretch;
-}
-
-[role="listNews"] h2 {
-	width: 100%;
-}
-
-[role="listNews"] article {
-	-webkit-box-flex:1;
-	    -ms-flex:1 0 250px;
-	        flex:1 0 250px;
-	margin: 0 20px 20px 0;
-	padding: 20px;
-	border:1px solid #CCC;
-}*/
-
-/*------------------
 ## Masonry
 -------------------*/
 
@@ -1531,21 +1479,6 @@ article > footer [class^="icon"],
 		width: 33.3%;
 	}
 }
-
-/*[role="homepage-mdright-widget-area"] .post-container {
-	width: 100%;
-}
-
-[role="homepage-mdright-widget-area"] .widget_newsrecent article header > :not(h3),
-[role="homepage-mdright-widget-area"] .widget_newsrecent article section,
-[role="homepage-mdright-widget-area"] .widget_newsrecent article footer > :not(.post-meta),
-[role="homepage-mdright-widget-area"] .widget_newsrecent article footer > .post-meta :not(.post-date) {
-	display: none;
-}
-
-[role="homepage-mdright-widget-area"] .widget_newsrecent article footer {
-	background: none;
-}*/
 
 /*-----------------------------------------------------------------
 ## homepage custom
@@ -1609,6 +1542,17 @@ section.widget_rss li:first-child {
 	margin-top: 0;
 }
 
+/*-------------------
+# Widgets SeeAllButton
+-----------------------*/
+.Aeris-seeAllButton {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #DDD;
+	border-radius: 5px;
+}
+
 /* Legende sur widget image standard de wordpress 
 */
 .widget.widget_media_image figure {
@@ -1628,7 +1572,7 @@ section.widget_rss li:first-child {
 * widget pour embed post 
 * lié au plugin https://github.com/aeris-data/aeris-wordpress-filtered-recent-news-plugin
 */
-article[role="short-embed-post"] {
+article[role="short-embed-post"]:not(:last-child) {
 	padding:10px 0; 
 	border-bottom:1px solid #EEE;
 	margin: 0;
@@ -1970,34 +1914,6 @@ figcaption {
 .copyright {
 	text-align: right;
 	font-size: 1em;
-}
-
-/*------------------------------------------------------------------
-## PLUGINS CSS
--------------------------------------------------------------------*/
-
-/*------------------
-## CAMPAIGN PLUGIN
-------------------*/
-
-[role="listProgram"] {
-    border: 1px solid #ccc;
-	overflow: hidden;
-	margin-bottom: 20px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	    -ms-flex-flow: row wrap;
-	        flex-flow: row wrap;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-}
-
-[role="listProgram"] > header {
-	width: 100%;
 }
 
 /*------------------------------------------------------------------

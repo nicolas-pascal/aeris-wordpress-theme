@@ -28,7 +28,9 @@ body {
 .default[id="content-area"] main,
 aside > section,
 .home main > article,
-[role="listNews"] article {
+[role="listNews"] article,
+[role="homepage-mdleft-widget-area"] > section,
+.widget[class*="feed"] ul {
 	background: #fff none repeat scroll 0 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
@@ -37,6 +39,9 @@ aside > section,
 .default[id="content-area"] main  {
     margin-bottom: 20px;
     margin-top: 20px;
+}
+
+.default[id="content-area"] main  {
     padding-bottom: 40px;
 }
 
@@ -64,8 +69,15 @@ section.widget_calendar {
 	padding-bottom: 0;
 }
 
-aside > section .calendar_wrap {
+aside > section .calendar_wrap,
+[role="listNews"] article > header > :not(figure),
+.post-excerpt,
+[role="homepage-mdleft-widget-area"] > section > h2{
 	padding:20px;
+}
+
+.widget[class*="feed"] ul {
+	padding:10px;
 }
 
 [role="listNews"] article {
@@ -73,9 +85,16 @@ aside > section .calendar_wrap {
 	padding: 0;
 }
 
-[role="listNews"] article > header > :not(figure),
-.post-excerpt {
-	padding: 20px;
+[role="listNews"] article[role="short-embed-post"]:not(:last-child) {
+    border:none;
+}
+
+[role="listNews"] article[role="short-embed-post"] header > figure ~ * {
+    padding: 0 0 0 10px;
+}
+[role="listNews"] article[role="short-embed-post"] {
+    margin-bottom:20px;
+    padding: 10px;
 }
 
 [role="listNews"] article > header > h3 {
