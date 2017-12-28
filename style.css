@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
-Version: 1.7.10
+Version: 1.8.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -157,7 +157,8 @@ figure {
 }
 
 hr {
-	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	        box-sizing: content-box;
 	height: 0;
 }
 
@@ -217,7 +218,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	padding: 0;
 }
 
@@ -335,7 +337,8 @@ blockquote {
     padding: 20px;
 	background: #fafafa;
 	border-left:2px solid;
-	box-shadow: 0 10px 6px -6px #bbb;
+	-webkit-box-shadow: 0 10px 6px -6px #bbb;
+	        box-shadow: 0 10px 6px -6px #bbb;
 }
 
 address {
@@ -383,13 +386,15 @@ big {
 # Elements
 --------------------------------------------------------------*/
 html {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+	-webkit-box-sizing: inherit;
+	        box-sizing: inherit;
 }
 
 body {
@@ -687,7 +692,8 @@ a:active {
 
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
 	top: 40px;
@@ -915,7 +921,8 @@ nav.post-navigation a {
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
     border-color: #eee transparent transparent;
-    border-image: none;
+    -o-border-image: none;
+       border-image: none;
     border-style: solid;
     border-width: 17px;
     bottom: 0;
@@ -932,7 +939,8 @@ nav.post-navigation a {
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
     border-color: #FAFAFA transparent transparent;
-    border-image: none;
+    -o-border-image: none;
+       border-image: none;
     border-style: solid;
     border-width: 16px;
     bottom: 0;
@@ -986,7 +994,8 @@ nav.post-navigation a {
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	color: #21759b;
 	display: block;
@@ -1070,9 +1079,9 @@ nav.post-navigation a {
 	display: block;
 }
 
-.hentry {
+/* .hentry {
 	margin: 0 0 1.5em;
-}
+} */
 
 .byline,
 .updated:not(.published) {
@@ -1286,7 +1295,9 @@ main[role="main"] {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-flow: row wrap;
-	    flex-flow: row wrap;
+	    -webkit-box-orient: horizontal;
+	    -webkit-box-direction: normal;
+	        flex-flow: row wrap;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
@@ -1303,7 +1314,9 @@ main[role="main"] {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-flow: column nowrap;
-	    flex-flow: column nowrap;
+	    -webkit-box-orient: vertical;
+	    -webkit-box-direction: normal;
+	        flex-flow: column nowrap;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
@@ -1345,28 +1358,6 @@ aside ol {
 /* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
-}
-
-.widget_recent_entries h2::before,
-.widget_archive h2::before, 
-.widget_calendar h2::before,
-.widget_categories h2::before {
-	margin-right: 10px;
-}
-
-
-.widget_recent_entries h2::before {
-	content:'\e808';
-}
-.widget_archive h2::before {
-	content:'\e806';
-}
-.widget_calendar h2::before {
-	content:'\e807';
-}
-
-.widget_categories h2::before {
-	content:'\f187';;
 }
 
 .widget > ul {
@@ -1468,63 +1459,26 @@ article > footer [class^="icon"],
 }
 
 /*------------------
-## homepage - list post
--------------------*/
-
-/*[role="listNews"] {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-flow: row wrap;
-	    flex-flow: row wrap;
-	-ms-flex-pack: distribute;
-	    justify-content: space-around;
-	-webkit-box-align: stretch;
-	    -ms-flex-align: stretch;
-	        align-items: stretch;
-}
-
-[role="listNews"] h2 {
-	width: 100%;
-}
-
-[role="listNews"] article {
-	-webkit-box-flex:1;
-	    -ms-flex:1 0 250px;
-	        flex:1 0 250px;
-	margin: 0 20px 20px 0;
-	padding: 20px;
-	border:1px solid #CCC;
-}*/
-
-/*------------------
 ## Masonry
 -------------------*/
 
 .posts {
 	overflow: visible;
 }
-
 .post-container {
-    padding: 0 2.5% 3.5%;
-    width: 33.3%;
+	padding: 0 2.5% 3.5%;
+	/* width: 33.3%; */
 }
-
-
-/*[role="homepage-mdright-widget-area"] .post-container {
-	width: 100%;
+@media (min-width:700px) {
+	.post-container {
+		width: 50%;
+	}
 }
-
-[role="homepage-mdright-widget-area"] .widget_newsrecent article header > :not(h3),
-[role="homepage-mdright-widget-area"] .widget_newsrecent article section,
-[role="homepage-mdright-widget-area"] .widget_newsrecent article footer > :not(.post-meta),
-[role="homepage-mdright-widget-area"] .widget_newsrecent article footer > .post-meta :not(.post-date) {
-	display: none;
+@media (min-width:1024px) {
+	.post-container {
+		width: 33.3%;
+	}
 }
-
-[role="homepage-mdright-widget-area"] .widget_newsrecent article footer {
-	background: none;
-}*/
 
 /*-----------------------------------------------------------------
 ## homepage custom
@@ -1533,26 +1487,45 @@ article > footer [class^="icon"],
 [role="homepage-top-widget-area"],
 [role="homepage-md"],
 [role="homepage-footer-widget-area"] {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow:row wrap;
-	justify-content: space-between;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;
+	    -ms-flex-flow:row wrap;
+	        flex-flow:row wrap;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 [role="homepage-top-widget-area"] > *,
 [role="homepage-footer-widget-area"] > *:not(.widget_rss) {
-	flex: 0 1 300px;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 1 300px;
+	        flex: 1 1 300px;
+	padding-right:20px;
+}
+[role="homepage-top-widget-area"] > :last-child {
+	padding-right: 0;
 }
 
 [role="homepage-md"] > section+section {
-	padding-left: 60px;
+	padding-left: 20px;
 }
 
 [role="homepage-md"] > [role="homepage-mdleft-widget-area"] {
-	flex: 1 1 740px;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 1 550px;
+	        flex: 1 1 550px;
+	padding-right: 20px;
+	border-right: 1px solid #EEE;
 }
 
 [role="homepage-md"] > [role="homepage-mdright-widget-area"] {
-	flex: 1 1 250px;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 1 300px;
+	        flex: 1 1 300px;
 }
 
 
@@ -1567,6 +1540,17 @@ section.widget_rss li {
 }
 section.widget_rss li:first-child {
 	margin-top: 0;
+}
+
+/*-------------------
+# Widgets SeeAllButton
+-----------------------*/
+.Aeris-seeAllButton {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #DDD;
+	border-radius: 5px;
 }
 
 /* Legende sur widget image standard de wordpress 
@@ -1584,6 +1568,46 @@ section.widget_rss li:first-child {
     right: 0;
 }
 
+/* 
+* widget pour embed post 
+* lié au plugin https://github.com/aeris-data/aeris-wordpress-filtered-recent-news-plugin
+*/
+article[role="short-embed-post"]:not(:last-child) {
+	padding:10px 0; 
+	border-bottom:1px solid #EEE;
+	margin: 0;
+}
+article[role="short-embed-post"] header {
+	margin: 0;
+}
+article[role="short-embed-post"] header > figure {
+	width: 100px; 
+	float: left;
+	margin: 5px 0;
+
+}
+article[role="short-embed-post"] header > figure > img{
+	border-radius: 5px;
+}
+article[role="short-embed-post"] header > figure ~ *{
+	clear: none;
+	float: left;
+	width: calc(100% - 100px);
+	padding-left: 10px;
+}
+[role="listNews"] article[role="short-embed-post"] > header > h3 {
+	margin: 0 0 10px;
+	border: none;
+	font-weight: normal;
+	font-size: 1.1rem;
+}
+article[role="short-embed-post"] footer {
+	clear: both;
+	margin-top: 5px;
+	padding: 0;
+	background: none;
+	border: none;
+}
 /*------------------
 ## all template
 -------------------*/
@@ -1609,7 +1633,9 @@ section.widget_rss li:first-child {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-flow: row wrap;
-	    flex-flow: row wrap;
+	    -webkit-box-orient: horizontal;
+	    -webkit-box-direction: normal;
+	        flex-flow: row wrap;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -1750,7 +1776,9 @@ article.item-child header + p {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-flow: row wrap;
-	    flex-flow: row wrap;
+	    -webkit-box-orient: horizontal;
+	    -webkit-box-direction: normal;
+	        flex-flow: row wrap;
 	-webkit-box-pack: start;
 	    -ms-flex-pack: start;
 	        justify-content: flex-start;
@@ -1900,30 +1928,16 @@ figcaption {
     border: 1px solid #ccc;
 	overflow: hidden;
 	margin-bottom: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-}
-
-[role="listProgram"] > header {
-	width: 100%;
-}
-
-/*------------------------------------------------------------------
-## PLUGINS CSS
--------------------------------------------------------------------*/
-
-/*------------------
-## CAMPAIGN PLUGIN
-------------------*/
-
-[role="listProgram"] {
-    border: 1px solid #ccc;
-	overflow: hidden;
-	margin-bottom: 20px;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 [role="listProgram"] > header {
