@@ -187,6 +187,7 @@ add_theme_support( 'post-thumbnails' );
 */
 function images_setup() {
     add_image_size( 'illustration-article', 1024, 500, true );
+    add_image_size( 'single-article', 1024, 500, false );
     add_image_size( 'embed-article', 1024, 250, false );
     add_image_size( 'post-image', 945, 9999 );
     add_image_size( 'logo-partenaire', 100, 40, false );

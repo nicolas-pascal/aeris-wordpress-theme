@@ -42,17 +42,6 @@ while ( have_posts() ) : the_post();
 			?>
 			<section role="listNews" class="posts">
                <?php
-                /*******  WP_QUERY
-                * Liste des derniers articles (actus)
-                */
-
-                // $argsListPost = array (
-                //     'post_type'             => array( 'post' ),
-                //     'post_status'           => array( 'publish' ),
-                //     'order'                 => 'DESC'
-                // );
-				                
-                // list_pages($argsListPost, false);
 				global $post;
 				$argsListPost = array(
 					'posts_per_page'   => get_option('posts_per_page'),
@@ -86,9 +75,7 @@ while ( have_posts() ) : the_post();
 					</div>
 					<?php
 				endforeach;
-               
-                ?>
-				
+                ?>				
             </section>
 			<?php 
 				the_posts_navigation();
