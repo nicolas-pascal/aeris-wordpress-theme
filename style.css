@@ -157,7 +157,8 @@ figure {
 }
 
 hr {
-	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	        box-sizing: content-box;
 	height: 0;
 }
 
@@ -217,7 +218,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	padding: 0;
 }
 
@@ -335,7 +337,8 @@ blockquote {
     padding: 20px;
 	background: #fafafa;
 	border-left:2px solid;
-	box-shadow: 0 10px 6px -6px #bbb;
+	-webkit-box-shadow: 0 10px 6px -6px #bbb;
+	        box-shadow: 0 10px 6px -6px #bbb;
 }
 
 address {
@@ -383,13 +386,15 @@ big {
 # Elements
 --------------------------------------------------------------*/
 html {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+	-webkit-box-sizing: inherit;
+	        box-sizing: inherit;
 }
 
 body {
@@ -687,7 +692,8 @@ a:active {
 
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
 	top: 40px;
@@ -915,7 +921,8 @@ nav.post-navigation a {
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
     border-color: #eee transparent transparent;
-    border-image: none;
+    -o-border-image: none;
+       border-image: none;
     border-style: solid;
     border-width: 17px;
     bottom: 0;
@@ -932,7 +939,8 @@ nav.post-navigation a {
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
     border-color: #FAFAFA transparent transparent;
-    border-image: none;
+    -o-border-image: none;
+       border-image: none;
     border-style: solid;
     border-width: 16px;
     bottom: 0;
@@ -986,7 +994,8 @@ nav.post-navigation a {
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	color: #21759b;
 	display: block;
@@ -1286,7 +1295,9 @@ main[role="main"] {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-flow: row wrap;
-	    flex-flow: row wrap;
+	    -webkit-box-orient: horizontal;
+	    -webkit-box-direction: normal;
+	        flex-flow: row wrap;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
@@ -1303,7 +1314,9 @@ main[role="main"] {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-flow: column nowrap;
-	    flex-flow: column nowrap;
+	    -webkit-box-orient: vertical;
+	    -webkit-box-direction: normal;
+	        flex-flow: column nowrap;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
@@ -1541,14 +1554,23 @@ article > footer [class^="icon"],
 [role="homepage-top-widget-area"],
 [role="homepage-md"],
 [role="homepage-footer-widget-area"] {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow:row wrap;
-	justify-content: space-between;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;
+	    -ms-flex-flow:row wrap;
+	        flex-flow:row wrap;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 [role="homepage-top-widget-area"] > *,
 [role="homepage-footer-widget-area"] > *:not(.widget_rss) {
-	flex: 1 1 300px;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 1 300px;
+	        flex: 1 1 300px;
 	padding-right:20px;
 }
 [role="homepage-top-widget-area"] > :last-child {
@@ -1560,13 +1582,17 @@ article > footer [class^="icon"],
 }
 
 [role="homepage-md"] > [role="homepage-mdleft-widget-area"] {
-	flex: 1 1 550px;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 1 550px;
+	        flex: 1 1 550px;
 	padding-right: 20px;
 	border-right: 1px solid #EEE;
 }
 
 [role="homepage-md"] > [role="homepage-mdright-widget-area"] {
-	flex: 1 1 300px;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 1 300px;
+	        flex: 1 1 300px;
 }
 
 
@@ -1663,7 +1689,9 @@ article[role="short-embed-post"] footer {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-flow: row wrap;
-	    flex-flow: row wrap;
+	    -webkit-box-orient: horizontal;
+	    -webkit-box-direction: normal;
+	        flex-flow: row wrap;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -1804,7 +1832,9 @@ article.item-child header + p {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-flow: row wrap;
-	    flex-flow: row wrap;
+	    -webkit-box-orient: horizontal;
+	    -webkit-box-direction: normal;
+	        flex-flow: row wrap;
 	-webkit-box-pack: start;
 	    -ms-flex-pack: start;
 	        justify-content: flex-start;
@@ -1954,9 +1984,16 @@ figcaption {
     border: 1px solid #ccc;
 	overflow: hidden;
 	margin-bottom: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 [role="listProgram"] > header {
@@ -1975,9 +2012,16 @@ figcaption {
     border: 1px solid #ccc;
 	overflow: hidden;
 	margin-bottom: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 [role="listProgram"] > header {
