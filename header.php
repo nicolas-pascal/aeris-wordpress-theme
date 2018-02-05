@@ -35,7 +35,9 @@
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="fa fa-bars"></span></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav>
-				
+				<?php
+				if ( has_nav_menu( 'header-menu' ) ){
+				?>
 				<nav id="top-header-menu" role="navigation" aria-label="Menu secondaire / Second menu">
 					<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_id' => 'header-menu' ) ); 
 					//@author epointal add switch language
@@ -57,6 +59,9 @@
 					}
 					?>
 				</nav>
+				<?php
+				}
+				?>
 			</div>
 			
 		</div>

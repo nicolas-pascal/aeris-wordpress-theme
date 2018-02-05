@@ -30,7 +30,8 @@ aside > section,
 .home main > article,
 [role="listNews"] article,
 [role="homepage-mdleft-widget-area"] > section,
-.widget[class*="feed"] ul {
+.widget[class*="feed"] ul,
+.widget.widget_media_image figure {
 	background: #fff none repeat scroll 0 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
@@ -51,7 +52,8 @@ article > figure,
 	margin:0;
 }
 
-.wrapper-content {
+.wrapper-content,
+.textwidget {
     padding: 20px 50px;
 }
 
