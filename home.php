@@ -1,78 +1,61 @@
 <?php
 /**
-* Template homepage par défaut pour lister les articles
-*
-*/
+ * The template for displaying archive pages
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package aeris
+ */
+
 get_header(); 
+
+get_template_part( 'template-parts/header-content', 'archive' );
+
+$categories = get_the_terms( $post->ID, 'category');  
 
 ?>
 
-	<div id="content-area" class="wrapper">
+	<div id="content-area" class="wrapper archives">
 		<main id="main" class="site-main" role="main">
-			
-			<?php 
-			if ( is_active_sidebar( 'homepage-top-widget-area' ) ) {
-				?>
-			<section role="homepage-top-widget-area">    
-				<?php
-				dynamic_sidebar( 'homepage-top-widget-area' );
-				?>
-			</section>
-			<?php
-			}
-			?>
-			<?php 
-			if ( ( is_active_sidebar( 'homepage-mdleft-widget-area' ) )||( is_active_sidebar( 'homepage-mdright-widget-area' ) ) ) 
-			{
-			?>
-			<div role="homepage-md">
-				<?php 
-				if ( is_active_sidebar( 'homepage-mdleft-widget-area' ) ) {
-					?>
-				<section role="homepage-mdleft-widget-area">    
-					<?php
-					dynamic_sidebar( 'homepage-mdleft-widget-area' );
-					?>
-				</section>
-				<?php
-				}
-				?>
 
-				<?php 
-				if ( is_active_sidebar( 'homepage-mdright-widget-area' ) ) {
-					?>
-				<section role="homepage-mdright-widget-area">    
-					<?php
-					dynamic_sidebar( 'homepage-mdright-widget-area' );
-					?>
-				</section>
-				<?php
-				}
-				?>            
-			</div>
 			<?php
-			}
-			?>
-			<?php 
-			if ( is_active_sidebar( 'homepage-footer-widget-area' ) ) {
+			if ( have_posts() ) : ?>
+
+			<section role="listNews" class="posts">
+				
+			<?php
+				while ( have_posts() ) : the_post();
 				?>
-			<section role="homepage-footer-widget-area">    
+				<div class="post-container">
 				<?php
-				dynamic_sidebar( 'homepage-footer-widget-area' );
-				?>
+					get_template_part( 'template-parts/content', get_post_format() );
+
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+					?>
+				</div>
+				<?php
+				endwhile; // End of the loop.
+				?>				
 			</section>
+			<?php 
+				the_posts_navigation();
+				?>
 			<?php
-			}
-			?>
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif; ?>
+		
 		</main><!-- #main -->
 		<?php 
 		// get_sidebar();
 		?>
 	</div><!-- #content-area -->
-
 <?php
-//endwhile; // End of the loop.
-// get_sidebar();
 get_footer();
-
+?>
 
