@@ -4,6 +4,21 @@ Wordpress - Thème Aeris
 ===
 
 ## Release notes
+### 1.8.1
+
+- Correctifs CSS 
+    - [id="content-area"].default > main pour pallier bug dans webcomponent
+    - Line height fil d'ariane
+    - Gestion des débordements, césure (td,th,p,a,input)
+    - suppression de l'opacité sur l'image d'en-tête
+    - ajout d'un wrapper-content sur le widget texte en display "tous en boite"
+    - Suppression des légendes des images widget dans la zone de widget "Foire aux logos"
+
+- Correctif du fichier home.php , retour à la normale
+    les pages d'acceuil custom sont à utiliser avec une page de modèle "homepage custom"
+
+- ajout d'une condition d'affichage sur l'emplacement de menu header (pas d'affichage si pas de menu affecté à la zone)
+
 ### 1.8.0
 
 - Correctif sur l'image des posts: ajout de l'image size "single-article"

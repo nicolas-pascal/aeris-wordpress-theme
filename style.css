@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
-Version: 1.8.0
+Version: 1.8.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -182,6 +182,10 @@ textarea {
 	color: inherit;
 	font: inherit;
 	margin: 0;
+}
+
+input {
+	max-width: 100%;
 }
 
 button {
@@ -383,6 +387,23 @@ big {
 }
 
 /*--------------------------------------------------------------
+# Cesures
+--------------------------------------------------------------*/
+p,
+a,
+td,
+th {
+	hyphens: auto;
+	word-wrap: break-word;
+}
+
+code,
+pre {
+	white-space: pre-wrap;
+	word-wrap:break-word;
+}
+
+/*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
 html {
@@ -464,6 +485,7 @@ figure {
 
 table {
 	margin: 0 0 1.5em;
+	table-layout: fixed;
 	width: 100%;
 }
 
@@ -647,9 +669,6 @@ a:active {
 
 .main-navigation {
 	clear: both;
-	-webkit-box-ordinal-group:2;
-	    -ms-flex-order:1;
-	        order:1;
 }
 
 .main-navigation ul {
@@ -959,8 +978,6 @@ nav.post-navigation a {
 }
 
 [id="breadcrumbs"] nav {
-	height: 72px;
-	line-height: 72px;
 	text-align: right;
 }
 
@@ -1313,13 +1330,16 @@ main[role="main"] {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-flow: column nowrap;
-	    -webkit-box-orient: vertical;
-	    -webkit-box-direction: normal;
-	        flex-flow: column nowrap;
+
+	        flex-flow: column-reverse nowrap;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	        justify-content: flex-start;
+}
+
+[id="top-header-menu"] {
+    align-self: flex-end;
+    margin-bottom: 25px;
 }
 
 /*------------------
@@ -1378,6 +1398,15 @@ aside ol {
     position: absolute;
 }
 
+.textwidget {
+    padding: 20px;
+}
+
+/** image widget : supprimer legende dans foire aux logos */
+#partners-sidebar .widget_sp_image-description {
+	display:none;
+}
+
 /*-----------------------------------------------------------------
 ## article 
 -------------------*/
@@ -1423,7 +1452,8 @@ article > footer [class^="icon"],
 	}
 }
 
-.site-branding::after {
+/*** Ombrage sur image cover ***/
+/* .site-branding::after {
     background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
     content: " ";
     height: 100%;
@@ -1432,7 +1462,7 @@ article > footer [class^="icon"],
     top: 0;
     width: 100%;
     z-index: -1;
-}
+} */
 
 .site-branding h1 {
 	border-bottom:none;
@@ -1483,6 +1513,11 @@ article > footer [class^="icon"],
 /*-----------------------------------------------------------------
 ## homepage custom
 -------------------*/
+
+.page-template-template-homepage .default[id="content-area"] main {
+	background: none;
+	box-shadow: none;
+}
 
 [role="homepage-top-widget-area"],
 [role="homepage-md"],
@@ -1619,7 +1654,7 @@ article[role="short-embed-post"] footer {
 /*------------------
 ## Template default
 -------------------*/
-[id="content-area"].default main {
+[id="content-area"].default > main {
 	max-width: 1024px;
 	margin: 0 auto;
 } 

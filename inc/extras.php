@@ -191,6 +191,7 @@ function images_setup() {
     add_image_size( 'embed-article', 1024, 250, false );
     add_image_size( 'post-image', 945, 9999 );
     add_image_size( 'logo-partenaire', 100, 40, false );
+
  }
 add_action( 'after_setup_theme', 'images_setup' );
 
@@ -269,4 +270,30 @@ function hex2rgb($hex) {
 		$rgb = array($r, $g, $b);
 		//return implode(",", $rgb); // returns the rgb values separated by commas
 		return $rgb; // returns an array with the rgb values
-	}
+  }
+  
+/******************************************************************
+* CACHER L'EDITEUR POUR UN MODELE DE PAGE
+*/
+
+
+add_action( 'admin_head', 'theme_aeris_hide_editor' );
+function theme_aeris_hide_editor() {
+  $template_file = basename( get_page_template() );
+  
+  /**
+  * CACHER TOUT L'EDITEUR PPOUR LE MODELE HOMEPAGE CUSTOM
+  * source : https://gist.github.com/ramseyp/4060095
+  */
+	if($template_file == 'template-homepage.php'){ // template homepage custom
+		remove_post_type_support('page', 'editor');
+  } 
+  /**
+  * CACHER TOUT L'EDITEUR PPOUR LE MODELE CATALOGUE
+  * source : https://gist.github.com/ramseyp/4060095
+  */
+  // if($template_file == 'template-catalogue.php'){ // template catalogue
+	// 	echo "<style>.mce-tinymce.mce-container.mce-panel, #content-tmce{display:none;}</style>";
+  // } 
+}
+
