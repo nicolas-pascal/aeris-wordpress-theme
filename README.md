@@ -18,6 +18,7 @@ Wordpress - Thème Aeris
     les pages d'acceuil custom sont à utiliser avec une page de modèle "homepage custom"
 
 - ajout d'une condition d'affichage sur l'emplacement de menu header (pas d'affichage si pas de menu affecté à la zone)
+- Editeur caché pour le modèle de page "homepage custom" (extras.php)
 
 ### 1.8.0
 
