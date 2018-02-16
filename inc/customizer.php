@@ -195,7 +195,7 @@ function theme_aeris_customize_color( $wp_customize )
     //  = Text Input copyright     =
     //  =============================
     $wp_customize->add_setting('theme_aeris_copyright', array(
-        'default'        => 'Pôle Aeris '.date('Y').'- Service de données OMP (SEDOO)',
+        'default'        => 'Pôle Aeris '.date('Y').' - Service de données OMP (SEDOO)',
         'capability'     => 'edit_theme_options',
         'type'           => 'theme_mod',
  

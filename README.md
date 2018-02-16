@@ -1,9 +1,24 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
-
-Wordpress - Thème Aeris 
+# Wordpress - Thème Aeris 
 ===
 
-## Release notes
+## Change logs
+
+### 1.8.2
+
+- Correctifs CSS
+    - Menu qui dépasse sur Template catalogue corrigé X
+    - figcaption, suppression des marges top et bottom X
+    - padding-top sur template Fullwidth X
+    - padding-top sur [id="masterhead"] X
+    - cookie notice button
+    - .feedzy-rss ul {margin: 0;} X
+
+- Bricole CSS sur template catalogue pour le déploiement top menu admin, via plugin Auto Hide Admin Bar, afin qu'il ne passe pas sur le menu
+
+- Affichage Titre sans logo X
+
+- Correction du copyright par défaut
+
 ### 1.8.1
 
 - Correctifs CSS 

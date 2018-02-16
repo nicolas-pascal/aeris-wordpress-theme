@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
-Version: 1.8.1
+Version: 1.8.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -1215,8 +1215,9 @@ object {
 	margin-right: auto;
 }
 
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+.wp-caption .wp-caption-text,
+figcaption {
+	margin: 0;
 }
 
 .wp-caption-text {
@@ -1300,8 +1301,8 @@ main[role="main"] {
 ## header
 --------------------------------------------------------------*/
 [id="masterhead"] {
-	padding-top:10px;
-	border-bottom: 2px solid #eee;
+	/* padding-top:10px; */
+	border-bottom: 2px solid #ddd;
 }
 
 /*------------------
@@ -1347,9 +1348,16 @@ main[role="main"] {
 -------------------*/
 
 [id="masterhead"] > div > a{
-	display: block;
 	width: 200px;
-	padding-bottom: 10px;
+	align-self: center;
+}
+
+/** Pas de logo */
+[id="masterhead"] > div > a.nologo{
+	align-self: center;
+	width: auto;
+	font-size: 1.5rem;
+	text-decoration: none;
 }
 
 /*--------------------------------------------------------------
@@ -1400,6 +1408,10 @@ aside ol {
 
 .textwidget {
     padding: 20px;
+}
+
+.feedzy-rss ul {
+	margin: 0;
 }
 
 /** image widget : supprimer legende dans foire aux logos */
@@ -1711,9 +1723,9 @@ article[role="short-embed-post"] footer {
 	font-size:1.3rem;
 }
 
-.page-template-template-fullwidth article .wrapper-content,
 .page-template-template-fullwidth [id="content-area"],
-.page-template-template-catalogue [id="content-area"]{
+.page-template-template-catalogue [id="content-area"],
+.page-template-template-catalogue article .wrapper-content {
 	padding:0;
 }
 
@@ -1722,12 +1734,19 @@ article[role="short-embed-post"] footer {
 -----------------------*/
 
 .page-template-template-catalogue [id="masterhead"]  {
-	height: 60px;
+	/* height: 60px; */
 	position: fixed;
 	top:0;
 	width: 100%;
 	z-index: 1;
-    background: #FFF;
+	background: #FFF;
+	transition: .3s all ease-in-out;
+}
+.page-template-template-catalogue[style*="background-position"] [id="masterhead"] {
+	top:32px;
+}
+.page-template-template-catalogue[style="margin-top: -32px; background-position-y: -32px;"] [id="masterhead"] {
+	top:0;
 }
 
 .page-template-template-catalogue [id="top-header-menu"], 
@@ -1739,6 +1758,11 @@ article[role="short-embed-post"] footer {
 
 .page-template-template-catalogue [id="masterhead"] > div > a {
 	width: 80px;
+	padding-bottom: 0;
+}
+.page-template-template-catalogue [id="masterhead"] > div > a.nologo {
+	width: auto;
+	padding-bottom: 0;
 }
 .page-template-template-catalogue div[data-aeris-catalog] {
 	padding-top:60px;
