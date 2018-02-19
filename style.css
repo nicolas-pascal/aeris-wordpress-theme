@@ -590,7 +590,6 @@ textarea {
   font-family: "icon-aeris";
   font-style: normal;
   font-weight: normal;
-  speak: none;
  
   display: inline-block;
   text-decoration: inherit;
@@ -746,18 +745,10 @@ a:active {
 	border-bottom: 2px solid #888;
 }
 
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-}
-
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
 	background: #eee none repeat scroll 0 0 !important;
     color: #687074;
-}
-
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a.focus {
 }
 
 .main-navigation ul li:hover > ul,
@@ -1040,13 +1031,11 @@ nav.post-navigation a {
 # Alignments
 --------------------------------------------------------------*/
 .alignleft {
-	display: inline;
 	float: left;
 	margin-right: 1.5em;
 }
 
 .alignright {
-	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
@@ -2066,10 +2055,6 @@ figcaption {
 	width: 250px;
 	padding: 20px;
 	/*margin: 0 20px 20px 0;*/
-}
-
-[role="listProgram"] > article header {
-	/*margin-left: 20px;*/
 }
 
 [role="listProgram"] > article ul {
