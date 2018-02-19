@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       SEDOO OMP - Pierre VERT
 Author URI:   http://sedoo.fr
-Version: 1.8.1
+Version: 1.8.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aeris-wordpress-theme
@@ -393,7 +393,9 @@ p,
 a,
 td,
 th {
-	hyphens: auto;
+	-webkit-hyphens: auto;
+	    -ms-hyphens: auto;
+	        hyphens: auto;
 	word-wrap: break-word;
 }
 
@@ -588,7 +590,6 @@ textarea {
   font-family: "icon-aeris";
   font-style: normal;
   font-weight: normal;
-  speak: none;
  
   display: inline-block;
   text-decoration: inherit;
@@ -744,18 +745,10 @@ a:active {
 	border-bottom: 2px solid #888;
 }
 
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-}
-
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
 	background: #eee none repeat scroll 0 0 !important;
     color: #687074;
-}
-
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a.focus {
 }
 
 .main-navigation ul li:hover > ul,
@@ -1038,13 +1031,11 @@ nav.post-navigation a {
 # Alignments
 --------------------------------------------------------------*/
 .alignleft {
-	display: inline;
 	float: left;
 	margin-right: 1.5em;
 }
 
 .alignright {
-	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
@@ -1215,8 +1206,9 @@ object {
 	margin-right: auto;
 }
 
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+.wp-caption .wp-caption-text,
+figcaption {
+	margin: 0;
 }
 
 .wp-caption-text {
@@ -1283,12 +1275,19 @@ object {
 .wrapper{
 	max-width: 1170px;
 	margin: 0 auto;
+	padding:0 10px;
 }
 
 @media (min-width:768px) {
 	.default .wrapper-content {
 		max-width: 768px;
 		margin: 0 auto;
+	}
+}
+
+@media (min-width:1190px) {
+	.wrapper{
+		padding:0;
 	}
 }
 
@@ -1300,8 +1299,8 @@ main[role="main"] {
 ## header
 --------------------------------------------------------------*/
 [id="masterhead"] {
-	padding-top:10px;
-	border-bottom: 2px solid #eee;
+	/* padding-top:10px; */
+	border-bottom: 2px solid #ddd;
 }
 
 /*------------------
@@ -1315,9 +1314,9 @@ main[role="main"] {
 	    -webkit-box-orient: horizontal;
 	    -webkit-box-direction: normal;
 	        flex-flow: row wrap;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+		-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+				justify-content: space-between;
 	-webkit-box-align: stretch;
 	    -ms-flex-align: stretch;
 	        align-items: stretch;
@@ -1330,16 +1329,26 @@ main[role="main"] {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: reverse;
+	    -ms-flex-flow: column-reverse nowrap;
 	        flex-flow: column-reverse nowrap;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
-	        justify-content: flex-start;
+	        justify-content: space-between;
 }
 
 [id="top-header-menu"] {
-    align-self: flex-end;
-    margin-bottom: 25px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    /* margin-bottom: 25px; */
+}
+
+@media (min-width:600px) {
+	[id="site-navigation"] {
+		-ms-flex-item-align: end;
+		    align-self: flex-end;
+	}
 }
 
 /*------------------
@@ -1347,9 +1356,18 @@ main[role="main"] {
 -------------------*/
 
 [id="masterhead"] > div > a{
-	display: block;
 	width: 200px;
-	padding-bottom: 10px;
+	-ms-flex-item-align: center;
+	    align-self: center;
+}
+
+/** Pas de logo */
+[id="masterhead"] > div > a.nologo{
+	-ms-flex-item-align: center;
+	    align-self: center;
+	width: auto;
+	font-size: 1.5rem;
+	text-decoration: none;
 }
 
 /*--------------------------------------------------------------
@@ -1400,6 +1418,10 @@ aside ol {
 
 .textwidget {
     padding: 20px;
+}
+
+.feedzy-rss ul {
+	margin: 0;
 }
 
 /** image widget : supprimer legende dans foire aux logos */
@@ -1516,7 +1538,8 @@ article > footer [class^="icon"],
 
 .page-template-template-homepage .default[id="content-area"] main {
 	background: none;
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 }
 
 [role="homepage-top-widget-area"],
@@ -1711,9 +1734,9 @@ article[role="short-embed-post"] footer {
 	font-size:1.3rem;
 }
 
-.page-template-template-fullwidth article .wrapper-content,
 .page-template-template-fullwidth [id="content-area"],
-.page-template-template-catalogue [id="content-area"]{
+.page-template-template-catalogue [id="content-area"],
+.page-template-template-catalogue article .wrapper-content {
 	padding:0;
 }
 
@@ -1722,15 +1745,19 @@ article[role="short-embed-post"] footer {
 -----------------------*/
 
 .page-template-template-catalogue [id="masterhead"]  {
-	height: 60px;
 	position: fixed;
 	top:0;
 	width: 100%;
 	z-index: 1;
-    background: #FFF;
+	background: #FFF;
+	-webkit-transition: .3s all ease-in-out;
+	transition: .3s all ease-in-out;
 }
 
-.page-template-template-catalogue [id="top-header-menu"], 
+.admin-bar [id="masterhead"] {
+	top:32px;
+}
+
 .page-template-template-catalogue [role="breadcrumbs"],
 .page-template-template-catalogue [id="content-area"]+footer
  {
@@ -1739,10 +1766,36 @@ article[role="short-embed-post"] footer {
 
 .page-template-template-catalogue [id="masterhead"] > div > a {
 	width: 80px;
+	padding-bottom: 0;
 }
+.page-template-template-catalogue [id="masterhead"] > div > a.nologo {
+	width: auto;
+	padding-bottom: 0;
+}
+/* Menus */
+.page-template-template-catalogue [id="masterhead"] [id="top-header-menu"],
+.page-template-template-catalogue [id="masterhead"] [id="top-header-menu"] ul {
+	margin-bottom:0;
+}
+.page-template-template-catalogue [id="masterhead"] [id="top-header-menu"] ul li a {
+	font-size:0.7rem;
+}
+.page-template-template-catalogue [id="masterhead"] .main-navigation a {
+	font-size: 0.8rem;
+}
+/* Décalage pour catalogue */
+/* si admin bar affichée */
+.page-template-template-catalogue.admin-bar {
+	margin-top:-32px;
+}
+.page-template-template-catalogue.admin-bar div[data-aeris-catalog] {
+	padding-top:103px;
+}
+/* sans admin bar */
 .page-template-template-catalogue div[data-aeris-catalog] {
-	padding-top:60px;
+	padding-top:71px;
 }
+
 
 /*------------------
 ## Template blank
@@ -1955,6 +2008,18 @@ figcaption {
 ## PLUGINS CSS
 -------------------------------------------------------------------*/
 
+/*----------------------
+## COOKIE NOTICE PLUGIN
+------------------------*/
+
+#cookie-notice .button {
+    margin-left: 10px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding: 1px 5px 2px;
+    text-decoration: none;
+}
+
 /*------------------
 ## CAMPAIGN PLUGIN
 ------------------*/
@@ -1990,10 +2055,6 @@ figcaption {
 	width: 250px;
 	padding: 20px;
 	/*margin: 0 20px 20px 0;*/
-}
-
-[role="listProgram"] > article header {
-	/*margin-left: 20px;*/
 }
 
 [role="listProgram"] > article ul {
