@@ -278,7 +278,8 @@ function theme_aeris_color_style() {
 			.bkg,
 			[role="listNews"] article.format-quote > header > blockquote,
             [role="listProgram"] > header > h2,
-            .Aeris-seeAllButton:hover
+            .Aeris-seeAllButton:hover,
+            #cookie-notice .button
              {
                 background: <?php echo $code_color;?>;
                 color:<?php echo get_theme_mod( 'theme_aeris_text_color_code' );?>;
@@ -290,7 +291,8 @@ function theme_aeris_color_style() {
 				color: <?php echo get_theme_mod( 'theme_aeris_link_hover_color_code' );?>;
 			}
 
-			.site-branding h1 a {
+            .site-branding h1 a,
+            #cookie-notice .button:hover {
                 background-color: rgba(<?php echo $rgb_color[0].",".$rgb_color[1].",".$rgb_color[2].",.5)"; ?>;
                 color:<?php echo get_theme_mod( 'theme_aeris_text_color_code' );?>;
 			}

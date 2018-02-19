@@ -6,16 +6,22 @@
 ### 1.8.2
 
 - Correctifs CSS
-    - Menu qui dépasse sur Template catalogue corrigé X
-    - figcaption, suppression des marges top et bottom X
-    - padding-top sur template Fullwidth X
-    - padding-top sur [id="masterhead"] X
-    - cookie notice button
-    - .feedzy-rss ul {margin: 0;} X
+    - Menu qui dépasse sur Template catalogue corrigé
+    - figcaption, suppression des marges top et bottom
+    - padding-top sur template Fullwidth
+    - padding-top sur [id="masterhead"]
+    - cookie notice button, couleur en fonction du thème
+    - .feedzy-rss ul {margin: 0;}
 
-- Bricole CSS sur template catalogue pour le déploiement top menu admin, via plugin Auto Hide Admin Bar, afin qu'il ne passe pas sur le menu
+-  Masquage la barre d'admin pour les utilisateurs n'ayant aucun droit d'édition
+    - Ajout de la fonction *"function theme_aeris_hide_admin_bar()"* dans inc/custom-rights
+    - Correctifs css
+    - Le plugin "Auto Hide Admin Bar" n'est plus nécessaire.
 
-- Affichage Titre sans logo X
+- Affichage Titre sans logo
+
+- Ajout des liens "log in" "log out" dans l'emplacement de menu header
+    - ajout de la fonction *"function theme_aeris_add_login_logout_register_menu()"* dans custom-nav.php
 
 - Correction du copyright par défaut
 
@@ -45,7 +51,8 @@
 
 ### 1.7.10
 
-Ajout d'une condition sur les items de menu pour l'utilisation du modèle de page "Catalogue / application Webcomponents" > inc/custom-nav.php
+Ajout d'une condition sur les items de menu (plugin If Menu) pour filtrer sur le modèle de page "Catalogue / application Webcomponents" 
+    - inc/custom-nav.php : *theme_aeris_menu_conditions()*
 
     1.7.9 >> FAIL sur numéro de version dans CSS
 
