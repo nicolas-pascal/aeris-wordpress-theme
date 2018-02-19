@@ -27,8 +27,13 @@
 
 		?>
 		<div class="wrapper">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" <?php if (!$image) { ?>class="nologo"<?php }?>>
+				<?php if ($image) {?>
 				<img src="<?php echo $image[0];?>" alt="<?php bloginfo( 'name' ); ?>" title="<?php bloginfo( 'name' ); ?> : <?php echo $description;?>">
+				<?php } else {?>
+					<?php bloginfo( 'name' ); ?>
+
+				<?php }?>
 			</a>
 			<div>
 				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Menu principal / Main menu">
