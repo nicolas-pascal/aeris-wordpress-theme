@@ -7,10 +7,11 @@
 
 <?php wp_head(); ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+<script src="http://localhost/wpedu/wp-content/themes/aeris-wordpress-theme/js/tota11y.min.js"></script>
 </head>
 <body <?php body_class(); ?> data-color="<?php echo theme_aeris_main_color();?>" data-secondary-color="<?php echo get_theme_mod( 'theme_aeris_second_color_code' );?>" data-text-color="<?php echo get_theme_mod( 'theme_aeris_text_color_code' );?>" data-link-hover-color="<?php echo get_theme_mod( 'theme_aeris_link_hover_color_code' );?>">
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'theme-aeris' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content-area"><?php esc_html_e( 'Skip to content', 'theme-aeris' ); ?></a>
 
 	<header id="masterhead" class="site-header" role="banner">
 		<?php 
