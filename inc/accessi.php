@@ -1,6 +1,10 @@
 <?php
 /******************************************************************
 * ACCESSIBILITE
+*
+* A AJOUTER DANS header.php en DEV
+* <script src="http://localhost/wpedu/wp-content/themes/aeris-wordpress-theme/js/tota11y.min.js"></script>
+*
 */
 
 //Title Tag

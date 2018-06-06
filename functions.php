@@ -186,7 +186,7 @@ require get_template_directory() . '/inc/custom-shortcodes.php';
 
 /**
  * ACCESSIBILITE
- * 
+ * A activer en environnement de DEV
  */
-require get_template_directory() . '/inc/accessi.php';
+//require get_template_directory() . '/inc/accessi.php';
 
