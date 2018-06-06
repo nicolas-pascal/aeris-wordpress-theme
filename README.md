@@ -3,6 +3,13 @@
 
 ## Change logs
 
+### 1.8.3
+- Option breadcrumb
+    - Ajout d'une option dans l'outil de personnalisation pour afficher ou pas le breadcrumb (defaut : non affiché)
+
+- désactivation des liens "login /logout" dans l'emplacement de menu header (liens générés incorrects)
+    - function *"function theme_aeris_add_login_logout_register_menu()"* dans custom-nav.php à adapter pour iThemes security
+
 ### 1.8.2
 
 - Correctifs CSS

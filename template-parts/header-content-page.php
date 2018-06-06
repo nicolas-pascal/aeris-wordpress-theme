@@ -13,7 +13,7 @@
 		</h1>
 		<?php 
 		// Show breadcrumb if checked in customizer
-		if( get_theme_mod( 'theme_aeris_breadcrumb' ) == "true") {
+		if ( get_theme_mod( 'theme_aeris_breadcrumb' ) == "true") {
 			if (function_exists('the_breadcrumb')) the_breadcrumb(); 
 		}
 		?>
