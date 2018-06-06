@@ -23,6 +23,8 @@ add_action( 'init', 'theme_aeris_register_menu_location' );
 /** 
  * Ajout des liens login/logout au menu header
  * source : https://profilepress.net/register-login-logout-links-wordpress-menu/
+ * 
+ * A ADAPTER POUR iTHEMES SECURITY (cacher url admin)
 */
 function theme_aeris_add_login_logout_register_menu( $items, $args ) {
   if ( $args->theme_location != 'header-menu' ) {
@@ -39,7 +41,7 @@ function theme_aeris_add_login_logout_register_menu( $items, $args ) {
   return $items;
  }
   
-add_filter( 'wp_nav_menu_items', 'theme_aeris_add_login_logout_register_menu', 199, 2 );
+//add_filter( 'wp_nav_menu_items', 'theme_aeris_add_login_logout_register_menu', 199, 2 );
 
 /** Adding custom visibility rules in a plugin or theme
 * Custom visibility rules can be added easily by any plugin or theme.

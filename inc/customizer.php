@@ -191,6 +191,23 @@ function theme_aeris_customize_color( $wp_customize )
         ),
     ));
 
+    //  =============================
+    //  = Checkbox breadcrumb       =
+    //  =============================
+    $wp_customize->add_setting('theme_aeris_breadcrumb', array(
+        'default'        => 'false',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+ 
+    ));
+
+	$wp_customize->add_control('theme_aeris_breadcrumb', array(
+        'label'      => __('Afficher le fil d\'ariane sur les pages', 'theme_aeris'),
+        'section'    => 'theme_aeris_color_scheme',
+        'settings'   => 'theme_aeris_breadcrumb',
+        'type'       => 'checkbox',
+    ));
+
 	//  =============================
     //  = Text Input copyright     =
     //  =============================

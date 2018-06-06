@@ -76,7 +76,12 @@
 	// Breadcrumbs sans titre
 	if ( is_front_page() && is_home() ) { ?>
 	<div id="breadcrumbs">
-		<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
+		<?php 
+		// Show breadcrumb if checked in customizer
+		if( get_theme_mod( 'theme_aeris_breadcrumb' ) == "true") {
+			if (function_exists('the_breadcrumb')) the_breadcrumb(); 
+		}
+		?>
 	</div>
 	
 	<div class="site-branding" style="background-image:url(<?php header_image()?>);">

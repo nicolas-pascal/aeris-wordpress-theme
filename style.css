@@ -914,10 +914,6 @@ nav.post-navigation a {
 	display: flex;
 	-ms-flex-flow: row wrap;
 	    flex-flow: row wrap;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: reverse;
-	    -ms-flex-direction: row-reverse;
-	        flex-direction: row-reverse;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
