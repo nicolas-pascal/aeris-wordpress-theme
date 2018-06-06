@@ -10,7 +10,7 @@
 </head>
 <body <?php body_class(); ?> data-color="<?php echo theme_aeris_main_color();?>" data-secondary-color="<?php echo get_theme_mod( 'theme_aeris_second_color_code' );?>" data-text-color="<?php echo get_theme_mod( 'theme_aeris_text_color_code' );?>" data-link-hover-color="<?php echo get_theme_mod( 'theme_aeris_link_hover_color_code' );?>">
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'theme-aeris' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content-area"><?php esc_html_e( 'Skip to content', 'theme-aeris' ); ?></a>
 
 	<header id="masterhead" class="site-header" role="banner">
 		<?php 
@@ -76,7 +76,12 @@
 	// Breadcrumbs sans titre
 	if ( is_front_page() && is_home() ) { ?>
 	<div id="breadcrumbs">
-		<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
+		<?php 
+		// Show breadcrumb if checked in customizer
+		if( get_theme_mod( 'theme_aeris_breadcrumb' ) == "true") {
+			if (function_exists('the_breadcrumb')) the_breadcrumb(); 
+		}
+		?>
 	</div>
 	
 	<div class="site-branding" style="background-image:url(<?php header_image()?>);">
