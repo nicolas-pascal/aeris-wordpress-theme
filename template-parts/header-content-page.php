@@ -8,10 +8,16 @@
 ?>
 <div id="breadcrumbs">
 	<div class="wrapper">
-		<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
 		<h1 rel="bookmark">
 			<?php the_title(); ?>
 		</h1>
+		<?php 
+		// Show breadcrumb if checked in customizer
+		if ( get_theme_mod( 'theme_aeris_breadcrumb' ) == "true") {
+			if (function_exists('the_breadcrumb')) the_breadcrumb(); 
+		}
+		?>
+		
 	</div>
 </div>
 
