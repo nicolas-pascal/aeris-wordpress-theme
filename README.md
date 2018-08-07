@@ -1,4 +1,8 @@
 # Wordpress - Thème Aeris 
+
+## Licence Creative Commons, CC-by-nc-sa. 
+> https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr 
+
 ===
 
 ## Change logs
