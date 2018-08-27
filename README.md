@@ -7,6 +7,16 @@
 
 ## Change logs
 
+### 1.9.0
+> les utilisateurs sont rois, je rajoute des options de personnalisation, préparez les lunettes de protections...
+- option "Black theme" 
+- option Footer background + text color 
+- option background image 
+- correction CSS sur homepage custom, section de droite pour le display "Tous en boite"
+
+### 1.8.5
+- update readme file licence creative commons
+
 ### 1.8.3
 - Option breadcrumb
     - Ajout d'une option dans l'outil de personnalisation pour afficher ou pas le breadcrumb (defaut : non affiché)

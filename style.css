@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme worpdress Aeris
 Author:       Aeris / SEDOO OMP - Pierre VERT
 Author URI:   https://www.aeris-data.fr
-Version: 1.8.5
+Version: 1.9.0
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: aeris-wordpress-theme
@@ -446,10 +446,6 @@ hr {
 ul,
 ol {
 	margin: 0 0 1.5em 3em;
-}
-
-ul {
-	list-style: none;
 }
 
 ol {
@@ -1295,9 +1291,14 @@ main[role="main"] {
 ## header
 --------------------------------------------------------------*/
 [id="masterhead"] {
-	/* padding-top:10px; */
+	background:#FFF;
 	border-bottom: 2px solid #ddd;
 }
+
+.darkTheme [id="masterhead"] {
+	background:#222;
+}
+
 
 /*------------------
 ## div pour logo + nav
@@ -1394,9 +1395,9 @@ aside ol {
 	max-width: 100%;
 }
 
-.widget > ul {
-	margin: 0;
-    padding: 0;
+.widget ul {
+	margin: 0 0 0 40px;
+	padding: 0;
 }
 
 .widget.widget_media_image figure {
@@ -1413,7 +1414,7 @@ aside ol {
 }
 
 .textwidget {
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 .feedzy-rss ul {
@@ -1424,6 +1425,8 @@ aside ol {
 #partners-sidebar .widget_sp_image-description {
 	display:none;
 }
+
+
 
 /*-----------------------------------------------------------------
 ## article 
@@ -1837,8 +1840,9 @@ article.item-child header + p {
 
 [id="page"] > footer {
 	padding:20px;
-	background: #585f69;
+	background: #333;
 	color: #FFF;
+	border-top: 2px solid #DDD;
 }
 
 [id="page"] > footer a, 

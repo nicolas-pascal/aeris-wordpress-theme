@@ -26,9 +26,10 @@ aside > section,
 .home main > article,
 [role="listNews"] article,
 [role="homepage-mdleft-widget-area"] > section,
+[role="homepage-mdright-widget-area"] > section,
 .widget[class*="feed"] ul,
 .widget.widget_media_image figure {
-	background: #fff none repeat scroll 0 0;
+	background: rgba(255,255,255,.8) none repeat scroll 0 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -70,7 +71,8 @@ section.widget_calendar {
 aside > section .calendar_wrap,
 [role="listNews"] article > header > :not(figure),
 .post-excerpt,
-[role="homepage-mdleft-widget-area"] > section > h2{
+[role="homepage-mdleft-widget-area"] > section > h2,
+[role="homepage-mdright-widget-area"] > section > h2 {
 	padding:20px;
 }
 
