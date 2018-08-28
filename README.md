@@ -11,8 +11,10 @@
 > les utilisateurs sont rois, je rajoute des options de personnalisation, préparez les lunettes de protections...
 - option "Black theme" 
 - option Footer background + text color 
-- option background image 
+- option background image ( c'est ici que les sites s'auto-détruiront )
 - correction CSS sur homepage custom, section de droite pour le display "Tous en boite"
+- suppression de la feuille de style boxes.css (inclus dans style.css), ajout d'attribut dans <body> 
+
 
 ### 1.8.5
 - update readme file licence creative commons

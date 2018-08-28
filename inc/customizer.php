@@ -42,7 +42,7 @@ $wp_customize->remove_section('colors');
 add_action( 'customize_register', 'theme_aeris_customizer_remove_section' );
 
 /*************************************************************************************************************
-*  Ajout du support de l'image d'entête personnalisée dans le customizer
+*  Ajout des supports de l'image d'entête personnalisée et du background-image dans le customizer
 *
 */
 
@@ -52,6 +52,20 @@ $args = array(
 	'default-image' => get_template_directory_uri() . '/images/atmosphere-cover.jpg',
 );
 add_theme_support( 'custom-header', $args );
+
+$defaults = array(
+	'default-color'          => 'FFFFFF',
+	'default-image'          => '',
+	'default-repeat'         => 'repeat',
+	'default-position-x'     => 'left',
+        'default-position-y'     => 'top',
+        'default-size'           => 'auto',
+	'default-attachment'     => 'cover',
+	'wp-head-callback'       => '_custom_background_cb',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => ''
+);
+add_theme_support( 'custom-background', $defaults );
 
 /**************************************************************************************************************
 *  Ajout du controleur de couleur personnalisée dans le customizer
@@ -384,40 +398,25 @@ function theme_aeris_color_style() {
 }
 add_action( 'wp_head', 'theme_aeris_color_style');
 
-/*****
-* 
-* Ajout des styles Boxes
-* 
-*/
-
-function theme_aeris_box_style() {
-    
-	// le if == "value1" est une vieillerie, non supprimable !! tous les vieux sites sont parametrés avec cette valeur... bref, j'avais codé comme un con...
-	if(( get_theme_mod( 'theme_aeris_box' ) == "value1") || (get_theme_mod( 'theme_aeris_box' ) == "box")) {
-	    wp_enqueue_style('theme-aeris-box', get_bloginfo('template_directory') . '/css/boxes.css');
-	}
-}
-add_action( 'wp_enqueue_scripts', 'theme_aeris_box_style' );
-
-function theme_aeris_bodyClasses_style() {
+// Fonction renvoyant les valeurs du customizer "Options du thème / Ambiance & Display mode
+function theme_aeris_bodyAttribute() {
     
     if( get_theme_mod( 'theme_aeris_ambiance' ) == "dark") {
         // wp_enqueue_style('theme_aeris_ambiance', get_bloginfo('template_directory') . '/css/dark.css');
-        $classes['ambiance'] = "darkTheme ";
+        $classes['ambiance'] = "darkTheme";
     } else {
-        $classes['ambiance'] = "lightTheme ";
+        $classes['ambiance'] = "lightTheme";
     }
 
 	// le if == "value1" est une vieillerie, non supprimable !! tous les vieux sites sont parametrés avec cette valeur... bref, j'avais codé comme un con...
 	if(( get_theme_mod( 'theme_aeris_box' ) == "value1") || (get_theme_mod( 'theme_aeris_box' ) == "box")) {
-        $classes['box'] = "boxes ";
+        $classes['box'] = "boxes";
 	    // wp_enqueue_style('theme-aeris-box', get_bloginfo('template_directory') . '/css/boxes.css');
     }else {
-        $classes['box'] = "nobox ";
+        $classes['box'] = "nobox";
     }
     return $classes;
 }
-add_filter('body_class', 'theme_aeris_bodyClasses_style');
 
 /******************************************************************
 * Ajout du css custom dans le customizer 
