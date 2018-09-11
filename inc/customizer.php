@@ -363,7 +363,7 @@ function theme_aeris_color_style() {
 			.bkg,
 			[role="listNews"] article.format-quote > header > blockquote,
             [role="listProgram"] > header > h2,
-            .Aeris-seeAllButton:hover,
+            .Aeris-seeAllButton,            
             #cookie-notice .button
              {
                 background: <?php echo $code_color;?>;

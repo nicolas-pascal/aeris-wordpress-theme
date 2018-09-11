@@ -12,7 +12,7 @@ while ( have_posts() ) : the_post();
 ?>
 <?php 
     // Show breadcrumb if checked in customizer
-    if ( get_theme_mod( 'theme_aeris_breadcrumb' ) == "true") {
+    if ( (get_theme_mod( 'theme_aeris_breadcrumb' ) == "true") && !(is_front_page()) ) {
     ?>
 	<div id="breadcrumbs">
     <?php

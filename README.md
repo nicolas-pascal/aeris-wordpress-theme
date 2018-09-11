@@ -11,9 +11,13 @@
 > les utilisateurs sont rois, je rajoute des options de personnalisation, préparez les lunettes de protections...
 - option "Black theme" 
 - option Footer background + text color 
-- option background image ( c'est ici que les sites s'auto-détruiront )
+- option background image ( c'est ici que les sites s'auto-détruiront, adieu sobriété... )
 - correction CSS sur homepage custom, section de droite pour le display "Tous en boite"
-- suppression de la feuille de style boxes.css (inclus dans style.css), ajout d'attribut dans <body> 
+- suppression de la feuille de style boxes.css (inclus maintenant dans style.css), ajout d'attribut dans <body> 
+- Passage des font-size en rem dans les menus
+- correctif CSS du widget FooGallery sur la taille du figcaption en hover
+- correctif CSS bouton "See all" plugin Aeris widget Taxonomies list article
+- correctif condition affichage breadcrumb sur homepage custom
 
 
 ### 1.8.5
