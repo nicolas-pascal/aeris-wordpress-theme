@@ -2285,8 +2285,12 @@ body[data-themeambiance="darkTheme"],
 	background:#333;
 }
 
+[data-themeambiance="darkTheme"] article[role="short-embed-post"] footer {
+	background: none;
+}
+
 [data-themeambiance="darkTheme"] [id="page"] > footer {
-	background: #222;
+	/* background: #222; */
 	border-top-color:#444;
 }
 
@@ -2347,4 +2351,8 @@ body[data-themeambiance="darkTheme"],
 }
 [data-themeambiance="lightTheme"] main > article {
 	padding: 20px 50px;
+}
+[data-themeambiance="lightTheme"][data-themedisplay="boxes"] main > article {
+	padding: 0 0 50px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }

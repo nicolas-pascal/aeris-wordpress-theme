@@ -18,6 +18,7 @@
 - correctif CSS du widget FooGallery sur la taille du figcaption en hover
 - correctif CSS bouton "See all" plugin Aeris widget Taxonomies list article
 - correctif condition affichage breadcrumb sur homepage custom
+- Modification de la page 404. Ajout du texte si pas de droits suffisants pour accèder à la recherche.
 
 
 ### 1.8.5
