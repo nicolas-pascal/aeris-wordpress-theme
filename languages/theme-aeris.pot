@@ -14,7 +14,7 @@ msgstr ""
 
 #: 404.php:17
 #@ _s
-msgid "Oops! That page can&rsquo;t be found."
+msgid "Oops! That page can&rsquo;t be found, or you don\'t have enought right to see this ressource."
 msgstr ""
 
 #: 404.php:21

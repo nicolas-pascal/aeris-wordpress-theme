@@ -10,10 +10,18 @@ while ( have_posts() ) : the_post();
 
 
 ?>
+<?php 
+    // Show breadcrumb if checked in customizer
+    if ( (get_theme_mod( 'theme_aeris_breadcrumb' ) == "true") && !(is_front_page()) ) {
+    ?>
 	<div id="breadcrumbs">
-		<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
-	</div>
-	
+    <?php
+			if (function_exists('the_breadcrumb')) the_breadcrumb(); 
+	?>	
+    </div>
+    <?php
+    }
+	?>
 	<div class="site-branding" style="background-image:url(<?php header_image()?>);">
 		<div>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
