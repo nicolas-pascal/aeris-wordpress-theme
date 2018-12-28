@@ -37,12 +37,12 @@ function theme_aeris_customizer_remove_section( $wp_customize )
 // remove section colors
 $wp_customize->remove_section('colors');
 // remove section background image
-$wp_customize->remove_section('background_image');
+// $wp_customize->remove_section('background_image');
 }
 add_action( 'customize_register', 'theme_aeris_customizer_remove_section' );
 
 /*************************************************************************************************************
-*  Ajout du support de l'image d'entête personnalisée dans le customizer
+*  Ajout des supports de l'image d'entête personnalisée et du background-image dans le customizer
 *
 */
 
@@ -52,6 +52,20 @@ $args = array(
 	'default-image' => get_template_directory_uri() . '/images/atmosphere-cover.jpg',
 );
 add_theme_support( 'custom-header', $args );
+
+$defaults = array(
+	'default-color'          => 'FFFFFF',
+	'default-image'          => '',
+	'default-repeat'         => 'repeat',
+	'default-position-x'     => 'left',
+        'default-position-y'     => 'top',
+        'default-size'           => 'auto',
+	'default-attachment'     => 'cover',
+	'wp-head-callback'       => '_custom_background_cb',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => ''
+);
+add_theme_support( 'custom-background', $defaults );
 
 /**************************************************************************************************************
 *  Ajout du controleur de couleur personnalisée dans le customizer
@@ -71,6 +85,28 @@ function theme_aeris_customize_color( $wp_customize )
     ));
 
 //2. Register new settings to the WP database...
+
+    //  =============================
+    //  = Radio Input for Light/Dark side  =
+    //  =============================
+    $wp_customize->add_setting('theme_aeris_ambiance', array(
+        'default'        => 'light',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+    ));
+
+    $wp_customize->add_control('theme_aeris_ambiance', array(
+        'label'      => __('Ambiance du thème', 'theme_aeris'),
+        'description'=> __('Choisissez votre ambiance, claire ou foncée', 'theme_aeris'),
+        'section'    => 'theme_aeris_color_scheme',
+        'settings'   => 'theme_aeris_ambiance',
+        'type'       => 'radio',
+        'choices'    => array(
+            'light' => 'Light',
+            'dark' => 'Dark',
+        ),
+    ));
+
 
     //  =================================
     //  = Select Box pour theme color   =
@@ -171,6 +207,38 @@ function theme_aeris_customize_color( $wp_customize )
         'settings'   => 'theme_aeris_link_hover_color_code',
     )) );
 
+    //  =======================================
+    //  = Text Input Footer background color code        =
+    //  =======================================
+    $wp_customize->add_setting('theme_aeris_footer_background_color_code', array(
+        'default'        => '#333333',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+ 
+    ));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'theme_aeris_footer_background_color_code', array(
+        'label'      => __('Couleur de fond du footer', 'theme_aeris'),
+        'section'    => 'theme_aeris_color_scheme',
+        'settings'   => 'theme_aeris_footer_background_color_code',
+    )) );
+    //  =======================================
+    //  = Text Input Footer text color code        =
+    //  =======================================
+    $wp_customize->add_setting('theme_aeris_footer_text_color_code', array(
+        'default'        => '#FFFFFF',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'theme_mod',
+ 
+    ));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'theme_aeris_footer_text_color_code', array(
+        'label'      => __('Couleur des textes du footer', 'theme_aeris'),
+        'description'=> __('Préferez une couleur de texte foncé sur fond clair, et inversement', 'theme_aeris'),
+        'section'    => 'theme_aeris_color_scheme',
+        'settings'   => 'theme_aeris_footer_text_color_code',
+    )) );
+
     //  =============================
     //  = Radio Input boxes or not  =
     //  =============================
@@ -186,8 +254,8 @@ function theme_aeris_customize_color( $wp_customize )
         'settings'   => 'theme_aeris_box',
         'type'       => 'radio',
         'choices'    => array(
-            'value1' => 'Tous en boîte',
-            'value2' => 'Aplat',
+            'box' => 'Tous en boîte',
+            'nobox' => 'Aplat',
         ),
     ));
 
@@ -263,7 +331,7 @@ function theme_aeris_color_style() {
     $code_color=theme_aeris_main_color();
 
 	$rgb_color = hex2rgb($code_color); // array 0 => r , 1 => g, 2 => b
-	
+    
 	?>
          <style type="text/css">
 			h1,
@@ -295,7 +363,7 @@ function theme_aeris_color_style() {
 			.bkg,
 			[role="listNews"] article.format-quote > header > blockquote,
             [role="listProgram"] > header > h2,
-            .Aeris-seeAllButton:hover,
+            .Aeris-seeAllButton,            
             #cookie-notice .button
              {
                 background: <?php echo $code_color;?>;
@@ -312,27 +380,43 @@ function theme_aeris_color_style() {
             #cookie-notice .button:hover {
                 background-color: rgba(<?php echo $rgb_color[0].",".$rgb_color[1].",".$rgb_color[2].",.5)"; ?>;
                 color:<?php echo get_theme_mod( 'theme_aeris_text_color_code' );?>;
-			}
+            }
+            
+            [id="page"] > footer {
+                background-color:<?php echo get_theme_mod( 'theme_aeris_footer_background_color_code');?>;
+                
+            }
+            [id="page"] > footer,
+            [id="page"] > footer a, 
+            [id="page"] > footer h2 {
+                color:<?php echo get_theme_mod( 'theme_aeris_footer_text_color_code');?>;
+            }
+
          </style>
     <?php
 
 }
 add_action( 'wp_head', 'theme_aeris_color_style');
 
-/*****
-* 
-* Ajout des styles Boxes
-* 
-*/
+// Fonction renvoyant les valeurs du customizer "Options du thème / Ambiance & Display mode
+function theme_aeris_bodyAttribute() {
+    
+    if( get_theme_mod( 'theme_aeris_ambiance' ) == "dark") {
+        // wp_enqueue_style('theme_aeris_ambiance', get_bloginfo('template_directory') . '/css/dark.css');
+        $classes['ambiance'] = "darkTheme";
+    } else {
+        $classes['ambiance'] = "lightTheme";
+    }
 
-function theme_aeris_box_style() {
-	
-	if( get_theme_mod( 'theme_aeris_box' ) == "value1") {
-	wp_enqueue_style('theme-aeris-box', get_bloginfo('template_directory') . '/css/boxes.css');
-	}
-
+	// le if == "value1" est une vieillerie, non supprimable !! tous les vieux sites sont parametrés avec cette valeur... bref, j'avais codé comme un con...
+	if(( get_theme_mod( 'theme_aeris_box' ) == "value1") || (get_theme_mod( 'theme_aeris_box' ) == "box")) {
+        $classes['box'] = "boxes";
+	    // wp_enqueue_style('theme-aeris-box', get_bloginfo('template_directory') . '/css/boxes.css');
+    }else {
+        $classes['box'] = "nobox";
+    }
+    return $classes;
 }
-add_action( 'wp_enqueue_scripts', 'theme_aeris_box_style' );
 
 /******************************************************************
 * Ajout du css custom dans le customizer 

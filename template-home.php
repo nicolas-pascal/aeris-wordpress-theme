@@ -11,9 +11,18 @@ while ( have_posts() ) : the_post();
 
 	// get_template_part( 'template-parts/header-content', 'page' );
 ?>
+<?php 
+    // Show breadcrumb if checked in customizer
+    if ( (get_theme_mod( 'theme_aeris_breadcrumb' ) == "true") && (! is_home()) ) {
+    ?>
 	<div id="breadcrumbs">
-		<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
-	</div>
+    <?php
+			if (function_exists('the_breadcrumb')) the_breadcrumb(); 
+	?>	
+    </div>
+    <?php
+    }
+	?>
 	
 	<div class="site-branding" style="background-image:url(<?php header_image()?>);">
 		<div>

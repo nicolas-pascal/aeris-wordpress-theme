@@ -50,8 +50,8 @@ msgid "Pages:"
 msgstr "Pages:"
 
 #: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/404.php:17
-msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oups! Cette page n&rsquo;a pas pu &ecirc;tre trouv&eacute;e."
+msgid "Oops! That page can&rsquo;t be found, or you don\'t have enought right to see this ressource."
+msgstr "Oups! Cette page n&rsquo;a pas pu &ecirc;tre trouv&eacute;e, ou vous n'avez pas les droits nécessaires pour consulter cette ressource."
 
 #: /var/www/multisite.test/wp-content/themes/aeris-wordpress-theme/404.php:21
 msgid ""
