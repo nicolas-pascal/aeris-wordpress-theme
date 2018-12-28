@@ -211,7 +211,7 @@ function theme_aeris_customize_color( $wp_customize )
     //  = Text Input Footer background color code        =
     //  =======================================
     $wp_customize->add_setting('theme_aeris_footer_background_color_code', array(
-        'default'        => '#333333',
+        'default'        => '#CCC',
         'capability'     => 'edit_theme_options',
         'type'           => 'theme_mod',
  
@@ -226,7 +226,7 @@ function theme_aeris_customize_color( $wp_customize )
     //  = Text Input Footer text color code        =
     //  =======================================
     $wp_customize->add_setting('theme_aeris_footer_text_color_code', array(
-        'default'        => '#FFFFFF',
+        'default'        => '#333',
         'capability'     => 'edit_theme_options',
         'type'           => 'theme_mod',
  

@@ -7,6 +7,9 @@
 
 ## Change logs
 
+### 1.9.1
+- correctif sur la couleur par défaut du footer (background + typo)
+
 ### 1.9.0
 > les utilisateurs sont rois, je rajoute des options de personnalisation, préparez les lunettes de protections...
 - option "Black theme" 
