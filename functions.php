@@ -182,7 +182,7 @@ require get_template_directory() . '/inc/custom-shortcodes.php';
 /**
  * Enqueue Javascript custom files
  */
-//require get_template_directory() . '/inc/custom-register-scripts.php';
+require get_template_directory() . '/inc/custom-register-scripts.php';
 
 /**
  * ACCESSIBILITE

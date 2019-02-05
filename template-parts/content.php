@@ -10,7 +10,7 @@ $categories = get_the_terms( $post->ID, 'category');
 <article role="embed-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
         <h3>
-           <a href="<?php the_permalink(); ?>">
+           <a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
             <?php the_title();?>
             </a>
         </h3>     
@@ -19,7 +19,9 @@ $categories = get_the_terms( $post->ID, 'category');
         if (get_the_post_thumbnail()) {
         ?>
         <figure>
-        <?php the_post_thumbnail( 'illustration-article' ); ?>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
+                <?php the_post_thumbnail( 'illustration-article' ); ?>
+            </a>
         </figure>
         <?php 
         }
@@ -35,7 +37,8 @@ $categories = get_the_terms( $post->ID, 'category');
     </section>
     <footer>
         <?php theme_aeris_show_categories($categories);?>
-        
-		<?php theme_aeris_meta(); ?>
+        <small>
+            <?php theme_aeris_meta(); ?>
+        </small>
 	</footer>
 </article>

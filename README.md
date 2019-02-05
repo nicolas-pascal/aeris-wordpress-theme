@@ -7,6 +7,13 @@
 
 ## Change logs
 
+### 2.0.0
+- Correctif CSS 
+  - padding sur le template catalogue
+  - footer des articles en mode "embedé"
+  - couleur bouton categorie à la couleur dominante choisi
+- Ajout du template TOC , page avec table des matières en "sticky menu" à gauche
+
 ### 1.9.1
 - correctif sur la couleur par défaut du footer (background + typo)
 

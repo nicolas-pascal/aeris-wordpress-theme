@@ -48,15 +48,15 @@ add_action( 'wp_head', 'theme_aeris_pingback_header' );
 
 // Change the length of excerpts
 function custom_excerpt_length( $length ) {
-	return 50;
+	return 20;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 // Add more-link text to excerpt
 function new_excerpt_more( $more ) {
-	return '... <a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __('Continue Reading', 'theme_aeris') . ' <span class="icon-angle-right"></span></a>';
+	return '... <br><a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __('Continue Reading', 'theme_aeris') . ' <span class="icon-angle-right"></span></a>';
 }
-add_filter( 'excerpt_more', 'new_excerpt_more' );
+// add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 
 /******************************************************************

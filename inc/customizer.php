@@ -364,7 +364,8 @@ function theme_aeris_color_style() {
 			[role="listNews"] article.format-quote > header > blockquote,
             [role="listProgram"] > header > h2,
             .Aeris-seeAllButton,            
-            #cookie-notice .button
+            #cookie-notice .button,
+            body .tag a
              {
                 background: <?php echo $code_color;?>;
                 color:<?php echo get_theme_mod( 'theme_aeris_text_color_code' );?>;
