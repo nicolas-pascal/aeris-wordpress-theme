@@ -125,7 +125,7 @@ function theme_aeris_meta() { ?>
 
 	<div class="post-meta">
 	
-		<a class="post-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><span class="icon-clock"></span> <?php the_time( 'Y/m/d' ); ?></a>
+		<?php the_time( 'd M Y' ); ?>
 		
 		<?php
 		
@@ -135,7 +135,7 @@ function theme_aeris_meta() { ?>
 				comments_popup_link( '0', '1', '%', 'post-comments' );
 			}
 			
-			edit_post_link(); 
+			// edit_post_link(); 
 		
 		?>
 		

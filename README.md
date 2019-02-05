@@ -19,6 +19,7 @@ header-color option
   - footer des articles en mode "embedé"
   - couleur bouton categorie à la couleur dominante choisi
 - Ajout du template TOC , page avec table des matières en "sticky menu" à gauche
+- Modifs templates des posts embarqués (positionnement des catégories / date)
 
 ### 1.9.1
 - correctif sur la couleur par défaut du footer (background + typo)
