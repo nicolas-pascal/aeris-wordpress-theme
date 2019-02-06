@@ -17,7 +17,7 @@ header-color option
 - Correctif CSS 
   - padding sur le template catalogue
   - footer des articles en mode "embedé"
-  - couleur bouton categorie à la couleur dominante choisi
+  - modif bouton categorie, arrondi, et :hover à la couleur dominante choisi
 - Ajout du template TOC , page avec table des matières en "sticky menu" à gauche
 - Modifs templates des posts embarqués (positionnement des catégories / date)
 

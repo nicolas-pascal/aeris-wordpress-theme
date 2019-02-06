@@ -123,9 +123,9 @@ add_action( 'save_post',     'theme_aeris_category_transient_flusher' );
 
 function theme_aeris_meta() { ?>
 
-	<div class="post-meta">
+	<p class="post-meta">
 	
-		<?php the_time( 'd M Y' ); ?>
+		<?php the_time('F j, Y'); ?>
 		
 		<?php
 		
@@ -138,10 +138,8 @@ function theme_aeris_meta() { ?>
 			// edit_post_link(); 
 		
 		?>
-		
-		<div class="clear"></div>
 	
-	</div> <!-- /post-meta -->
+		</p> <!-- /post-meta -->
 	
 <?php
 }

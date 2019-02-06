@@ -166,7 +166,6 @@ function theme_aeris_show_categories($categories) {
       }
   ?>
   </div>
-  <div class="clear"></div>
 <?php
     } 
 }

@@ -11,6 +11,7 @@ $title = mb_strimwidth($title, 0, 50, '...');
 
 <article role="short-embed-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
+    <?php theme_aeris_show_categories($categories);?>
     <?php 
     if (get_the_post_thumbnail()) {
     ?>
@@ -20,7 +21,7 @@ $title = mb_strimwidth($title, 0, 50, '...');
     <?php 
     }
     ?> 
-        <?php theme_aeris_meta(); ?> 
+        
         <h3>
            <a href="<?php the_permalink(); ?>">
             <?php echo $title;?>
@@ -29,8 +30,6 @@ $title = mb_strimwidth($title, 0, 50, '...');
                  
     </header>
     <footer>
-        <?php theme_aeris_show_categories($categories);?>
-        
-		
-	</footer>
+        <?php theme_aeris_meta(); ?> 
+    </footer>
 </article>
