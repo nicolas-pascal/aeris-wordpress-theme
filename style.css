@@ -283,7 +283,7 @@ input,
 select,
 textarea {
 	color: #333;
-	font-family: Arial,sans-serif;	
+	font-family: 'Nunito Sans',Arial,sans-serif;
 	font-size: 1rem;
 	line-height: 1.7;
 }
@@ -1073,7 +1073,7 @@ body .tag a {
 	couleurécraséeparladominanteduthème*/
 	text-transform: uppercase;
 	font-size: .7rem;
-	color: #62707c;
+	color: #555;
 	text-decoration: none;
 	-webkit-border-radius: 50px;
 	-moz-border-radius: 50px;

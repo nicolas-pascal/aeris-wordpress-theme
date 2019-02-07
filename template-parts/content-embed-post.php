@@ -16,15 +16,17 @@ $title = mb_strimwidth($title, 0, 50, '...');
     if (get_the_post_thumbnail()) {
     ?>
         <figure>
-        <?php the_post_thumbnail( 'single-article' ); ?>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
+                <?php the_post_thumbnail( 'single-article' ); ?>
+            </a>
         </figure>
     <?php 
     }
     ?> 
         
         <h3>
-           <a href="<?php the_permalink(); ?>">
-            <?php echo $title;?>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
+                <?php echo $title;?>
             </a>
         </h3>      
                  
