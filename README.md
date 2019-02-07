@@ -18,6 +18,8 @@ header-color option
   - padding sur le template catalogue
   - footer des articles en mode "embedé"
   - modif bouton categorie, arrondi, et :hover à la couleur dominante choisi
+- Ajout Google font "Open Sans" pour tous les headers html (h1 > h6)
+- Ajout Google font "Roboto" pour les textes
 - Ajout du template TOC , page avec table des matières en "sticky menu" à gauche
 - Modifs templates des posts embarqués (positionnement des catégories / date)
 
