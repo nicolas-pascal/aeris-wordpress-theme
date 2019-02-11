@@ -43,8 +43,9 @@ while ( have_posts() ) : the_post();
 		        </section>
 
 				<footer>
-					<span class="icon-user"></span><?php the_author();?>
-					<span class="icon-clock"></span><?php the_time( get_option( 'date_format' ) );?>
+					<p>
+						<?php the_author();?> - <?php theme_aeris_meta();?>
+					</p>
 					<?php 
 					// if ( get_edit_post_link() ) : 
 					// 	edit_post_link(

@@ -65,6 +65,11 @@ function theme_aeris_icons_font() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_aeris_icons_font' );
 
+function theme_aeris_google_fonts() {
+	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto', false );
+	}
+	add_action( 'wp_enqueue_scripts', 'theme_aeris_google_fonts' );
+
 /************************************************************/
 
 if ( ! function_exists( 'theme_aeris_header_style' ) ) :

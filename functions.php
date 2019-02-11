@@ -40,7 +40,8 @@ function theme_aeris_setup() {
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+	// add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -182,7 +183,7 @@ require get_template_directory() . '/inc/custom-shortcodes.php';
 /**
  * Enqueue Javascript custom files
  */
-//require get_template_directory() . '/inc/custom-register-scripts.php';
+require get_template_directory() . '/inc/custom-register-scripts.php';
 
 /**
  * ACCESSIBILITE
