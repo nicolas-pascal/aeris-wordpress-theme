@@ -5,7 +5,6 @@
 jQuery(document).ready(function(){
     
 	// création du nav Sommaire
-	//jQuery('main article aside').prepend('<nav role="sommaire"></nav>');
     var i=0;
     var navSommaire = '<nav role="sommaire"></nav>';
     var prevH2Item = null;                                                            
@@ -33,15 +32,10 @@ jQuery(document).ready(function(){
         i++;
 	});
     
-    if (i == 0) {
+    if (i < 2) {
         jQuery('[role="sommaire"]').css("display", "none");
     }
 
-
-    // jQuery('[href^="#toc"]').click(function(){
-    //    jQuery('[href^="#toc"]').removeClass();
-    //    jQuery(this).addClass('active');
-    // });
 
     jQuery('#tocList > li:first-child').addClass('active');
 
@@ -50,8 +44,8 @@ jQuery(document).ready(function(){
 
     // Fixe le sommaire au scroll (jquery.sticky.js)
     jQuery(window).load(function(){
-      jQuery('div > aside').sticky({ topSpacing: 40 }); // utilisé sur page
-      jQuery('div > aside').sticky({ bottomSpacing: footerHeight });
+      jQuery('aside#stickyMenu').sticky({ topSpacing: 40 }); // utilisé sur page
+      jQuery('aside#stickyMenu').sticky({ bottomSpacing: footerHeight });
       //jQuery('li + nav[role="sommaire"]').sticky({ topSpacing: 0 }); // utilisé sur template-infos
     });
 

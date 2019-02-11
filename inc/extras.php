@@ -181,7 +181,7 @@ function theme_aeris_show_categories($categories) {
 */
 
 // active les Post thumbnails (images à la une).
-add_theme_support( 'post-thumbnails' );
+// add_theme_support( 'post-thumbnails' );
 
 /* Ajout de tailles d'images
 * https://developer.wordpress.org/reference/functions/add_image_size/

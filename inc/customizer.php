@@ -378,6 +378,7 @@ function theme_aeris_color_style() {
 			}
 
             .site-branding h1 a,
+            .site-branding h1 span,
             #cookie-notice .button:hover {
                 background-color: rgba(<?php echo $rgb_color[0].",".$rgb_color[1].",".$rgb_color[2].",.5)"; ?>;
                 color:<?php echo get_theme_mod( 'theme_aeris_text_color_code' );?>;

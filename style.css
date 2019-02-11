@@ -1,7 +1,7 @@
 /*
 Theme Name:   Theme Aeris
 Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
-Description:  Theme worpdress Aeris
+Description:  Theme wordpress Aeris
 Author:       Aeris / SEDOO OMP - Pierre VERT
 Author URI:   https://www.aeris-data.fr
 Version: 2.0.0
@@ -713,7 +713,7 @@ a:active {
 
 .main-navigation a {
 	display: block;
-	padding: 9px 20px 9px 10px;
+	padding: 5px 15px 5px 15px;
 	font-size: .875rem;
 	color: #687074;
 	text-decoration: none;
@@ -725,24 +725,12 @@ a:active {
 	color: #4765a0;
 }
 
-/* .main-navigation .nav-menu > li > a::after {
-    content: "";
-    display: inline-block;
-    font-family: FontAwesome;
-    font-size: 11px;
-    font-weight: normal;
-    position: absolute;
-    right: 6px;
-    top: 11px;
-} */
-
-
 .main-navigation ul ul {
 	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 40px;
+	top: 34px;
 	left: -999em;
 	background: #FFF;
 	z-index: 99999;
@@ -755,6 +743,7 @@ a:active {
 }
 
 .main-navigation ul ul a {
+	padding: 9px 10px;
 	font-size: .8rem;
 	text-transform: none;
 }
@@ -1091,9 +1080,9 @@ body .tag a {
 	-o-border-radius: 50px;
 }
 
-body .tag a:visited {
+/* body .tag a:visited {
 	color:#FFF;
-}
+} */
 
 body .tag a:hover,
 .post-edit-link:hover {
@@ -1328,7 +1317,7 @@ main[role="main"] {
 ## Breadcrumbs
 --------------------------------------------------------------*/
 [id="breadcrumbs"] {
-	min-height:40px;
+	/* min-height:40px; */
 	background: #FAFAFA;
 	border-bottom: 1px solid #eee;
 	border-top:2px solid #ddd;
@@ -1394,6 +1383,7 @@ main[role="main"] {
 
 [id="breadcrumbs"] nav {
 	text-align: right;
+	font-size:.9rem;
 }
 
 [id="breadcrumbs"] a {
@@ -1533,7 +1523,8 @@ article > footer [class^="icon"],
 	border-bottom:none;
 }
 
-.site-branding h1 a {
+.site-branding h1 a,
+.site-branding h1 span {
 	display: inline-block;
 	margin-bottom:10px;
 	padding: 0 20px;
@@ -1759,7 +1750,7 @@ article[role="short-embed-post"] footer {
 ## Template Table of content
 --------------------------------*/
 
-[id="content-area"].toc-left > div[id="sticky-wrapper"] {
+[id="content-area"].toc-left > div[id="stickyMenu-sticky-wrapper"] {
 	order:1;
 	flex:0 1 250px;
 }
@@ -1768,18 +1759,19 @@ article[role="short-embed-post"] footer {
 	order:2;
 	flex:1 1 auto;
 }
-.toc-left > div[id="sticky-wrapper"] aside {
+.toc-left > div[id="stickyMenu-sticky-wrapper"] aside {
 	width:100%;
 }
 
 @media (min-width: 768px) {
-	.toc-left > div[id="sticky-wrapper"]  {
+	.toc-left > div[id="stickyMenu-sticky-wrapper"]  {
 		padding-top: 10px;
 	}
-	.toc-left > div[id="sticky-wrapper"],
-	.toc-left > div[id="sticky-wrapper"] aside {
+	.toc-left > div[id="stickyMenu-sticky-wrapper"],
+	.toc-left > div[id="stickyMenu-sticky-wrapper"] aside {
 		border-left: none;
 	}
+}
 
 .toc-left [role="sommaire"] ul {
 	padding:0;
@@ -1803,9 +1795,9 @@ article[role="short-embed-post"] footer {
     position: relative;
 }
 
-/* [role="sommaire"] {
+[role="sommaire"] {
     display: none;
-} */
+}
 
 [role="sommaire"] a {
     display: block;
