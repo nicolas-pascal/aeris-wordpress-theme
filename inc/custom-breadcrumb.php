@@ -53,8 +53,8 @@ function the_breadcrumb() {
                 
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
-              
-                echo '<a href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a>';
+                $titleItem=mb_strimwidth($post_type_object->labels->name, 0, 20, '...');
+                echo '<a href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $titleItem . '</a>';
                 echo '<span class="delimiter"> ' . $separator . ' </span>';
               
             }
@@ -86,8 +86,9 @@ function the_breadcrumb() {
                   
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
+                $titleItem=mb_strimwidth($post_type_object->labels->name, 0, 20, '...');
               
-                echo '<a href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a>';
+                echo '<a href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $titleItem . '</a>';
                 echo '<span class="delimiter"> ' . $separator . '</span>';
               
             }
@@ -107,7 +108,7 @@ function the_breadcrumb() {
                 // Loop through parent categories and store in variable $cat_display
                 $cat_display = '';
                 foreach($cat_parents as $parents) {
-                    $cat_display .= ''.$parents.'';     //////////////////////////////////  CHELOU  !!! ! !! !! 
+                    $cat_display .= ''.$parents.'';
                     $cat_display .= '<span class="delimiter"> ' . $separator . ' </span>';
                 }
              
@@ -124,22 +125,20 @@ function the_breadcrumb() {
                 $cat_name       = $taxonomy_terms[0]->name;
                
             }
-              
+            $titleItem=mb_strimwidth(get_the_title(), 0, 40, '...');  
             // Check if the post is in a category
             if(!empty($last_category)) {
                 echo $cat_display;
-                echo '<span class="current">' . get_the_title() . '</span>';
+                echo '<span class="current">' . $titleItem . '</span>';
                   
             // Else if post is in a custom taxonomy
             } else if(!empty($cat_id)) {
-                  
                 echo '<a href="' . $cat_link . '" title="' . $cat_name . '">' . $cat_name . '</a>';
                 echo '<span class="delimiter"> ' . $separator . ' </span>';
-                echo '<span class="current">' . get_the_title() . '</span>';
+                echo '<span class="current">' . $titleItem . '</span>';
               
             } else {
-                  
-                echo '<span class="current">' . get_the_title() . '</span>';
+                echo '<span class="current">' . $titleItem . '</span>';
                   
             }
               
@@ -162,7 +161,8 @@ function the_breadcrumb() {
                 // Parent page loop
                 if ( !isset( $parents ) ) $parents = null;
                 foreach ( $anc as $ancestor ) {
-                    $parents .= '<a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a>';
+                    $titleItem=mb_strimwidth(get_the_title($ancestor), 0, 20, '...');
+                    $parents .= '<a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . $titleItem . '</a>';
                     $parents .= '<span class="delimiter"> ' . $separator . ' </span>';
                 }
                    
@@ -170,7 +170,8 @@ function the_breadcrumb() {
                 echo $parents;
                    
                 // Current page
-                echo '<span class="current">' . get_the_title() . '</span>';
+                $titleItem=mb_strimwidth(get_the_title(), 0, 40, '...');
+                echo '<span class="current">' . $titleItem . '</span>';
                    
             } else {
                    
