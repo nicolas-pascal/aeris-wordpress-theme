@@ -7,12 +7,6 @@
 
 ## Change logs
 
-## TO DO
-finir actus page accueil
-background-color breadcrumb option
-header-color option
-
-
 ### 2.0.0
 - Correctif CSS 
   - padding sur le template catalogue
