@@ -192,7 +192,6 @@ function images_setup() {
     add_image_size( 'embed-article', 1024, 250, false );
     add_image_size( 'post-image', 945, 9999 );
     add_image_size( 'logo-partenaire', 100, 40, false );
-
  }
 add_action( 'after_setup_theme', 'images_setup' );
 

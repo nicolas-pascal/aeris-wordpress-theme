@@ -29,9 +29,14 @@ jQuery(document).ready(function(){
             prevH2List.append(item);                                  
         }
 
-        i++;
+        i++;        
 	});
     
+    if (i == 0) {
+        console.log("mon III"+ i);
+        jQuery('[role="sommaire"]').css("display", "none");
+    }
+
     if (i < 2) {
         jQuery('[role="sommaire"]').css("display", "none");
     }

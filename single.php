@@ -43,9 +43,8 @@ while ( have_posts() ) : the_post();
 		        </section>
 
 				<footer>
-					<p>
-						<?php the_author();?> - <?php theme_aeris_meta();?>
-					</p>
+					<?php theme_aeris_meta();?>
+					
 					<?php 
 					// if ( get_edit_post_link() ) : 
 					// 	edit_post_link(
