@@ -125,7 +125,9 @@ function theme_aeris_meta() { ?>
 
 	<p class="post-meta">
 	
-		<?php the_time('F j, Y'); ?>
+		<?php the_author_posts_link();
+		echo " -- ";
+		 the_time('F j, Y'); ?>
 		
 		<?php
 		

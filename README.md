@@ -7,6 +7,11 @@
 
 ## Change logs
 
+### 2.0.1
+- Correctif script toc.js pour Theia-wpth-child
+- Ajout du template author.php
+- Ajout du lien vers author.php dans single.php
+
 ### 2.0.0
 - Correctif CSS 
   - padding sur le template catalogue

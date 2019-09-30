@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme wordpress Aeris
 Author:       Aeris / SEDOO OMP - Pierre VERT
 Author URI:   https://www.aeris-data.fr
-Version: 2.0.0
+Version: 2.0.1
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: aeris-wordpress-theme
@@ -680,7 +680,7 @@ a:active {
 	color:#97A7B5;
 	font-size:.9rem;
 	margin:0;
-	padding-top:10px;
+	padding:10px 0;
 }
 .post-meta::first-letter {
 	text-transform: uppercase;
@@ -1472,10 +1472,13 @@ article > header,
 
 article > footer {
 	margin-top: 20px;
-	padding: 20px; 
 	border-top: 1px solid #eee;
-	background: #f0f0f0;
 }
+
+article > footer .post-meta{
+	border-bottom: 1px solid #eee;
+}
+
 
 article > footer [class^="icon"],
 .nav-previous a::before,
