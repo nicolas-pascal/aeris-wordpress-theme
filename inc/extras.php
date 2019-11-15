@@ -156,10 +156,13 @@ function theme_aeris_show_categories($categories) {
   <?php
       foreach( $categories as $categorie ) { 
           if ($categorie->slug !== "non-classe") {
-          echo '<a href="'.site_url().'/category/'.$categorie->slug.'" class="'.$categorie->slug.'">';
-
-                echo $categorie->name; 
-              ?>                    
+            if( (function_exists('pll_current_language') ) && ( "en" == pll_current_language()) ) {
+              echo '<a href="'.site_url().'/'.pll_current_language().'/category/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+            }else {
+              echo '<a href="'.site_url().'/category/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+            }
+            echo $categorie->name; 
+            ?>                    
           </a>
   <?php 
           }

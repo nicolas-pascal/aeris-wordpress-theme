@@ -7,6 +7,9 @@
 
 ## Change logs
 
+### 2.0.2
+- update theme_aeris_show_categories() function for polylang URL
+
 ### 2.0.1
 - Correctif script toc.js pour Theia-wpth-child
 - Ajout du template author.php
