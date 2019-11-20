@@ -1,0 +1,83 @@
+/************
+* Backoffice custom
+******/
+
+option[value="#4765a0"],
+option[value="#90BCD1"],
+option[value="#08A5E0"],
+option[value="#1F7E9E"],
+option[value="#2D4F59"],
+option[value="#B6CC49"],
+option[value="#7DBF3B"],
+option[value="#DD9946"],
+option[value="#E25B3D"],
+option[value="#CCC"],
+option[value="#AAA"],
+option[value="#777"],
+option[value="#000"],
+option[value="custom"] {
+	padding:20px;
+	color: white;
+}
+
+option[value="custom"] {
+	padding:20px;
+	color: black;
+}
+
+option[value="#4765a0"],
+option[value="#4765a0"][selected] {
+	background: #4765a0;
+}
+
+option[value="#90BCD1"],
+option[value="#90BCD1"][selected] {
+	background: #90BCD1;
+}
+option[value="#08A5E0"],
+option[value="#08A5E0"][selected] {
+	background: #08A5E0;
+}
+option[value="#1F7E9E"],
+option[value="#1F7E9E"][selected] {
+	background: #1F7E9E;
+}
+option[value="#2D4F59"],
+option[value="#2D4F59"][selected] {
+	background: #2D4F59;
+}
+option[value="#B6CC49"],
+option[value="#B6CC49"][selected] {
+	background: #B6CC49;
+}
+option[value="#7DBF3B"],
+option[value="#7DBF3B"][selected] {
+	background: #7DBF3B;
+}
+option[value="#DD9946"],
+option[value="#DD9946"][selected] {
+	background: #DD9946;
+}
+option[value="#E25B3D"],
+option[value="#E25B3D"][selected] {
+	background: #E25B3D;
+}
+option[value="#CCC"],
+option[value="#CCC"][selected] {
+	background: #CCC;
+}
+option[value="#AAA"],
+option[value="#AAA"][selected] {
+	background: #AAA;
+}
+option[value="#777"],
+option[value="#777"][selected] {
+	background: #777;
+}
+option[value="#000"],
+option[value="#000"][selected] {
+	background: #000;
+}
+option:hover, option:focus {
+	background: #ccc;
+}
