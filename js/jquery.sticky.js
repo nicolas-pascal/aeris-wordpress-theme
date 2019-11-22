@@ -26,7 +26,7 @@
     var splice = Array.prototype.splice; // save ref to original slice()
 
   var defaults = {
-      topSpacing: 0,
+      topSpacing: 150,
       bottomSpacing: 0,
       className: 'is-sticky',
       wrapperClassName: 'sticky-wrapper',
