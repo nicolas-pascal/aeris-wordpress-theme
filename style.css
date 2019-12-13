@@ -1284,6 +1284,19 @@ main[role="main"] {
 	overflow: hidden;
 }
 
+.cover-page{
+    height: 20vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cover-page img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
 /*--------------------------------------------------------------
 ## header
 --------------------------------------------------------------*/
@@ -1836,7 +1849,7 @@ article[role="short-embed-post"] footer {
     margin-bottom: 40px;
 }
 
-.toc-left [role="sommaire"] ul li.active ul{
+.toc-left [role="sommaire"] li.active ul{
 	border-left:1px solid var(--dark-grey);
 }
 
