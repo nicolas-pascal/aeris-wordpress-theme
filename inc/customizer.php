@@ -343,7 +343,8 @@ function theme_aeris_color_style() {
 			.main-navigation .nav-menu > .current-menu-item > a,
 			.main-navigation .nav-menu > .current_page_ancestor > a,
 			.main-navigation .nav-menu > .current-menu-ancestor > a,
-            [role="listNews"] article > header {
+            [role="listNews"] article > header,
+            .toc-left [role="sommaire"] li.active ul{
             /* .Aeris-seeAllButton { */
 				border-color: <?php echo $code_color;?>; 
 			}
@@ -354,12 +355,12 @@ function theme_aeris_color_style() {
 			.main-navigation .nav-menu > .current_page_item > a,
 			.main-navigation .nav-menu > .current-menu-item > a,
 			.main-navigation .nav-menu > .current_page_ancestor > a,
-			.main-navigation .nav-menu > .current-menu-ancestor > a
+			.main-navigation .nav-menu > .current-menu-ancestor > a,
+            .toc-left [role="sommaire"] li.active a        
 			{
 				color: <?php echo $code_color;?>;
 			}
 
-			aside .widget-title,
 			.bkg,
 			[role="listNews"] article.format-quote > header > blockquote,
             [role="listProgram"] > header > h2,
