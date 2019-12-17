@@ -13,8 +13,8 @@
 	<?php 
     if (get_the_post_thumbnail()) {
     ?>
-    <figure>
-    <?php the_post_thumbnail( 'illustration-article' ); ?>
+    <figure class="cover-page">
+        <?php the_post_thumbnail( 'illustration-article' ); ?>
     </figure>
     <?php 
     }
