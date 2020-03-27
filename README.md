@@ -7,6 +7,11 @@
 
 ## Change logs
 
+### 2.2.0
+- add thumbnail support on RSS feeds
+- translation fix on 404 page
+- remove post_author on post
+
 ### 2.0.2
 - update theme_aeris_show_categories() function for polylang URL
 

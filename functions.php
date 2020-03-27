@@ -170,9 +170,9 @@ require get_template_directory() . '/inc/custom-rights.php';
 
 /**
  * Theme supports
- * Posts Formats
+ * Thumbnail on RSS feed
  */
-//require get_template_directory() . '/inc/custom-theme-supports.php';
+require get_template_directory() . '/inc/custom-theme-supports.php';
 
 /**
  * SHORTCODES
