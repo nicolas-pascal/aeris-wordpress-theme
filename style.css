@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme wordpress Aeris
 Author:       Pierre VERT - SEDOO DATA CENTER / Aeris
 Author URI:   https://www.aeris-data.fr
-Version: 2.2.1
+Version: 2.2.2
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: aeris-wordpress-theme
@@ -686,6 +686,29 @@ a:active {
 	text-transform: uppercase;
 }
 
+/* PAGE BREAK */
+.page-links {
+    clear: both;
+    margin: 20px 0 1.5em;
+    border-top: 1px solid #EEE;
+	padding: 20px 0;
+}
+
+.page-links span, .page-links a {
+    display: inline-block;
+    width: 28px;
+	height: 28px;
+	margin-left:5px;
+	border-radius: 50%;
+    border: 1px solid #CCC;
+	text-align: center;
+	text-decoration: none;
+}
+
+.page-links a:hover {
+	background:#DDD ;
+}
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -952,24 +975,41 @@ nav.post-navigation a {
 	outline: 0;
 }
 
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
+/****************************
+****** BLOCK GUTENBERG ******
+****************************/
+
 .alignleft {
-	float: left;
-	margin-right: 1.5em;
+float: left;
+margin-right: 1em;
 }
 
 .alignright {
-	float: right;
-	margin-left: 1.5em;
+float: right;
+margin-left: 1em;
 }
 
 .aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+clear: both;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.alignwide {
+	margin-left: calc(25% - 25vw);
+	margin-right: calc(25% - 25vw);
+}
+
+.alignfull {
+	margin-left: calc(50% - 45vw);
+	margin-right: calc(50% - 45vw);
+}
+
+.alignfull.wp-block-cover {
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
 }
 
 /*--------------------------------------------------------------
@@ -1230,9 +1270,9 @@ figcaption {
 	}
 }
 
-main[role="main"] {
+/* main[role="main"] {
 	overflow: hidden;
-}
+} */
 
 /*--------------------------------------------------------------
 ## header
@@ -1754,16 +1794,17 @@ article[role="short-embed-post"] footer {
 --------------------------------*/
 
 [id="content-area"].toc-left > div[id="stickyMenu-sticky-wrapper"] {
-	order:1;
+	/* order:1; */
 	flex:0 1 250px;
 }
 
 [id="content-area"].toc-left > main {
-	order:2;
+	/* order:2; */
 	flex:1 1 auto;
 }
 .toc-left > div[id="stickyMenu-sticky-wrapper"] aside {
 	width:100%;
+	background: rgba(255, 255, 255,.95);
 }
 
 @media (min-width: 768px) {

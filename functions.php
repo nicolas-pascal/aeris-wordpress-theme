@@ -68,6 +68,12 @@ function theme_aeris_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+	
+	/**
+	 * Add support for core custom logo.
+	 *
+	 */
+	add_theme_support( 'align-wide' );
 }
 endif;
 add_action( 'after_setup_theme', 'theme_aeris_setup' );

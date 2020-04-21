@@ -343,7 +343,8 @@ function theme_aeris_color_style() {
 			.main-navigation .nav-menu > .current-menu-item > a,
 			.main-navigation .nav-menu > .current_page_ancestor > a,
 			.main-navigation .nav-menu > .current-menu-ancestor > a,
-            [role="listNews"] article > header {
+            [role="listNews"] article > header,
+            .page-links span.current {
             /* .Aeris-seeAllButton { */
 				border-color: <?php echo $code_color;?>; 
 			}
@@ -365,7 +366,8 @@ function theme_aeris_color_style() {
             [role="listProgram"] > header > h2,
             .Aeris-seeAllButton,            
             #cookie-notice .button,
-            body .tag a:hover
+            body .tag a:hover,
+            .page-links span.current
              {
                 background: <?php echo $code_color;?>;
                 color:<?php echo get_theme_mod( 'theme_aeris_text_color_code' );?>;
