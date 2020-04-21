@@ -1,4 +1,3 @@
-
 <?php
 /*
 Template Name: Page avec sommaire
@@ -11,18 +10,19 @@ while ( have_posts() ) : the_post();
 ?>
 
 	<div id="content-area" class="wrapper sidebar toc-left">
-		<main id="main" class="site-main" role="main">
-			<?php
-			get_template_part( 'template-parts/content', 'page' );	
-			?>
-		</main>
-        <!-- Ici sera généré la table des matières en "sticky menu" -->
-        <aside id="stickyMenu">
+		<?php // Table of content generated / sticky menu ?>
+		<aside id="stickyMenu">
             <nav role="sommaire">
                 <ul id="tocList">
                 </ul>
             </nav>
         </aside>
+		<main id="main" class="site-main" role="main">
+			<?php
+			get_template_part( 'template-parts/content', 'page' );	
+			?>
+		</main>
+        
 	</div><!-- #content-area -->
 
 <?php
