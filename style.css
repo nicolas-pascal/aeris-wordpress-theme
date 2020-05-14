@@ -4,7 +4,7 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme wordpress Aeris
 Author:       Pierre VERT - SEDOO DATA CENTER / Aeris
 Author URI:   https://www.aeris-data.fr
-Version: 2.2.2
+Version: 2.2.3
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: aeris-wordpress-theme
@@ -1773,6 +1773,7 @@ article[role="short-embed-post"] footer {
 	background:#585F69;
 	color: #FFF;
 }
+
 /*------------------
 ## all template
 -------------------*/
@@ -2610,4 +2611,26 @@ body[data-themeambiance="darkTheme"],
 
 [data-themeambiance="lightTheme"][data-themedisplay="boxes"] main > article {
 	padding: 0 0 50px;
+}
+
+/*** BLOCKS ***/ 
+.sedoo_blocks_relatedcontents[role="listNews"] > a {
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 6px rgba(0,0,0,.2);
+}
+
+.sedoo_blocks_relatedcontents[role="listNews"] > a img {
+    margin: 0;
+    padding: 0;
+}
+
+.sedoo_blocks_relatedcontents[role="listNews"] > a h3 {
+    margin: 0;
+    position: absolute;
+    bottom: 0px;
+    background: rgba(0,0,0,0.8);
+    color: #FFF;
+    width: 100%;
+    padding: 10px;
 }
