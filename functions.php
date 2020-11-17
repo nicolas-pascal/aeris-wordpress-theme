@@ -112,7 +112,7 @@ add_action( 'widgets_init', 'theme_aeris_widgets_init' );
  * Enqueue scripts and styles.
  */
 function theme_aeris_scripts() {
-	wp_enqueue_style( 'theme-aeris-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'theme-aeris-style', get_stylesheet_uri(), array(), filemtime(get_template_directory() . '/style.css'), false );
 
 	wp_enqueue_script( 'theme-aeris-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
