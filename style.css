@@ -4,22 +4,13 @@ Theme URI:    https://github.com/aeris-data/aeris-wordpress-theme
 Description:  Theme wordpress Aeris
 Author:       Pierre VERT - Nicolas Gruwe - SEDOO DATA CENTER / Aeris
 Author URI:   https://www.aeris-data.fr
-Version: 2.2.5
+Version: 2.3.0
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: aeris-wordpress-theme
 Tags:
 GitHub Theme URI: aeris-data/aeris-wordpress-theme
 GitHub Branch: master
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-aeris is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 
 /*--------------------------------------------------------------
@@ -1279,6 +1270,8 @@ figcaption {
 --------------------------------------------------------------*/
 [id="masterhead"] {
 	background:#FFF;
+	position: sticky;
+	top:0;
 }
 
 [data-themeambiance="darkTheme"] [id="masterhead"] {
@@ -1962,17 +1955,13 @@ article[role="short-embed-post"] footer {
 -----------------------*/
 
 .page-template-template-catalogue [id="masterhead"]  {
-	position: fixed;
+	position: sticky;
 	top:0;
 	width: 100%;
 	z-index: 1;
 	background: #FFF;
 	-webkit-transition: .3s all ease-in-out;
 	transition: .3s all ease-in-out;
-}
-
-.admin-bar [id="masterhead"] {
-	top:32px;
 }
 
 .page-template-template-catalogue [role="breadcrumbs"],
@@ -2002,16 +1991,16 @@ article[role="short-embed-post"] footer {
 }
 /* Décalage pour catalogue */
 /* si admin bar affichée */
-.page-template-template-catalogue.admin-bar {
+/* .page-template-template-catalogue.admin-bar {
 	margin-top:-32px;
 }
 .page-template-template-catalogue.admin-bar div[data-aeris-catalog] {
 	padding-top:103px;
 }
-/* sans admin bar */
+
 .page-template-template-catalogue div[data-aeris-catalog] {
 	padding-top:71px;
-}
+} */
 
 
 /*------------------
