@@ -210,7 +210,7 @@ add_action( 'after_setup_theme', 'default_attachment_display_settings' );
 
 
 // Flexslider function for format-gallery
-function theme_aeris_flexslider($size = thumbnail, $post) {
+function theme_aeris_flexslider($size = thumbnail, $post = NULL) {
 
   if ( is_page()) :
     $attachment_parent = $post->ID;
